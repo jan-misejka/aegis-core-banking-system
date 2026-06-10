@@ -1,32 +1,43 @@
-UC001 Create Client
+# Business požadavky
 
-Description:
-Create a new bank client.
+## Rozsah systému
 
----
+Systém představuje zjednodušenou platformu pro správu osobního bankovnictví.
 
-UC002 Open Account
+## Případy užití
 
-Description:
-Open a bank account for an existing client.
+### UC001 – Vytvoření klienta
 
----
+Bankovní pracovník vytvoří nového klienta.
 
-UC003 Deposit Money
+### UC002 – Založení účtu
 
-Description:
-Deposit money to account.
+Bankovní pracovník založí účet existujícímu klientovi.
 
----
+### UC003 – Vklad peněz
 
-UC004 Withdraw Money
+Na účet jsou vloženy peníze.
 
-Description:
-Withdraw money from account.
+### UC004 – Výběr peněz
 
----
+Z účtu jsou vybrány peníze.
 
-UC005 Transfer Money
+### UC005 – Převod peněz
 
-Description:
-Transfer money between accounts.
+Peníze jsou převedeny mezi dvěma účty.
+
+### UC006 – Vydání platební karty
+
+K účtu je vydána platební karta.
+
+### UC007 – Blokace platební karty
+
+Platební karta je zablokována.
+
+## Business pravidla
+
+- Účet musí patřit konkrétnímu klientovi.
+- Transakce musí být přiřazena ke konkrétnímu účtu.
+- Převod musí mít zdrojový a cílový účet.
+- Zablokovanou kartu nelze použít.
+- Zůstatek na účtu nesmí být záporný, pokud není implementována podpora kontokorentu.

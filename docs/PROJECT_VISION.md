@@ -1,36 +1,41 @@
-# Aegis Core Banking System
+# Vize projektu
 
-## Purpose:
-Learning project simulating a banking system.
+## Název projektu
 
-Primary objective:
-Prepare for Junior IT Tester role in banking.
+Aegis Core Banking System
 
-## Technology:
-- Java
-- Spring Boot
-- Maven
-- MySQL
-- DBeaver
-- Postman
-- Jira
-- Excel
+## Vize
 
-## Current Phase:
-Database Design
+Vytvořit realistický bankovní systém, který bude sloužit k výuce a procvičování:
 
-## Scope:
-The system should support:
-
-- Clients
-- Accounts
-- Cards
-- Transactions
-
-## Future Phases:
+- SQL
+- návrhu databází
 - REST API
-- API Testing
-- Test Cases
-- Bug Reporting
-- Logging
-- Mainframe Simulation
+- testování API
+- práce s Postman
+- práce s Jira
+- návrhu testovacích scénářů
+- tvorby bug reportů
+
+Projekt by měl svým charakterem připomínat enterprise bankovní systémy používané v reálných organizacích.
+Projekt není určen k výuce cloudových technologií ani cloudové bezpečnosti. Tyto oblasti budou řešeny v samostatných projektech.
+
+## Hlavní cíl
+
+Připravit se na pozici Junior IT tester v bankovním prostředí.
+
+## Vedlejší cíle
+- zlepšit znalosti SQL
+- osvojit si základy backendového vývoje
+- pochopit business procesy v bankovnictví
+- vytvořit realistický portfolio projekt
+
+## Budoucí směřování
+
+Po dokončení verze zaměřené na testování může být projekt rozšířen o:
+
+- koncepty mainframe prostředí
+- koncepty COBOLu
+- koncepty JCL
+- dávkové zpracování (batch processing)
+- simulaci legacy bankovních systémů

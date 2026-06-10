@@ -1,52 +1,52 @@
-# Aegis Core Banking System - Project Context
+# Aegis Core Banking System – Kontext projektu
 
-## Project Purpose
+## Účel projektu
 
-Aegis Core Banking System is a long-term learning project designed to simulate a realistic banking environment.
+Aegis Core Banking System je dlouhodobý studijní projekt navržený pro simulaci realistického bankovního prostředí.
 
-The primary objective is to prepare for a Junior IT Tester role in banking and enterprise environments.
+Hlavním cílem projektu je příprava na pozici Junior IT Tester v bankovním a enterprise prostředí.
 
-The project should gradually evolve from database design and testing into more advanced banking concepts.
-
----
-
-## Current Goal
-
-Build a realistic banking system that can be used for:
-
-* SQL learning
-* Database testing
-* API testing
-* Postman practice
-* Test case design
-* Bug reporting
-* Business analysis practice
-
-The project should resemble systems commonly found in banks.
+Projekt by se měl postupně vyvíjet od návrhu databáze a testování k pokročilejším bankovním konceptům.
 
 ---
 
-## Technology Stack
+## Aktuální cíl
 
-### Development
+Vytvořit realistický bankovní systém, který lze využít pro:
+
+* výuku SQL
+* testování databází
+* testování API
+* procvičování práce s Postmanem
+* návrh testovacích scénářů
+* tvorbu bug reportů
+* procvičování business analýzy
+
+Projekt by měl svým charakterem připomínat systémy běžně používané v bankách.
+
+---
+
+## Používané technologie
+
+### Vývoj
 
 * Java
 * Spring Boot
 * Maven
 * IntelliJ IDEA Community
 
-### Database
+### Databáze
 
 * MySQL
 * DBeaver
 
-### Testing
+### Testování
 
 * Postman
 * Jira
 * Excel
 
-### Environment
+### Prostředí
 
 * Git
 * GitHub
@@ -54,7 +54,7 @@ The project should resemble systems commonly found in banks.
 
 ---
 
-## Repository Structure
+## Struktura repozitáře
 
 ```text
 aegis-core-banking-system/
@@ -69,107 +69,107 @@ README.md
 
 ---
 
-## Current Phase
+## Aktuální fáze
 
-Phase 1 - Database Design
+### Fáze 1 – Návrh databáze
 
-Current database:
+Aktuální databáze:
 
 ```text
 aegiscore_banking
 ```
 
-Current repository state:
+Aktuální stav repozitáře:
 
 ```text
 database/
 └── schema.sql
 ```
 
-The database schema is currently being designed.
+Databázové schéma je momentálně ve fázi návrhu.
 
-No REST API has been implemented yet.
+REST API zatím nebylo implementováno.
 
-No Spring Boot application has been implemented yet.
-
----
-
-## Learning Philosophy
-
-Learning is more important than speed.
-
-The project should be built incrementally.
-
-The goal is understanding, not generating large amounts of code.
-
-Every major design decision should be explained.
-
-When suggesting solutions:
-
-1. Explain reasoning.
-2. Explain business context.
-3. Explain testing implications.
-4. Generate code only when necessary.
+Spring Boot aplikace zatím nebyla implementována.
 
 ---
 
-## Scope
+## Filosofie učení
 
-The banking system should eventually support:
+Porozumění je důležitější než rychlost.
 
-* Clients
-* Accounts
-* Cards
-* Transactions
-* Money Transfers
+Projekt by měl být budován postupně po jednotlivých krocích.
 
-Additional functionality may be added later.
+Cílem je pochopit principy, nikoliv generovat velké množství kódu.
+
+Každé důležité návrhové rozhodnutí by mělo být vysvětleno.
+
+Při navrhování řešení:
+
+1. Nejprve vysvětli důvody návrhu.
+2. Vysvětli business kontext.
+3. Vysvětli dopady na testování.
+4. Kód generuj pouze tehdy, pokud je to skutečně potřeba.
 
 ---
 
-## Out of Scope (For Now)
+## Rozsah systému
 
-The following topics should not be introduced unless explicitly requested:
+Bankovní systém by měl v budoucnu podporovat:
+
+* klienty
+* účty
+* platební karty
+* transakce
+* převody peněz
+
+Další funkcionalita může být přidána později.
+
+---
+
+## Mimo rozsah projektu (zatím)
+
+Následující témata by neměla být zaváděna, pokud nejsou výslovně požadována:
 
 * AWS
 * Azure
 * Kubernetes
 * Terraform
 * Cloud Security
-* Microservices
+* Mikroservisy
 
-These topics belong to future projects.
-
----
-
-## Future Extension
-
-After the tester-focused version is complete, the project may be extended with:
-
-* Mainframe concepts
-* COBOL concepts
-* JCL concepts
-* Batch processing
-* Legacy banking simulation
-
-These features should not influence the current database design unless necessary.
+Tato témata patří do budoucích projektů.
 
 ---
 
-## AI Instructions
+## Budoucí rozšíření
 
-When assisting with this project:
+Po dokončení verze zaměřené na testování může být projekt rozšířen o:
 
-1. Treat this document as the primary source of truth.
-2. Read all provided project documentation before making suggestions.
-3. Focus on banking testing and database learning.
-4. Prefer realistic banking scenarios.
-5. Avoid unnecessary complexity.
-6. Suggest the next logical milestone.
-7. Keep recommendations aligned with the current project phase.
+* koncepty mainframe prostředí
+* koncepty COBOLu
+* koncepty JCL
+* dávkové zpracování (batch processing)
+* simulaci legacy bankovních systémů
+
+Tyto oblasti by neměly ovlivňovat současný návrh databáze, pokud to není nezbytné.
 
 ---
 
-## Current Objective
+## Instrukce pro AI
 
-Design the first version of the banking database schema and create a foundation for future API testing and QA activities.
+Při práci na tomto projektu:
+
+1. Považuj tento dokument za hlavní zdroj informací o projektu.
+2. Před návrhy si vždy přečti dostupnou projektovou dokumentaci.
+3. Zaměř se na bankovní testování a výuku databází.
+4. Preferuj realistické bankovní scénáře.
+5. Vyhýbej se zbytečné složitosti.
+6. Navrhuj další logický milník projektu.
+7. Udržuj doporučení v souladu s aktuální fází projektu.
+
+---
+
+## Aktuální úkol
+
+Navrhnout první verzi databázového schématu bankovního systému a vytvořit základ pro budoucí testování API a QA aktivity.
