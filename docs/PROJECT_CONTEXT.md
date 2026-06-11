@@ -94,6 +94,9 @@ database/
     - Transfer
 
 * Byly definovány základní vztahy mezi entitami.
+* Byla doplněna relace:
+    - Transaction → Transfer (transakce může být navázána na převod prostřednictvím transfer_id)
+
 * Byl dokončen návrh atributů všech entit databázového modelu.
 * Byly schváleny atributy pro:
     - Client
