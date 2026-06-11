@@ -283,8 +283,8 @@ Tyto oblasti mohou být přidány v budoucích verzích projektu.
 
 ---
 
-# Další Krok
+# Poznámky
 * Atributy všech entit byly navrženy a schváleny.
-Dalším krokem projektu bude vytvoření fyzického databázového schématu:
+* Fyzické databázové schéma bylo implementováno v:
 
-  - database/schema.sql
+database/schema.sql

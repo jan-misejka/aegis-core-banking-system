@@ -5,7 +5,7 @@
 * vytvoření dokumentace:
     - docs/DATABASE_MODEL.md ✅
 * návrh atributů entit ✅
-* vytvoření fyzického databázového schématu (schema.sql) ⏳
+* vytvoření fyzického databázového schématu (schema.sql) ✅
 * vytvoření testovacích dat ⏳
 * vytvoření SQL cvičení a dotazů ⏳
 

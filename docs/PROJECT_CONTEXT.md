@@ -108,7 +108,12 @@ database/
     - tx_type
     - transfer_status
 
-* Fyzické databázové schéma (schema.sql) zatím nebylo vytvořeno.
+* Fyzické databázové schéma (database/schema.sql) bylo vytvořeno. Byly definovány:
+
+    - primární klíče (PK)
+    - cizí klíče (FK)
+    - UNIQUE omezení
+    - CHECK omezení
 
 REST API zatím nebylo implementováno.
 
