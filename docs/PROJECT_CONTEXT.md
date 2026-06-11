@@ -201,8 +201,19 @@ Při práci na tomto projektu:
 ---
 
 ## Aktuální úkol
-* Vytvořit první verzi database/schema.sql.
-* Definovat primární klíče (PK).
-* Definovat cizí klíče (FK).
-* Definovat databázová omezení (UNIQUE, CHECK).
-* Připravit základ pro budoucí testování API a QA aktivity.
+* Byla vytvořena testovací databázová data.
+* Datový model obsahuje:
+    * 10 klientů
+    * 15 účtů
+    * 12 platebních karet
+    * 20 převodů
+    * 50 transakcí
+
+* Byly ověřeny:
+    * relace mezi entitami
+    * primární klíče
+    * cizí klíče
+    * CHECK omezení
+    * UNIQUE omezení
+
+* Dalším cílem projektu je vytvoření SQL cvičení a databázových dotazů pro testování a výuku SQL.

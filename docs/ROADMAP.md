@@ -6,7 +6,7 @@
     - docs/DATABASE_MODEL.md ✅
 * návrh atributů entit ✅
 * vytvoření fyzického databázového schématu (schema.sql) ✅
-* vytvoření testovacích dat ⏳
+* vytvoření testovacích dat ✅
 * vytvoření SQL cvičení a dotazů ⏳
 
 ## Fáze 2 – Backend (Spring Boot)
@@ -72,6 +72,23 @@
 
 * Detailní popis modelu je uložen v:
   docs/DATABASE_MODEL.md
+
+* Byla vytvořena první verze testovacích dat.
+* Testovací dataset obsahuje:
+    * 10 klientů
+    * 15 účtů
+    * 12 platebních karet
+    * 20 převodů
+    * 50 transakcí
+
+* Byly ověřeny vazby mezi všemi entitami databázového modelu.
+* Byla doplněna vazba:
+  Transfer → Transaction
+
+prostřednictvím atributu:
+```
+transfer_id
+```
 
 ## Poznámka
 

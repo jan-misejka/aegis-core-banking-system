@@ -302,3 +302,14 @@ Tyto oblasti mohou být přidány v budoucích verzích projektu.
 * Fyzické databázové schéma bylo implementováno v:
 
 database/schema.sql
+
+* Byla vytvořena první verze testovacích dat.
+* Testovací data byla rozdělena na:
+    * klienty
+    * účty
+    * platební karty
+    * převody
+    * transakce
+
+* Model byl úspěšně ověřen naplněním databáze testovacími daty.
+* Relace mezi entitami byly validovány pomocí SQL dotazů a cizích klíčů.
