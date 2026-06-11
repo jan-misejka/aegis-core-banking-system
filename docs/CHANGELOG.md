@@ -14,4 +14,4 @@
 - Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md) a jeho implementace do zdrojů projektu AI
 - Aktualizace DM navržením atributů pro jednotlivé entity a aktualizace dokumentace (DATABASE_MODEL.md, PROJECT_CONTEXT.md, ROADMAP.md)
 - Vytvořeno databázové schéma (database/schema.sql) na základě DM a aktualizace dokumentace (DATABASE_MODEL.md, PROJECT_CONTEXT.md, ROADMAP.md)
-- 
+- Update DM: rozšíření entity transaction o atribut transfer_id a aktualizace dokumentace (DATABASE_MODEL.md, PROJECT_CONTEXT.md, ROADMAP.md)

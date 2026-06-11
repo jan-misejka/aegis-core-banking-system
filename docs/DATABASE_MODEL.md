@@ -166,6 +166,19 @@ Význam:
 
 Účet může být cílovým účtem mnoha převodů.
 
+## Transfer → Transaction
+Mohutnost (Cardinality):
+
+1 : N
+
+Význam:
+
+Jeden převod může vytvářet více transakcí. Typicky:
+* OUTBOUND transakce
+* INBOUND transakce
+
+Transakce nemusí být vždy součástí převodu.
+
 ---
 
 # Atributy jednotlivých entit
@@ -211,6 +224,7 @@ Význam:
 * Schválené atributy:
     - tx_id
     - account_id
+    - transfer_id
     - tx_type
     - amount
     - description

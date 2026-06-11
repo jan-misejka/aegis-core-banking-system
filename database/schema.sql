@@ -50,6 +50,7 @@ CONSTRAINT chk_card_status
 CREATE TABLE transactions (
 tx_id BIGINT AUTO_INCREMENT PRIMARY KEY,
 account_id BIGINT NOT NULL,
+transfer_id BIGINT NULL,
 tx_type VARCHAR(20) NOT NULL,
 amount DECIMAL(15,2) NOT NULL,
 description VARCHAR(255),
@@ -58,6 +59,10 @@ tx_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 CONSTRAINT fk_transactions_account
     FOREIGN KEY (account_id)
     REFERENCES accounts(account_id),
+
+CONSTRAINT fk_transactions_transfer
+    FOREIGN KEY (transfer_id)
+    REFERENCES transfers(transfer_id),
 
 CONSTRAINT chk_tx_type
     CHECK (tx_type IN ('DEPOSIT', 'WITHDRAWAL', 'INBOUND', 'OUTBOUND')),
