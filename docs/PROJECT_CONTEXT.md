@@ -74,19 +74,29 @@ README.md
 ### Fáze 1 – Návrh databáze
 
 Aktuální databáze:
-
 ```text
 aegiscore_banking
 ```
-
 Aktuální stav repozitáře:
-
 ```text
+docs/
+└── DATABASE_MODEL.md
+
 database/
 └── schema.sql
 ```
+* Logický databázový model byl navržen a zdokumentován v souboru docs/DATABASE_MODEL.md.
 
-Databázové schéma je momentálně ve fázi návrhu.
+* Bylo definováno pět základních entit systému:
+    - Client
+    - Account
+    - Card
+    - Transaction
+    - Transfer
+
+* Byly definovány základní vztahy mezi entitami.
+
+* Fyzické databázové schéma (schema.sql) zatím nebylo vytvořeno.
 
 REST API zatím nebylo implementováno.
 
@@ -171,5 +181,7 @@ Při práci na tomto projektu:
 ---
 
 ## Aktuální úkol
-
-Navrhnout první verzi databázového schématu bankovního systému a vytvořit základ pro budoucí testování API a QA aktivity.
+* Navrhnout atributy jednotlivých entit databázového modelu.
+* Připravit fyzický databázový model.
+* Vytvořit první verzi database/schema.sql.
+* Vytvořit základ pro budoucí testování API a QA aktivity.

@@ -23,6 +23,10 @@ Milníky projektu a jednotlivé fáze implementace.
 
 Používané technologie, nástroje a vývojové prostředí.
 
+### DATABASE_MODEL.md
+
+Popisuje první verzi logického databázového modelu projektu Aegis Core Banking System.
+
 ## Účel
 
 Dokumentace slouží jako hlavní zdroj informací o projektu.
