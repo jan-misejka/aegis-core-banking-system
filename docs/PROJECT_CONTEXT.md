@@ -86,7 +86,6 @@ database/
 └── schema.sql
 ```
 * Logický databázový model byl navržen a zdokumentován v souboru docs/DATABASE_MODEL.md.
-
 * Bylo definováno pět základních entit systému:
     - Client
     - Account
@@ -95,6 +94,19 @@ database/
     - Transfer
 
 * Byly definovány základní vztahy mezi entitami.
+* Byl dokončen návrh atributů všech entit databázového modelu.
+* Byly schváleny atributy pro:
+    - Client
+    - Account
+    - Card
+    - Transaction
+    - Transfer
+
+* Byly definovány povolené hodnoty pro:
+    - account_type
+    - card_status
+    - tx_type
+    - transfer_status
 
 * Fyzické databázové schéma (schema.sql) zatím nebylo vytvořeno.
 
@@ -181,7 +193,8 @@ Při práci na tomto projektu:
 ---
 
 ## Aktuální úkol
-* Navrhnout atributy jednotlivých entit databázového modelu.
-* Připravit fyzický databázový model.
 * Vytvořit první verzi database/schema.sql.
-* Vytvořit základ pro budoucí testování API a QA aktivity.
+* Definovat primární klíče (PK).
+* Definovat cizí klíče (FK).
+* Definovat databázová omezení (UNIQUE, CHECK).
+* Připravit základ pro budoucí testování API a QA aktivity.

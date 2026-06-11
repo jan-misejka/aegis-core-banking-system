@@ -9,7 +9,8 @@
 - Nastavení workflow projektu ChatGPT
 
 ## 2026-06-11 - JM
-- Vytvořen a schválaen databázový model (DM)
+- Vytvořen a schválen databázový model (DM)
 - DM vložen jako zdroj do projektu ChatGPT
 - Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md) a jeho implementace do zdrojů projektu AI
+- Aktualizace DM navržením atributů pro jednotlivé entity a aktualizace dokumentace (DATABASE_MODEL.md, PROJECT_CONTEXT.md, ROADMAP.md)
 - 

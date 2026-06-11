@@ -4,7 +4,7 @@
 * návrh logického databázového modelu ✅
 * vytvoření dokumentace:
     - docs/DATABASE_MODEL.md ✅
-* návrh atributů entit ⏳
+* návrh atributů entit ✅
 * vytvoření fyzického databázového schématu (schema.sql) ⏳
 * vytvoření testovacích dat ⏳
 * vytvoření SQL cvičení a dotazů ⏳
@@ -47,7 +47,29 @@
     - Card
     - Transaction
     - Transfer
-  
+
+* Byly schváleny atributy všech entit.
+* Byly definovány základní business hodnoty:
+    - Account Type
+        - CURRENT
+        - SAVINGS
+
+    - Card Status
+        - ACTIVE
+        - BLOCKED
+        - EXPIRED
+
+    - Transaction Type (tx_type)
+        - DEPOSIT
+        - WITHDRAWAL
+        - INBOUND
+        - OUTBOUND
+
+    - Transfer Status
+        - PENDING
+        - COMPLETED
+        - FAILED
+
 * Detailní popis modelu je uložen v:
   docs/DATABASE_MODEL.md
 

@@ -168,6 +168,76 @@ Význam:
 
 ---
 
+# Atributy jednotlivých entit
+
+## Client
+* Schválené atributy:
+    - client_id
+    - first_name
+    - last_name
+    - email
+    - phone_number
+    - created_at
+
+## Account
+* Schválené atributy:
+    - account_id
+    - client_id
+    - iban
+    - account_type
+    - balance
+    - currency
+    - created_at
+
+* Povolené typy účtu:
+    - CURRENT
+    - SAVINGS
+
+## Card
+* Schválené atributy:
+    - card_id
+    - account_id
+    - card_number
+    - card_status
+    - expiry_date
+    - created_at
+
+* Povolené stavy karty:
+    - ACTIVE
+    - BLOCKED
+    - EXPIRED
+
+## Transaction
+* Schválené atributy:
+    - tx_id
+    - account_id
+    - tx_type
+    - amount
+    - description
+    - tx_date
+
+* Povolené typy transakcí:
+    - DEPOSIT
+    - WITHDRAWAL
+    - INBOUND
+    - OUTBOUND
+
+## Transfer
+* Schválené atributy:
+    - transfer_id
+    - source_acc_id
+    - target_acc_id
+    - amount
+    - transfer_status
+    - created_at
+
+* Povolené stavy převodu:
+    - PENDING
+    - COMPLETED
+    - FAILED
+
+---
+
 # Logický Diagram
 Client
 │
@@ -214,7 +284,7 @@ Tyto oblasti mohou být přidány v budoucích verzích projektu.
 ---
 
 # Další Krok
-Dalším krokem projektu bude návrh atributů jednotlivých entit.
-Po schválení atributů bude vytvořeno fyzické databázové schéma:
+* Atributy všech entit byly navrženy a schváleny.
+Dalším krokem projektu bude vytvoření fyzického databázového schématu:
 
-- database/schema.sql
+  - database/schema.sql
