@@ -347,3 +347,93 @@ Expected Result:
 ---
 
 ## Sada Regresních Testů
+
+### REG001
+Ověř celkový počet klientů.
+
+Expected Result:
+10
+---
+### REG002
+Ověř celkový počet účtů.
+
+Expected Result:
+15
+---
+### REG003
+Ověř celkový počet karet.
+
+Expected Result:
+12
+---
+### REG004
+Ověř celkový počet převodů.
+
+Expected Result:
+20
+---
+### REG005
+Ověř celkový počet transakcí.
+
+Expected Result:
+50
+---
+### REG006
+Ověř, že neexistují účty bez klienta.
+
+Expected Result:
+0 violations
+---
+### REG007
+Ověř, že neexistují karty bez účtu.
+
+Expected Result:
+0 violations
+---
+### REG008
+Ověř, že neexistují záporné zůstatky.
+
+Expected Result:
+0 violations
+---
+### REG009
+Ověř, že FAILED transfery nemají transakce.
+
+Expected Result:
+0 violations
+---
+### REG010
+Ověř, že PENDING transfery nemají transakce.
+
+Expected Result:
+0 violations
+---
+### REG011
+Ověř, že všechny COMPLETED transfery mají odpovídající INBOUND a OUTBOUND transakce.
+
+Expected Result:
+0 violations
+---
+### REG012
+Ověř počet ACTIVE karet.
+
+Expected Result:
+8
+---
+### REG013
+Ověř počet BLOCKED karet.
+
+Expected Result:
+2
+---
+### REG014
+Ověř počet EXPIRED karet.
+
+Expected Result:
+2
+---
+### REG015
+Ověř, že neexistují duplicitní IBANy.
+
+Expected Result:
+0 violations
