@@ -421,4 +421,106 @@ Zjisti počet převodů podle zdrojového účtu.
 ---
 
 ## Level 6 - JOINy
+
+### EX096
+Vypiš klienty a jejich účty.
+
+---
+### EX097
+Vypiš klienty a jejich IBANy.
+
+---
+### EX098
+Vypiš klienty a zůstatky jejich účtů.
+
+---
+### EX099
+Vypiš klienty a typy jejich účtů.
+
+---
+### EX100
+Vypiš účty a platební karty.
+
+---
+### EX101
+Vypiš číslo karty a IBAN účtu.
+
+---
+### EX102
+Vypiš klienta, účet a číslo karty.
+
+---
+### EX103
+Vypiš všechny účty a jejich transakce.
+
+---
+### EX104
+Vypiš všechny transakce včetně IBANu účtu.
+
+---
+### EX105
+Vypiš klienta a jeho transakce.
+
+---
+### EX106
+Vypiš všechny převody včetně zdrojového účtu.
+
+---
+### EX107
+Vypiš všechny převody včetně cílového účtu.
+
+---
+### EX108
+Vypiš všechny převody včetně zdrojového a cílového IBANu.
+
+---
+### EX109
+Vypiš všechny COMPLETED převody včetně obou účtů.
+
+---
+### EX110
+Vypiš všechny FAILED převody včetně obou účtů.
+
+---
+### EX111
+Vypiš všechny PENDING převody včetně obou účtů.
+
+---
+### EX112
+Vypiš klienty a počet jejich účtů.
+
+---
+### EX113
+Vypiš klienty a počet jejich karet.
+
+---
+### EX114
+Vypiš klienty a celkový zůstatek všech jejich účtů.
+
+---
+### EX115
+Vypiš klienty, kteří vlastní více než jeden účet.
+
+---
+### EX116
+Vypiš účty, které nemají vydanou žádnou kartu.
+
+---
+### EX117
+Vypiš klienty, kteří nemají žádnou kartu.
+
+---
+### EX118
+Vypiš účty, které nemají žádnou transakci.
+
+---
+### EX119
+Vypiš klienty, kteří provedli alespoň jeden převod.
+
+---
+### EX120
+Vypiš klienty, kteří nikdy neprovedli převod.
+
+---
+
 ## Level 7 - Pokročilejší Reporting queries
