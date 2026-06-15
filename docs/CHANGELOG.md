@@ -20,3 +20,5 @@
 ## 2026-06-15 - JM
 - Vytvořeny testovací úlohy a validační testy (SQL_EXERCISES.md, SQL_VALIDATION.md)
 - Import konkrétních úloh do dokumentů (SQL_EXERCISES.md, SQL_VALIDATION.md)
+- Aktualizace dokumentace (DATABASE_MODEL.md, PROJECT_CONTEXT.md, ROADMAP.md) a implmentace do zdrojů projektu AI (SQL_EXERCISES.md, SQL_VALIDATION.md)
+- 

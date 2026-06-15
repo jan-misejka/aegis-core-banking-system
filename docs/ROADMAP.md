@@ -7,7 +7,7 @@
 * návrh atributů entit ✅
 * vytvoření fyzického databázového schématu (schema.sql) ✅
 * vytvoření testovacích dat ✅
-* vytvoření SQL cvičení a dotazů ⏳
+* vytvoření SQL cvičení a dotazů ✅
 
 ## Fáze 2 – Backend (Spring Boot)
 * vytvoření projektu
@@ -89,6 +89,9 @@ prostřednictvím atributu:
 ```
 transfer_id
 ```
+* Byly vytvořeny SQL cvičení a validační testy pro všechny entity a jejich vazby. Cvičení a testy jsou uloženy v:
+  docs/SQL_EXERCISES.md
+  docs/SQL_VALIDATION.md
 
 ## Poznámka
 

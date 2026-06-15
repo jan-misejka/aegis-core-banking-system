@@ -81,9 +81,20 @@ Aktuální stav repozitáře:
 ```text
 docs/
 └── DATABASE_MODEL.md
+└── PROJECT_CONTEXT.md
+└── ROADMAP.md
+└── BUSINESS_REQUIREMENTS.md
+└── CHANGELOG.md
+└── PROJECT_VISION.md
+└── README.md
+└── TECH_STACK.md
 
 database/
 └── schema.sql
+└── SQL_EXERCISES.md
+└── SQL_VALIDATION.md
+└── test_data.sql
+└── test_data_part2.sql
 ```
 * Logický databázový model byl navržen a zdokumentován v souboru docs/DATABASE_MODEL.md.
 * Bylo definováno pět základních entit systému:
@@ -117,6 +128,25 @@ database/
     - cizí klíče (FK)
     - UNIQUE omezení
     - CHECK omezení
+
+* Byla vytvořena první verze testovacích dat (database/test_data.sql, database/test_data_part2.sql).
+* Testovací dataset obsahuje:
+    * 10 klientů
+    * 15 účtů
+    * 12 platebních karet
+    * 20 převodů
+    * 50 transakcí
+
+* Byly ověřeny vazby mezi všemi entitami databázového modelu.
+* Byla doplněna vazba:
+    - Transfer → Transaction
+    prostřednictvím atributu:
+    ```
+    transfer_id
+    ```
+* Byly vytvořeny SQL cvičení a validační testy pro všechny entity a jejich vazby. Cvičení a testy jsou uloženy v:
+    - docs/SQL_EXERCISES.md
+    - docs/SQL_VALIDATION.md
 
 REST API zatím nebylo implementováno.
 
@@ -216,4 +246,9 @@ Při práci na tomto projektu:
     * CHECK omezení
     * UNIQUE omezení
 
-* Dalším cílem projektu je vytvoření SQL cvičení a databázových dotazů pro testování a výuku SQL.
+* Byl vytvořen SQL Exercise Pack. (docs/SQL_EXERCISES.md)
+* Byl vytvořen SQL Validation Pack. (docs/SQL_VALIDATION.md)
+* Byly vytvořeny regresní databázové kontroly.
+* Fáze 1 je dokončena.
+
+* Dalším cílem projektu je vytvoření Spring Boot backendu.

@@ -313,3 +313,8 @@ database/schema.sql
 
 * Model byl úspěšně ověřen naplněním databáze testovacími daty.
 * Relace mezi entitami byly validovány pomocí SQL dotazů a cizích klíčů.
+* Byla doplněna vazba mezi entitami Transfer a Transaction prostřednictvím atributu transfer_id v tabulce Transaction.
+* Byly vytvořeny testovací úlohy a validační testy pro ověření správnosti dat a vazeb v databázi. Tyto jsou uloženy v:
+
+docs/SQL_EXERCISES.md
+docs/SQL_VALIDATION.md
