@@ -524,3 +524,102 @@ Vypiš klienty, kteří nikdy neprovedli převod.
 ---
 
 ## Level 7 - Pokročilejší Reporting queries
+
+### EX121
+Najdi 5 klientů s nejvyšším celkovým zůstatkem.
+
+---
+### EX122
+Najdi 5 klientů s nejnižším celkovým zůstatkem.
+
+---
+### EX123
+Zjisti celkový objem peněz spravovaný bankou.
+
+---
+### EX124
+Zjisti klienta s největším počtem účtů.
+
+---
+### EX125
+Zjisti klienta s největším počtem karet.
+
+---
+### EX126
+Zjisti účet s nejvyšším počtem transakcí.
+
+---
+### EX127
+Zjisti účet s nejvyšším objemem transakcí.
+
+---
+### EX128
+Zjisti účet s největším počtem příchozích transakcí.
+
+---
+### EX129
+Zjisti účet s největším počtem odchozích transakcí.
+
+---
+### EX130
+Zjisti účet s nejvyšším součtem příchozích převodů.
+
+---
+### EX131
+Zjisti účet s nejvyšším součtem odchozích převodů.
+
+---
+### EX132
+Zjisti klienty, kteří mají CURRENT i SAVINGS účet.
+
+---
+### EX133
+Zjisti klienty, kteří mají pouze CURRENT účet.
+
+---
+### EX134
+Zjisti klienty, kteří mají pouze SAVINGS účet.
+
+---
+### EX135
+Zjisti klienty bez aktivní karty.
+
+---
+### EX136
+Zjisti účty bez ACTIVE karty.
+
+---
+### EX137
+Zjisti procentuální zastoupení jednotlivých stavů karet.
+
+---
+### EX138
+Zjisti procentuální zastoupení jednotlivých stavů převodů.
+
+---
+### EX139
+Zjisti průměrný počet účtů na klienta.
+
+---
+### EX140
+Zjisti průměrný počet transakcí na účet.
+
+---
+### EX141
+Najdi klienty, kteří mají více než jednu kartu.
+
+---
+### EX142
+Najdi klienty, kteří mají více než 100000 CZK na všech účtech dohromady.
+
+---
+### EX143
+Najdi klienty, kteří provedli alespoň 3 převody.
+
+---
+### EX144
+Najdi účty, na kterých proběhl alespoň jeden DEPOSIT i jeden WITHDRAWAL.
+
+---
+### EX145
+Vytvoř report klient → počet účtů → počet karet → celkový zůstatek.
