@@ -338,5 +338,87 @@ Zjisti průměrnou částku WITHDRAWAL.
 ---
 
 ## Level 5 - GROUP BY
+
+### EX076
+Zjisti počet účtů podle account_type.
+
+---
+### EX077
+Zjisti počet karet podle card_status.
+
+---
+### EX078
+Zjisti počet převodů podle transfer_status.
+
+---
+### EX079
+Zjisti počet transakcí podle tx_type.
+
+---
+### EX080
+Zjisti součet zůstatků podle account_type.
+
+---
+### EX081
+Zjisti průměrný zůstatek podle account_type.
+
+---
+### EX082
+Zjisti nejvyšší zůstatek podle account_type.
+
+---
+### EX083
+Zjisti nejnižší zůstatek podle account_type.
+
+---
+### EX084
+Zjisti součet převodů podle transfer_status.
+
+---
+### EX085
+Zjisti průměrnou částku převodu podle transfer_status.
+
+---
+### EX086
+Zjisti počet transakcí na jednotlivých účtech.
+
+---
+### EX087
+Zjisti součet částek transakcí na jednotlivých účtech.
+
+---
+### EX088
+Zjisti počet karet na jednotlivých účtech.
+
+---
+### EX089
+Zjisti počet účtů jednotlivých klientů.
+
+---
+### EX090
+Zjisti celkový zůstatek jednotlivých klientů.
+
+---
+### EX091
+Zjisti počet příchozích (INBOUND) transakcí podle účtu.
+
+---
+### EX092
+Zjisti počet odchozích (OUTBOUND) transakcí podle účtu.
+
+---
+### EX093
+Zjisti součet DEPOSIT transakcí podle účtu.
+
+---
+### EX094
+Zjisti součet WITHDRAWAL transakcí podle účtu.
+
+---
+### EX095
+Zjisti počet převodů podle zdrojového účtu.
+
+---
+
 ## Level 6 - JOINy
 ## Level 7 - Pokročilejší Reporting queries
