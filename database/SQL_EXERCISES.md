@@ -235,6 +235,108 @@ Vypiš všechny převody seřazené podle data vytvoření od nejnovějších.
 ---
 
 ## Level 4 - Agregační Funkce
+
+### EX051
+Zjisti celkový počet klientů.
+
+---
+### EX052
+Zjisti celkový počet účtů.
+
+---
+### EX053
+Zjisti celkový počet platebních karet.
+
+---
+### EX054
+Zjisti celkový počet transakcí.
+
+---
+### EX055
+Zjisti celkový počet převodů.
+
+---
+### EX056
+Zjisti počet CURRENT účtů.
+
+---
+### EX057
+Zjisti počet SAVINGS účtů.
+
+---
+### EX058
+Zjisti počet ACTIVE karet.
+
+---
+### EX059
+Zjisti počet BLOCKED karet.
+
+---
+### EX060
+Zjisti počet EXPIRED karet.
+
+---
+### EX061
+Zjisti počet COMPLETED převodů.
+
+---
+### EX062
+Zjisti počet FAILED převodů.
+
+---
+### EX063
+Zjisti počet PENDING převodů.
+
+---
+### EX064
+Zjisti součet všech zůstatků na účtech.
+
+---
+### EX065
+Zjisti průměrný zůstatek účtu.
+
+---
+### EX066
+Zjisti nejvyšší zůstatek účtu.
+
+---
+### EX067
+Zjisti nejnižší zůstatek účtu.
+
+---
+### EX068
+Zjisti celkový objem všech převodů.
+
+---
+### EX069
+Zjisti průměrnou částku převodu.
+
+---
+### EX070
+Zjisti nejvyšší částku převodu.
+
+---
+### EX071
+Zjisti nejnižší částku převodu.
+
+---
+### EX072
+Zjisti celkovou částku všech DEPOSIT transakcí.
+
+---
+### EX073
+Zjisti celkovou částku všech WITHDRAWAL transakcí.
+
+---
+### EX074
+Zjisti průměrnou částku DEPOSIT.
+
+---
+### EX075
+Zjisti průměrnou částku WITHDRAWAL.
+
+---
+
 ## Level 5 - GROUP BY
 ## Level 6 - JOINy
 ## Level 7 - Pokročilejší Reporting queries
