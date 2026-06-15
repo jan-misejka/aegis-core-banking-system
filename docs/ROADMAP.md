@@ -10,7 +10,7 @@
 * vytvoření SQL cvičení a dotazů ✅
 
 ## Fáze 2 – Backend (Spring Boot)
-* vytvoření projektu
+* vytvoření projektu ✅
 * konfigurace připojení k MySQL
 * vytvoření entit
 * vytvoření repository vrstev

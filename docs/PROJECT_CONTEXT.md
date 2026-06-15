@@ -64,6 +64,11 @@ docs/
 testing/
 postman/
 jira/
+src/
+target/
+mvnw
+mvnw.cmd
+pom.xml
 README.md
 ```
 
@@ -150,7 +155,7 @@ database/
 
 REST API zatím nebylo implementováno.
 
-Spring Boot aplikace zatím nebyla implementována.
+Spring Boot aplikace byla vytvořena a základní struktura projektu byla nastavena, ale zatím nebyla implementována žádná funkcionalita.
 
 ---
 
@@ -251,4 +256,11 @@ Při práci na tomto projektu:
 * Byly vytvořeny regresní databázové kontroly.
 * Fáze 1 je dokončena.
 
-* Dalším cílem projektu je vytvoření Spring Boot backendu.
+* Byl vytvořen základ Spring Boot projektu. Projekt obsahuje:
+    - Spring Boot
+    - Spring Data JPA
+    - MySQL Driver
+    - Maven konfiguraci
+
+* Aplikace se úspěšně spouští.
+* Konfigurace databázového připojení zatím není dokončena.
