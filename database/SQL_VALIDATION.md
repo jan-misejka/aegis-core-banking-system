@@ -159,5 +159,98 @@ Expected Result:
 ---
 
 ## Validace převodů mezi účty
+
+### VAL026
+Ověř, že každý COMPLETED transfer má alespoň jednu OUTBOUND transakci.
+
+Expected Result:
+0 violations
+---
+### VAL027
+Ověř, že každý COMPLETED transfer má alespoň jednu INBOUND transakci.
+
+Expected Result:
+0 violations
+---
+### VAL028
+Ověř, že každý COMPLETED transfer má přesně dvě související transakce.
+
+Expected Result:
+0 violations
+---
+### VAL029
+Ověř, že všechny transakce navázané na COMPLETED transfer mají stejnou částku jako transfer.
+
+Expected Result:
+0 violations
+---
+### VAL030
+Ověř, že FAILED transfery nemají vytvořené žádné transakce.
+
+Expected Result:
+0 violations
+---
+### VAL031
+Ověř, že PENDING transfery nemají vytvořené žádné transakce.
+
+Expected Result:
+0 violations
+---
+### VAL032
+Ověř, že každý transfer obsahuje zdrojový účet.
+
+Expected Result:
+0 violations
+---
+### VAL033
+Ověř, že každý transfer obsahuje cílový účet.
+
+Expected Result:
+0 violations
+---
+### VAL034
+Ověř, že částka transferu je větší než nula.
+
+Expected Result:
+0 violations
+---
+### VAL035
+Ověř, že neexistuje transfer bez stavu.
+
+Expected Result:
+0 violations
+---
+### VAL036
+Ověř, že všechny OUTBOUND transakce odkazující na transfer mají účet shodný se zdrojovým účtem transferu.
+
+Expected Result:
+0 violations
+---
+### VAL037
+Ověř, že všechny INBOUND transakce odkazující na transfer mají účet shodný s cílovým účtem transferu.
+
+Expected Result:
+0 violations
+---
+### VAL038
+Ověř, že počet INBOUND transakcí odpovídá počtu OUTBOUND transakcí pro COMPLETED transfery.
+
+Expected Result:
+0 violations
+---
+### VAL039
+Ověř, že neexistují transakce odkazující na FAILED transfer.
+
+Expected Result:
+0 violations
+---
+### VAL040
+Ověř, že neexistují transakce odkazující na PENDING transfer.
+
+Expected Result:
+0 violations
+
+---
+
 ## Validace karet
 ## Sada Regresních Testů
