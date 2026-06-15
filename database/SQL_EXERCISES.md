@@ -152,6 +152,88 @@ Najdi klienty, kteří mají vyplněné telefonní číslo.
 ---
 
 ## Level 3 - ORDER BY
+
+### EX031
+Vypiš všechny klienty seřazené podle příjmení vzestupně.
+
+---
+### EX032
+Vypiš všechny klienty seřazené podle příjmení sestupně.
+
+---
+### EX033
+Vypiš všechny účty seřazené podle zůstatku od nejvyššího.
+
+---
+### EX034
+Vypiš všechny účty seřazené podle zůstatku od nejnižšího.
+
+---
+### EX035
+Najdi 5 účtů s nejvyšším zůstatkem.
+
+---
+### EX036
+Najdi 5 účtů s nejnižším zůstatkem.
+
+---
+### EX037
+Vypiš všechny převody seřazené podle částky od nejvyšší.
+
+---
+### EX038
+Vypiš všechny převody seřazené podle částky od nejnižší.
+
+---
+### EX039
+Najdi největší převod v systému.
+
+---
+### EX040
+Najdi nejmenší převod v systému.
+
+---
+### EX041
+Vypiš všechny transakce seřazené podle částky od nejvyšší.
+
+---
+### EX042
+Vypiš všechny transakce seřazené podle částky od nejnižší.
+
+---
+### EX043
+Najdi největší vklad (DEPOSIT).
+
+---
+### EX044
+Najdi největší výběr (WITHDRAWAL).
+
+---
+### EX045
+Vypiš všechny karty seřazené podle data expirace od nejbližší expirace.
+
+---
+### EX046
+Vypiš všechny karty seřazené podle data expirace od nejvzdálenější expirace.
+
+---
+### EX047
+Najdi kartu s nejbližší expirací.
+
+---
+### EX048
+Najdi nejstarší účet podle created_at.
+
+---
+### EX049
+Najdi nejnovější účet podle created_at.
+
+---
+### EX050
+Vypiš všechny převody seřazené podle data vytvoření od nejnovějších.
+
+---
+
 ## Level 4 - Agregační Funkce
 ## Level 5 - GROUP BY
 ## Level 6 - JOINy
