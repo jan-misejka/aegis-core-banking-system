@@ -253,4 +253,97 @@ Expected Result:
 ---
 
 ## Validace karet
+
+### VAL041
+Ověř, že všechny karty mají přiřazen účet.
+
+Expected Result:
+0 violations
+---
+### VAL042
+Ověř, že neexistují duplicitní čísla karet.
+
+Expected Result:
+0 violations
+---
+### VAL043
+Ověř, že všechny karty mají vyplněné datum expirace.
+
+Expected Result:
+0 violations
+---
+### VAL044
+Ověř, že všechny karty mají platný stav.
+
+Expected Result:
+0 violations
+---
+### VAL045
+Ověř, že neexistují ACTIVE karty s datem expirace v minulosti.
+
+Expected Result:
+0 violations
+---
+### VAL046
+Ověř, že všechny EXPIRED karty mají datum expirace v minulosti.
+
+Expected Result:
+0 violations
+---
+### VAL047
+Ověř, že neexistují BLOCKED karty bez účtu.
+
+Expected Result:
+0 violations
+---
+### VAL048
+Ověř, že počet ACTIVE karet odpovídá referenčnímu datasetu.
+
+Expected Result:
+8
+---
+### VAL049
+Ověř, že počet BLOCKED karet odpovídá referenčnímu datasetu.
+
+Expected Result:
+2
+---
+### VAL050
+Ověř, že počet EXPIRED karet odpovídá referenčnímu datasetu.
+
+Expected Result:
+2
+---
+### VAL051
+Ověř, že neexistuje účet s více kartami se stejným číslem.
+
+Expected Result:
+0 violations
+---
+### VAL052
+Ověř, že každá karta obsahuje neprázdné číslo karty.
+
+Expected Result:
+0 violations
+---
+### VAL053
+Ověř, že všechny ACTIVE karty mají datum expirace v budoucnosti.
+
+Expected Result:
+0 violations
+---
+### VAL054
+Ověř, že všechny EXPIRED karty jsou označeny stavem EXPIRED.
+
+Expected Result:
+0 violations
+---
+### VAL055
+Ověř, že všechny karty jsou navázány na existující účet.
+
+Expected Result:
+0 violations
+
+---
+
 ## Sada Regresních Testů
