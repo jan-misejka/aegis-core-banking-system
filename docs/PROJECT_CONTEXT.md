@@ -164,15 +164,23 @@ REST API zatím nebylo implementováno.
     - MySQL datasource
     - Hibernate
 
+#### Implementace entit a jejich vazeb
 * Byla vytvořena první entita Client v package pro entity.
 * Byla upravena entita Client zahrnutím anotace @GeneratedValue(strategy = GenerationType.IDENTITY) pro automatické generování ID.
 * Byla vytvořena entita Account.
 
-* Byla vytvořena první repository vrstva pro entitu Client.
+#### Implementace repository vrstvy
+* Byla vytvořena první repository vrstva pro entitu Client (ClientRepository).
+* Byla vytvořena repository vrstva pro entitu Account (AccountRepository).
 
+#### Implementace JPA relací
 * Byla vytvořena první JPA relace mezi Account a Client (Account → Client).
+* Byla ověřena relace Account -> Client.
 
+#### Implementace integračních testů
 * Byl vytvořen první integrační test pro entitu Client.
+* Byl vytvořen první test JPA relace (Account → Client).
+
 
 ---
 

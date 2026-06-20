@@ -35,4 +35,5 @@
 - Vytvoření prvního integračního testu pro entitu Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Vytvoření package pro repository a implementace repository třídy ClientRepository -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Vytvoření Account entity a první JPA relace Account → Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- Vytvoření AccountRepository a první integrační test pro entitu Account -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - 
