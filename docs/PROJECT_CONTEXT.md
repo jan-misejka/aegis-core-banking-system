@@ -167,6 +167,8 @@ REST API zatím nebylo implementováno.
 * Byla vytvořena první entita Client v package pro entity.
 * Byla vytvořena první repository vrstva pro entitu Client.
 
+* Byl vytvořen první integrační test pro entitu Client.
+
 ---
 
 ## Filosofie učení

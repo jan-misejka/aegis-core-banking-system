@@ -32,4 +32,4 @@
 - Úspěšné spuštění Spring Boot aplikace a ověření připojení k databázi aegiscore_banking
 - Vytvoření package pro entity a implementace entity třídy Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Úprava entity třídy Client zahrnutím @GeneratedValue(strategy = GenerationType.IDENTITY) a vytovření první repository vrstvy pro entitu Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
-- 
+- Vytvoření prvního integračního testu pro entitu Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
