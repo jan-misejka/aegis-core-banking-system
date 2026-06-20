@@ -38,4 +38,6 @@
 - Vytvoření AccountRepository a první integrační test pro entitu Account -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Vytvoření Card entity a první JPA relace Card → Account -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Vytvoření CardRepository a první integrační test pro entitu Card -> aktualizace dokumentace (PROJECT_CONTEXT.md)
-- 
+
+## 2026-06-21 - JM
+- Vytvoření Transfer entity a relací sourceAccount, targetAccount -> aktualizace dokumentace (PROJECT_CONTEXT.md)
