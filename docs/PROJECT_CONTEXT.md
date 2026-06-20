@@ -76,7 +76,7 @@ README.md
 
 ## Aktuální fáze
 
-### Fáze 1 – Návrh databáze
+### Fáze 1 – Databáze
 
 Aktuální databáze:
 ```text
@@ -155,7 +155,16 @@ database/
 
 REST API zatím nebylo implementováno.
 
-Spring Boot aplikace byla vytvořena a základní struktura projektu byla nastavena, ale zatím nebyla implementována žádná funkcionalita.
+### Fáze 2 - Backend
+
+* Spring Boot aplikace byla vytvořena a základní struktura projektu byla nastavena.
+* Aplikace se úspěšně spouští a připojuje k databázi aegiscore_banking.
+* Byla dokončena konfigurace:
+    - Spring Data JPA
+    - MySQL datasource
+    - Hibernate
+
+* Dalším krokem je vytvoření JPA entit.
 
 ---
 
@@ -263,4 +272,4 @@ Při práci na tomto projektu:
     - Maven konfiguraci
 
 * Aplikace se úspěšně spouští.
-* Konfigurace databázového připojení zatím není dokončena.
+* Konfigurace databázového připojení je dokončena.
