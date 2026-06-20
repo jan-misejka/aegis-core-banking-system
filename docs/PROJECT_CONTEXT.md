@@ -171,17 +171,19 @@ REST API zatím nebylo implementováno.
 * Byla vytvořena entita Card.
 
 #### Implementace repository vrstvy
-* Byla vytvořena první repository vrstva pro entitu Client (ClientRepository).
+* Byla vytvořena repository vrstva pro entitu Client (ClientRepository).
 * Byla vytvořena repository vrstva pro entitu Account (AccountRepository).
+* Byla vytvořena repository vrstva pro entitu Card (CardRepository).
 
 #### Implementace JPA relací
-* Byla vytvořena první JPA relace mezi Account a Client (Account → Client).
-* Byla ověřena relace Account -> Client.
+* Byla vytvořena a ověřena relace Account -> Client.
 * Byla vytvořena a ověřena relace Card -> Account.
+* Byla vytvořena a ověřena relace Card -> Account -> Client.
 
 #### Implementace integračních testů
 * Byl vytvořen první integrační test pro entitu Client.
-* Byl vytvořen první test JPA relace (Account → Client).
+* Byl vytvořen první integrační test pro entitu Account.
+* Byl vytvořen první integrační test pro entitu Card.
 
 
 ---
