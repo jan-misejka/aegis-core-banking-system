@@ -168,6 +168,7 @@ REST API zatím nebylo implementováno.
 * Byla vytvořena první entita Client v package pro entity.
 * Byla upravena entita Client zahrnutím anotace @GeneratedValue(strategy = GenerationType.IDENTITY) pro automatické generování ID.
 * Byla vytvořena entita Account.
+* Byla vytvořena entita Card.
 
 #### Implementace repository vrstvy
 * Byla vytvořena první repository vrstva pro entitu Client (ClientRepository).
@@ -176,6 +177,7 @@ REST API zatím nebylo implementováno.
 #### Implementace JPA relací
 * Byla vytvořena první JPA relace mezi Account a Client (Account → Client).
 * Byla ověřena relace Account -> Client.
+* Byla vytvořena a ověřena relace Card -> Account.
 
 #### Implementace integračních testů
 * Byl vytvořen první integrační test pro entitu Client.
