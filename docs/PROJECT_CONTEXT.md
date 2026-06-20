@@ -170,6 +170,7 @@ REST API zatím nebylo implementováno.
 * Byla vytvořena entita Account.
 * Byla vytvořena entita Card.
 * Byla vytvořena entita Transfer.
+* Byla vytvořena entita Transaction.
 
 #### Implementace repository vrstvy
 * Byla vytvořena repository vrstva pro entitu Client (ClientRepository).
@@ -182,6 +183,7 @@ REST API zatím nebylo implementováno.
 * Byla vytvořena a ověřena relace Card -> Account.
 * Byla vytvořena a ověřena relace Card -> Account -> Client.
 * Byly vytvořeny a ověřeny relace Transfer -> Account (sourceAccount, targetAccount).
+* Byly vytvořeny relace Transaction -> Account, Transaction -> Transfer.
 
 #### Implementace integračních testů
 * Byl vytvořen první integrační test pro entitu Client.
@@ -297,6 +299,7 @@ Při práci na tomto projektu:
 
 * Aplikace se úspěšně spouští.
 * Konfigurace databázového připojení je dokončena.
-* Byla vytvořena první entita Client v package pro entity.
+* Byly vytvořeny 5 entit v package pro entity a jejich relace.
+* Byly vytvořeny integrační testy pro ověření funkčnosti entit a jejich vazeb.
 
-* Další krok je dokončit implementaci všech entit a jejich vazeb.
+* Dokončen základní JPA model databáze.
