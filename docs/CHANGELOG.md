@@ -33,3 +33,6 @@
 - Vytvoření package pro entity a implementace entity třídy Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Úprava entity třídy Client zahrnutím @GeneratedValue(strategy = GenerationType.IDENTITY) a vytovření první repository vrstvy pro entitu Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Vytvoření prvního integračního testu pro entitu Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- Vytvoření package pro repository a implementace repository třídy ClientRepository -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- Vytvoření Account entity a první JPA relace Account → Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- 

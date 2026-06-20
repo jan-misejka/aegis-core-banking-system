@@ -165,7 +165,12 @@ REST API zatím nebylo implementováno.
     - Hibernate
 
 * Byla vytvořena první entita Client v package pro entity.
+* Byla upravena entita Client zahrnutím anotace @GeneratedValue(strategy = GenerationType.IDENTITY) pro automatické generování ID.
+* Byla vytvořena entita Account.
+
 * Byla vytvořena první repository vrstva pro entitu Client.
+
+* Byla vytvořena první JPA relace mezi Account a Client (Account → Client).
 
 * Byl vytvořen první integrační test pro entitu Client.
 
