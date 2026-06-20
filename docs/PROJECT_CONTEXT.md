@@ -164,7 +164,7 @@ REST API zatím nebylo implementováno.
     - MySQL datasource
     - Hibernate
 
-* Dalším krokem je vytvoření JPA entit.
+* Byla vytvořena první entita Client v package pro entity.
 
 ---
 
@@ -273,3 +273,6 @@ Při práci na tomto projektu:
 
 * Aplikace se úspěšně spouští.
 * Konfigurace databázového připojení je dokončena.
+* Byla vytvořena první entita Client v package pro entity.
+
+* Další krok je dokončit implementaci všech entit a jejich vazeb.

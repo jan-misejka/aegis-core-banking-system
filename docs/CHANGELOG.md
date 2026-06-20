@@ -30,3 +30,5 @@
 ## 2026-06-20 - JM
 - Konfigurace připojení k databázi v souboru application.properties
 - Úspěšné spuštění Spring Boot aplikace a ověření připojení k databázi aegiscore_banking
+- Vytvoření package pro entity a implementace entity třídy Client -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- 
