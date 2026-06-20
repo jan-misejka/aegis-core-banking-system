@@ -41,3 +41,5 @@
 
 ## 2026-06-21 - JM
 - Vytvoření Transfer entity a relací sourceAccount, targetAccount -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- vytvoření TransferRepository a první integrační test pro entitu Transfer -> aktualizace dokumentace (PROJECT_CONTEXT.md)
+- 
