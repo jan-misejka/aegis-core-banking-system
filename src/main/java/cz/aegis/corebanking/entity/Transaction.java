@@ -10,7 +10,7 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "transaction_id")
+    @Column(name = "tx_id")
     private Long transactionId;
 
     @ManyToOne
@@ -21,13 +21,16 @@ public class Transaction {
     @JoinColumn(name = "transfer_id")
     private Transfer transfer;
 
-    @Column(name = "transaction_type")
+    @Column(name = "tx_type")
     private String transactionType;
 
     @Column(name = "amount")
     private BigDecimal amount;
 
-    @Column(name = "created_at")
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "tx_date")
     private LocalDateTime createdAt;
 
     public Transaction() {
@@ -67,6 +70,13 @@ public class Transaction {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+        }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
