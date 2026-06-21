@@ -12,7 +12,7 @@
 ## Fáze 2 – Backend (Spring Boot)
 * vytvoření projektu ✅
 * konfigurace připojení k MySQL ✅
-* vytvoření entit ⏳
+* vytvoření entit ✅
 * vytvoření repository vrstev ⏳
 
 ## Fáze 3 – REST API
@@ -92,6 +92,7 @@ transfer_id
 * Byly vytvořeny SQL cvičení a validační testy pro všechny entity a jejich vazby. Cvičení a testy jsou uloženy v:
   docs/SQL_EXERCISES.md
   docs/SQL_VALIDATION.md
+* Byl dokončen základní JPA model databáze s entitami, jejich repository a relacemi (viz PROJECT_CONTEXT.md)
 
 ## Poznámka
 
