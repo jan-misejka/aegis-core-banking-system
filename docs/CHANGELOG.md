@@ -45,3 +45,7 @@
 - Vytvoření Transaction entity -> aktualizace dokumentace (PROJECT_CONTEXT.md)
 - Oprava Transaction entity mapování v databázovém schámatu, přidání chybějícího pole, oprava odkazujících atributů (tx_id, tx_type, tx_date mapování)
 - Aktualizace zdrojů projektu ChatGPT
+
+## 2026-07-28 - JM
+- Přidání 'target/' do .gitignore
+- Odstraněny Maven build artefakty z verzování pomocí Gitu

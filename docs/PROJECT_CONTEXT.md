@@ -65,7 +65,6 @@ testing/
 postman/
 jira/
 src/
-target/
 mvnw
 mvnw.cmd
 pom.xml
