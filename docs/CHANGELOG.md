@@ -49,3 +49,4 @@
 ## 2026-07-28 - JM
 - Přidání 'target/' do .gitignore
 - Odstraněny Maven build artefakty z verzování pomocí Gitu
+- Aktualizace ROADMAP.md

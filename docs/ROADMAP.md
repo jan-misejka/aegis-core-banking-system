@@ -13,7 +13,7 @@
 * vytvoření projektu ✅
 * konfigurace připojení k MySQL ✅
 * vytvoření entit ✅
-* vytvoření repository vrstev ⏳
+* vytvoření repository vrstev ✅
 
 ## Fáze 3 – REST API
 * API pro klienty ⏳
