@@ -192,6 +192,23 @@ REST API zatím nebylo implementováno.
 * Byl vytvořen první integrační test pro entitu Transfer.
 * Byl vytvořen první integrační test pro entitu Transaction.
 
+### Fáze 3 - REST API
+
+* Byla vytvořena první REST API vrstva pro entitu Client.
+* Byly vytvořeny DTO objekty:
+    - CreateClientRequest
+    - ClientResponse
+    - 
+* Byla vytvořena service vrstva (ClientService).
+* Byl vytvořen REST Controller (ClientController).
+* Byl implementován endpoint:
+    - POST /clients
+    - 
+* Endpoint úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
+* Entita Client automaticky nastavuje atribut createdAt pomocí JPA callbacku @PrePersist.
+* Funkčnost endpointu byla úspěšně ověřena pomocí Postmanu a DBeaveru.
+* 
+
 ---
 
 ## Filosofie učení
@@ -303,3 +320,11 @@ Při práci na tomto projektu:
 * Byly vytvořeny integrační testy pro ověření funkčnosti entit a jejich vazeb.
 
 * Dokončen základní JPA model databáze.
+
+* Byla dokončena první REST API funkcionalita:
+    - UC001 - Create Client
+
+* Endpoint POST /clients byl úspěšně otestován pomocí Postmanu.
+* Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
+
+* Dalším plánovaným krokem je rozšíření Client API o další CRUD operace a validaci vstupních dat.

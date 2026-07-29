@@ -50,3 +50,13 @@
 - Přidání 'target/' do .gitignore
 - Odstraněny Maven build artefakty z verzování pomocí Gitu
 - Aktualizace ROADMAP.md
+- Vytvoření složek controller, dto a service s příslušnými třdami pro implementaci REST API (pro entitu Client)
+
+## 2026-07-29 - JM
+- Implementace ClientController, ClientService a DTO tříd CreateClientRequest a ClientResponse pro REST API (entita Client)
+- Vytvoření workspace v Postman pro testování REST API a vytvoření prvního testovacího requestu pro POST /clients
+- Aktualizace entity Client - přidání JPA callbacku @PrePersist pro automatické nastavení atributu createdAt
+- Implementace endpointu POST /clients (UC001 - Create Client)
+- Úspěšné otestování endpointu POST /clients pomocí Postman
+- Ověření uložení nového klienta do databáze pomocí DBeaver
+- Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md)

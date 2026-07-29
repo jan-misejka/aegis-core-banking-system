@@ -16,7 +16,7 @@
 * vytvoření repository vrstev ✅
 
 ## Fáze 3 – REST API
-* API pro klienty ⏳
+* API pro klienty ✅
 * API pro účty ⏳
 * API pro transakce ⏳
 * API pro platební karty ⏳
@@ -94,6 +94,16 @@ transfer_id
   docs/SQL_VALIDATION.md
 * Byl dokončen základní JPA model databáze s entitami, jejich repository a relacemi (viz PROJECT_CONTEXT.md)
 
+* Byla dokončena první REST API funkcionalita:
+    - UC001 - Create Client
+
+* Implementován endpoint:
+    - POST /clients
+
+* Funkčnost endpointu byla ověřena pomocí Postmanu.
+* Bylo ověřeno správné ukládání dat do databáze pomocí DBeaveru.
+
+
 ## Poznámka
 
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
@@ -106,3 +116,4 @@ Po dokončení významného milníku je nutné aktualizovat:
 * PROJECT_VISION.md
 * BUSINESS_REQUIREMENTS.md
 * ROADMAP.md
+* (CHANGELOG.md)
