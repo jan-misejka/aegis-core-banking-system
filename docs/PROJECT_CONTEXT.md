@@ -207,7 +207,20 @@ REST API zatím nebylo implementováno.
 * Endpoint úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
 * Entita Client automaticky nastavuje atribut createdAt pomocí JPA callbacku @PrePersist.
 * Funkčnost endpointu byla úspěšně ověřena pomocí Postmanu a DBeaveru.
-* 
+
+#### Plán implementace REST API
+
+* Další vývoj REST API bude probíhat po jednotlivých entitách. Každá entita bude nejprve implementována jako kompletní CRUD funkcionalita a teprve poté bude projekt pokračovat dalšími business use cases.
+* Aktuální pořadí implementace:
+    1. UC001 - Create Client
+    2. GET /clients
+    3. GET /clients/{id}
+    4. PUT /clients/{id}
+    5. DELETE /clients/{id}
+    6. Validace vstupních dat
+    7. Globální zpracování výjimek (Exception Handling)
+    8. UC002 - Create Account
+  9. 
 
 ---
 
@@ -222,11 +235,24 @@ Cílem je pochopit principy, nikoliv generovat velké množství kódu.
 Každé důležité návrhové rozhodnutí by mělo být vysvětleno.
 
 Při navrhování řešení:
-
 1. Nejprve vysvětli důvody návrhu.
 2. Vysvětli business kontext.
 3. Vysvětli dopady na testování.
 4. Kód generuj pouze tehdy, pokud je to skutečně potřeba.
+
+### Git workflow
+
+* Od implementace dalších REST funkcionalit bude projekt využívat Git Feature Branch workflow.
+
+* Každá samostatná funkcionalita bude implementována ve vlastní větvi, následně otestována a po dokončení sloučena do hlavní větve (main).
+
+* Příklady názvů větví:
+    - feature/client-get-endpoints
+    - feature/client-update-delete
+    - feature/client-validation
+    - feature/uc002-open-account
+
+* Cílem je přiblížit vývoj projektu běžné praxi používané ve vývojových týmech.
 
 ---
 

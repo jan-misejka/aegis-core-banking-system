@@ -16,7 +16,17 @@
 * vytvoření repository vrstev ✅
 
 ## Fáze 3 – REST API
-* API pro klienty ✅
+
+### Client API
+* Create Client (POST /clients) ✅
+* Get All Clients (GET /clients) ⏳
+* Get Client by ID (GET /clients/{id}) ⏳
+* Update Client (PUT /clients/{id}) ⏳
+* Delete Client (DELETE /clients/{id}) ⏳
+* Validace vstupních dat ⏳
+* Globální zpracování výjimek ⏳
+
+### Bankovní funkcionalita
 * API pro účty ⏳
 * API pro transakce ⏳
 * API pro platební karty ⏳
@@ -109,6 +119,18 @@ transfer_id
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
 
 Každá fáze by měla být dokončena a zdokumentována před zahájením následující fáze.
+
+Od REST API bude každá větší funkcionalita implementována ve vlastní Git Feature Branch.
+Doporučený postup:
+1. vytvoření nové větve z main
+2. implementace funkcionality
+3. lokální testování
+4. aktualizace dokumentace
+5. commit
+6. merge do větve main
+7. odstranění dokončené větve
+
+Každá Feature Branch by měla představovat jednu logicky uzavřenou funkcionalitu projektu.
 
 Po dokončení významného milníku je nutné aktualizovat:
 
