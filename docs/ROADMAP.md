@@ -19,7 +19,7 @@
 
 ### Client API
 * Create Client (POST /clients) ✅
-* Get All Clients (GET /clients) ⏳
+* Get All Clients (GET /clients) ✅
 * Get Client by ID (GET /clients/{id}) ⏳
 * Update Client (PUT /clients/{id}) ⏳
 * Delete Client (DELETE /clients/{id}) ⏳

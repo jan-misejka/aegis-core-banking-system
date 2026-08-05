@@ -60,3 +60,10 @@
 - Úspěšné otestování endpointu POST /clients pomocí Postman
 - Ověření uložení nového klienta do databáze pomocí DBeaver
 - Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md)
+- Aktualizace zdrojů projektu ChatGPT
+
+## 2026-08-05 - JM
+- Implementace endpointu GET /clients.
+- Ověření funkčnosti endpointu pomocí Postman.
+- Ověřena konzistence dat s databází v DBeaver.
+- Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md)

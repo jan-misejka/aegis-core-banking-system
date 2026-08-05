@@ -7,6 +7,8 @@ import cz.aegis.corebanking.dto.ClientResponse;
 import cz.aegis.corebanking.dto.CreateClientRequest;
 import cz.aegis.corebanking.entity.Client;
 
+import java.util.List;
+
 @Service
 public class ClientService {
 
@@ -36,5 +38,24 @@ public class ClientService {
         response.setCreatedAt(savedClient.getCreatedAt());
 
         return response;
+    }
+
+    public List<ClientResponse> getAllClients() {
+        List<Client> clients = clientRepository.findAll();
+
+        return clients.stream()
+                .map(client -> {
+                    ClientResponse response = new ClientResponse();
+
+                    response.setClientId(client.getClientId());
+                    response.setFirstName(client.getFirstName());
+                    response.setLastName(client.getLastName());
+                    response.setEmail(client.getEmail());
+                    response.setPhoneNumber(client.getPhoneNumber());
+                    response.setCreatedAt(client.getCreatedAt());
+
+                    return response;
+                })
+                .toList();
     }
 }

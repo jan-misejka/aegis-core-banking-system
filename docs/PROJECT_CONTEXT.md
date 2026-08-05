@@ -203,10 +203,12 @@ REST API zatím nebylo implementováno.
 * Byl vytvořen REST Controller (ClientController).
 * Byl implementován endpoint:
     - POST /clients
+    - GET / clients
     - 
-* Endpoint úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
+* Endpoint POST /clients úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
+* Endpoint GET /clients úspěšně vrací seznam všech klientů z databáze.
 * Entita Client automaticky nastavuje atribut createdAt pomocí JPA callbacku @PrePersist.
-* Funkčnost endpointu byla úspěšně ověřena pomocí Postmanu a DBeaveru.
+* Funkčnost endpointů byla úspěšně ověřena pomocí Postmanu a DBeaveru.
 
 #### Plán implementace REST API
 
@@ -220,7 +222,7 @@ REST API zatím nebylo implementováno.
     6. Validace vstupních dat
     7. Globální zpracování výjimek (Exception Handling)
     8. UC002 - Create Account
-  9. 
+    9. 
 
 ---
 
@@ -351,6 +353,8 @@ Při práci na tomto projektu:
     - UC001 - Create Client
 
 * Endpoint POST /clients byl úspěšně otestován pomocí Postmanu.
+* Endpoint GET /clients byl úspěšně otestován pomocí Postmanu.
+* 
 * Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
 
 * Dalším plánovaným krokem je rozšíření Client API o další CRUD operace a validaci vstupních dat.
