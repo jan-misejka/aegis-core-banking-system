@@ -67,3 +67,9 @@
 - Ověření funkčnosti endpointu pomocí Postman.
 - Ověřena konzistence dat s databází v DBeaver.
 - Aktualizace dokumentace (PROJECT_CONTEXT.md, ROADMAP.md)
+
+## 2026-08-10 - JM
+- Implementace endpointu GET /clients/{id}.
+- Přidána možnost získat detail klienta podle ID.
+- Implementována odpověď HTTP 404 pro neexistujícího klienta.
+- Funkčnost ověřena pomocí Postman a DBeaver.

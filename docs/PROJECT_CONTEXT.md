@@ -204,9 +204,11 @@ REST API zatím nebylo implementováno.
 * Byl implementován endpoint:
     - POST /clients
     - GET / clients
+    - GET /clients/{id}
     - 
 * Endpoint POST /clients úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
 * Endpoint GET /clients úspěšně vrací seznam všech klientů z databáze.
+* Endpoint GET /clients/{id} úspěšně vrací detail klienta podle jeho ID.
 * Entita Client automaticky nastavuje atribut createdAt pomocí JPA callbacku @PrePersist.
 * Funkčnost endpointů byla úspěšně ověřena pomocí Postmanu a DBeaveru.
 
@@ -354,6 +356,7 @@ Při práci na tomto projektu:
 
 * Endpoint POST /clients byl úspěšně otestován pomocí Postmanu.
 * Endpoint GET /clients byl úspěšně otestován pomocí Postmanu.
+* Endpoint GET /clients/{id} byl úspěšně otestován pomocí Postmanu.
 * 
 * Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
 

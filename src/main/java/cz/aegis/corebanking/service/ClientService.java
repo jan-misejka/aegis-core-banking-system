@@ -58,4 +58,23 @@ public class ClientService {
                 })
                 .toList();
     }
+
+    public ClientResponse getClientById(Long id) {
+        Client client = clientRepository.findById(id).orElse(null);
+
+        if (client == null) {
+            return null;
+        }
+
+        ClientResponse response = new ClientResponse();
+
+        response.setClientId(client.getClientId());
+        response.setFirstName(client.getFirstName());
+        response.setLastName(client.getLastName());
+        response.setEmail(client.getEmail());
+        response.setPhoneNumber(client.getPhoneNumber());
+        response.setCreatedAt(client.getCreatedAt());
+
+        return response;
+    }
 }

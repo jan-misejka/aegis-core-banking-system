@@ -19,6 +19,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    //endpoint POST
     @PostMapping
     public ResponseEntity<ClientResponse> createClient(@RequestBody CreateClientRequest request) {
 
@@ -27,11 +28,24 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    //endpoint GET
     @GetMapping
     public ResponseEntity<List<ClientResponse>> getAllClients() {
 
         List<ClientResponse> clients = clientService.getAllClients();
 
         return ResponseEntity.ok(clients);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ClientResponse> getClientById(@PathVariable Long id) {
+
+        ClientResponse response = clientService.getClientById(id);
+
+        if (response == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(response);
     }
 }
