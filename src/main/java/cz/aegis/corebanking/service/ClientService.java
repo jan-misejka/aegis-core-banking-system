@@ -1,5 +1,6 @@
 package cz.aegis.corebanking.service;
 
+import cz.aegis.corebanking.dto.UpdateClientRequest;
 import cz.aegis.corebanking.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 
@@ -74,6 +75,32 @@ public class ClientService {
         response.setEmail(client.getEmail());
         response.setPhoneNumber(client.getPhoneNumber());
         response.setCreatedAt(client.getCreatedAt());
+
+        return response;
+    }
+
+    public ClientResponse updateClient(Long id, UpdateClientRequest request) {
+        Client client = clientRepository.findById(id).orElse(null);
+
+        if (client == null) {
+            return null;
+        }
+
+        client.setFirstName(request.getFirstName());
+        client.setLastName(request.getLastName());
+        client.setEmail(request.getEmail());
+        client.setPhoneNumber(request.getPhoneNumber());
+
+        Client updatedClient = clientRepository.save(client);
+
+        ClientResponse response = new ClientResponse();
+
+        response.setClientId(updatedClient.getClientId());
+        response.setFirstName(updatedClient.getFirstName());
+        response.setLastName(updatedClient.getLastName());
+        response.setEmail(updatedClient.getEmail());
+        response.setPhoneNumber(updatedClient.getPhoneNumber());
+        response.setCreatedAt(updatedClient.getCreatedAt());
 
         return response;
     }

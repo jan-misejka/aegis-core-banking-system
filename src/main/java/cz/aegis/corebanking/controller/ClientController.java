@@ -2,6 +2,7 @@ package cz.aegis.corebanking.controller;
 
 import cz.aegis.corebanking.dto.ClientResponse;
 import cz.aegis.corebanking.dto.CreateClientRequest;
+import cz.aegis.corebanking.dto.UpdateClientRequest;
 import cz.aegis.corebanking.service.ClientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +42,21 @@ public class ClientController {
     public ResponseEntity<ClientResponse> getClientById(@PathVariable Long id) {
 
         ClientResponse response = clientService.getClientById(id);
+
+        if (response == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(response);
+    }
+
+    //endpoint PUT
+    @PutMapping("/{id}")
+    public ResponseEntity<ClientResponse> updateClient(
+            @PathVariable Long id,
+            @RequestBody UpdateClientRequest request) {
+
+        ClientResponse response = clientService.updateClient(id, request);
 
         if (response == null) {
             return ResponseEntity.notFound().build();

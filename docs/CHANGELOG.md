@@ -73,3 +73,8 @@
 - Přidána možnost získat detail klienta podle ID.
 - Implementována odpověď HTTP 404 pro neexistujícího klienta.
 - Funkčnost ověřena pomocí Postman a DBeaver.
+- Implementace endpointu PUT /clients/{id}.
+- Přidána možnost aktualizace údajů existujícího klienta.
+- Implementována odpověď HTTP 404 při pokusu o aktualizaci neexistujícího klienta.
+- Vytvořeno DTO UpdateClientRequest.
+- Funkčnost ověřena pomocí Postman a DBeaver.
