@@ -90,8 +90,10 @@ docs/
 └── BUSINESS_REQUIREMENTS.md
 └── CHANGELOG.md
 └── PROJECT_VISION.md
-└── README.md
 └── TECH_STACK.md
+└── TECHNICAL_BACKLOG.md
+└── DEVELOPMENT_WORKFLOW.md
+└── README.md
 
 database/
 └── schema.sql
@@ -218,19 +220,27 @@ REST API zatím nebylo implementováno.
 * Funkčnost endpointů byla úspěšně ověřena pomocí Postmanu a DBeaveru.
 
 #### Plán implementace REST API
+Vývoj REST API probíhá iterativně po jednotlivých business Use Casech.
 
-* Další vývoj REST API bude probíhat po jednotlivých entitách. Každá entita bude nejprve implementována jako kompletní CRUD funkcionalita a teprve poté bude projekt pokračovat dalšími business use cases.
-* Aktuální pořadí implementace:
-    1. UC001 - Create Client
-    2. GET /clients
-    3. GET /clients/{id}
-    4. PUT /clients/{id}
-    5. DELETE /clients/{id}
-    6. Validace vstupních dat
-    7. Globální zpracování výjimek (Exception Handling)
-    8. UC002 - Create Account
-    9. 
+Aktuální stav:
 
+✅ UC001 – Client Management (CRUD) – dokončeno
+
+Následující krok:
+
+- Project Review #1
+
+Po dokončení Project Review budou implementovány všechny položky označené jako **High Priority** v dokumentu:
+
+`TECHNICAL_BACKLOG.md`
+
+Teprve poté bude zahájena implementace:
+
+✅ UC002 – Open Account
+
+Podrobný postup vývoje projektu je popsán v dokumentu:
+
+`DEVELOPMENT_WORKFLOW.md`
 ---
 
 ## Filosofie učení
@@ -262,6 +272,9 @@ Při navrhování řešení:
     - feature/uc002-open-account
 
 * Cílem je přiblížit vývoj projektu běžné praxi používané ve vývojových týmech.
+* Podrobnější pravidla vývoje projektu, Project Review, Technical Backlog a Definition of Done jsou popsány v dokumentu:
+
+`DEVELOPMENT_WORKFLOW.md`
 
 ---
 
@@ -373,4 +386,35 @@ Při práci na tomto projektu:
 * 
 * Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
 
-* Dalším plánovaným krokem je uzavření UC001 prostřednictvím Project Review #1, vytvoření Technical Backlog a příprava projektu na implementaci UC002 – Open Account.
+* Dalším plánovaným krokem je dokončení Project Review #1.
+
+* Součástí Project Review je:
+  - kontrola architektury projektu,
+  - kontrola dokumentace,
+  - aktualizace Technical Backlog,
+  - implementace všech položek označených jako High Priority.
+
+* Po úspěšném dokončení Project Review bude zahájena implementace UC002 – Open Account podle postupu definovaného v dokumentu DEVELOPMENT_WORKFLOW.md.
+
+---
+
+## Aktuální milestone
+### UC001 – Client Management
+
+**Stav:** Dokončeno
+
+Implementováno:
+- POST /clients
+- GET /clients
+- GET /clients/{id}
+- PUT /clients/{id}
+- DELETE /clients/{id}
+
+Ověření:
+- Úspěšně otestováno v Postman.
+- Konzistence dat ověřena v DBeaver.
+- Feature branche byly sloučeny do větve `main`.
+
+Další milestone:
+
+Project Review #1

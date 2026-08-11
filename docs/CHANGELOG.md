@@ -85,3 +85,12 @@
 - Implementována odpověď HTTP 204 po úspěšném smazání klienta.
 - Implementována odpověď HTTP 404 při pokusu o smazání neexistujícího klienta.
 - Funkčnost ověřena pomocí Postman a DBeaver.
+
+- Vytvoření nových dokumentů DEVELOPMENT_WORKFLOW.md a TECHNICAL_BACKLOG.md.
+- Aktualizace dokumentu README.md s informacemi o nových dokumentech.
+- Aktualizace dokumentu PROJECT_CONTEXT.md s informacemi o nových dokumentech.
+- Aktualizace dokumentu ROADMAP.md s informacemi o nových dokumentech.
+- Aktualizace dokumentu BUSINESS_REQUIREMENTS.md s informacemi o nových dokumentech.
+- Aktualizace dokumentu TECHNICAL_BACKLOG.md s informacemi o nových dokumentech.
+- Aktualizace dokumentu PROJECT_VISION.md s informacemi o nových dokumentech.
+- 

@@ -18,14 +18,24 @@
 ## Fáze 3 – REST API
 
 ### Client API
+#### UC001 – Client Management
 * Create Client (POST /clients) ✅
 * Get All Clients (GET /clients) ✅
 * Get Client by ID (GET /clients/{id}) ✅
 * Update Client (PUT /clients/{id}) ✅
 * Delete Client (DELETE /clients/{id}) ✅
-* Project Review #1 ⏳
-* Validace vstupních dat ⏳
-* Globální zpracování výjimek ⏳
+
+#### Project Review #1
+* Revize architektury projektu ⏳
+* Kontrola dokumentace ⏳
+* Aktualizace Technical Backlog ⏳
+
+#### High Priority (Technical Backlog)
+* TECH-001 – Globální zpracování výjimek ⏳
+* TECH-002 – Validace vstupních dat ⏳
+
+#### Další business funkcionalita
+* UC002 – Open Account ⏳
 
 ### Bankovní funkcionalita
 * API pro účty ⏳
@@ -116,12 +126,12 @@ transfer_id
 
 
 ## Poznámka
-
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
 
 Každá fáze by měla být dokončena a zdokumentována před zahájením následující fáze.
 
 Od REST API bude každá větší funkcionalita implementována ve vlastní Git Feature Branch.
+
 Doporučený postup:
 1. vytvoření nové větve z main
 2. implementace funkcionality
@@ -133,10 +143,35 @@ Doporučený postup:
 
 Každá Feature Branch by měla představovat jednu logicky uzavřenou funkcionalitu projektu.
 
-Po dokončení významného milníku je nutné aktualizovat:
+Po dokončení každého business Use Casu probíhá Project Review.
 
+Teprve po jeho dokončení a implementaci všech položek označených jako **High Priority** začíná implementace dalšího Use Casu.
+
+Podrobný postup vývoje je popsán v dokumentu:
+
+`DEVELOPMENT_WORKFLOW.md`
+
+Po dokončení významného milníku je nutné aktualizovat:
 * PROJECT_CONTEXT.md
 * PROJECT_VISION.md
 * BUSINESS_REQUIREMENTS.md
 * ROADMAP.md
 * (CHANGELOG.md)
+
+---
+
+## Aktuální milestone
+
+**Dokončeno**
+
+✅ UC001 – Client Management
+
+**Probíhá**
+
+🔄 Project Review #1
+
+**Následuje**
+
+1. TECH-001 – Globální zpracování výjimek
+2. TECH-002 – Validace vstupních dat
+3. UC002 – Open Account
