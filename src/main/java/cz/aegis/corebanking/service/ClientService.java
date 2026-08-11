@@ -104,4 +104,16 @@ public class ClientService {
 
         return response;
     }
+
+    public boolean deleteClient(Long id) {
+        Client client = clientRepository.findById(id).orElse(null);
+
+        if (client == null) {
+            return false;
+        }
+
+        clientRepository.delete(client);
+
+        return true;
+    }
 }

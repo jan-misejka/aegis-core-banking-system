@@ -78,3 +78,10 @@
 - Implementována odpověď HTTP 404 při pokusu o aktualizaci neexistujícího klienta.
 - Vytvořeno DTO UpdateClientRequest.
 - Funkčnost ověřena pomocí Postman a DBeaver.
+
+## 2026-08-11 - JM
+- Implementace endpointu DELETE /clients/{id}.
+- Dokončen CRUD pro entitu Client.
+- Implementována odpověď HTTP 204 po úspěšném smazání klienta.
+- Implementována odpověď HTTP 404 při pokusu o smazání neexistujícího klienta.
+- Funkčnost ověřena pomocí Postman a DBeaver.

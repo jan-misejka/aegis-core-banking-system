@@ -206,11 +206,13 @@ REST API zatím nebylo implementováno.
     - GET / clients
     - GET /clients/{id}
     - PUT /clients/{id}
+    - DELETE /clients/{id}
     - 
 * Endpoint POST /clients úspěšně vytváří klienta v databázi prostřednictvím repository vrstvy.
 * Endpoint GET /clients úspěšně vrací seznam všech klientů z databáze.
 * Endpoint GET /clients/{id} úspěšně vrací detail klienta podle jeho ID.
 * Endpoint PUT /clients/{id} úspěšně aktualizuje údaje existujícího klienta.
+* Endpoint DELETE /clients/{id} úspěšně odstraňuje klienta z databáze.
 * 
 * Entita Client automaticky nastavuje atribut createdAt pomocí JPA callbacku @PrePersist.
 * Funkčnost endpointů byla úspěšně ověřena pomocí Postmanu a DBeaveru.
@@ -361,12 +363,14 @@ Při práci na tomto projektu:
         - Výpis všech klientů.
         - Detailní výpis klienta dle jeho ID.
         - Aktualizace údajů klienta dle jeho ID.
+        - Odstranění klienta dle jeho ID.
 
 * Endpoint POST /clients byl úspěšně otestován pomocí Postmanu.
 * Endpoint GET /clients byl úspěšně otestován pomocí Postmanu.
 * Endpoint GET /clients/{id} byl úspěšně otestován pomocí Postmanu.
 * Endpoint PUT /clients/{id} byl úspěšně otestován pomocí Postmanu.
+* Endpoint DELETE /clients/{id} byl úspěšně otestován pomocí Postmanu.
 * 
 * Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
 
-* Dalším plánovaným krokem je rozšíření Client API o další CRUD operace a validaci vstupních dat.
+* Dalším plánovaným krokem je uzavření UC001 prostřednictvím Project Review #1, vytvoření Technical Backlog a příprava projektu na implementaci UC002 – Open Account.
