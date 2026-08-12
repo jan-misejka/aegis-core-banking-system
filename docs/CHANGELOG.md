@@ -93,4 +93,8 @@
 - Aktualizace dokumentu BUSINESS_REQUIREMENTS.md s informacemi o nových dokumentech.
 - Aktualizace dokumentu TECHNICAL_BACKLOG.md s informacemi o nových dokumentech.
 - Aktualizace dokumentu PROJECT_VISION.md s informacemi o nových dokumentech.
-- 
+
+## 2026-08-12 - JM
+- Zkouška nového postupu s AI - vložení dokumentace do Project Knowledge Base a vygenerování promptu pro pokračování v projektu.
+- Přejmenování Project Review #1 na PRXXX po UCXXX.
+- Aktualizace dokumentace.

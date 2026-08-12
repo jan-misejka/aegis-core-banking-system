@@ -41,7 +41,14 @@ feature/delete-client
 feature/open-account
 ```
 
-Projekt Review a dokumentační změny jsou prováděny v samostatných větvích typu:
+Projekt Review jsou označovány identifikátorem PR-XXX. Příklad:
+
+```
+PR-001 - Project Review po UC001
+PR-002 - Project Review po UC002
+```
+
+Pro dokumentační a review změny se používá samostatná branch:
 
 ```
 chore/project-review-uc001
@@ -57,7 +64,7 @@ Po dokončení vývoje:
 
 ---
 
-# Project Review
+# Project Review (PR-XXX)
 
 Po dokončení každého Use Casu probíhá Project Review.
 

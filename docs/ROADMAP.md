@@ -25,7 +25,7 @@
 * Update Client (PUT /clients/{id}) ✅
 * Delete Client (DELETE /clients/{id}) ✅
 
-#### Project Review #1
+#### PR-001 - Project Review po UC001
 * Revize architektury projektu ⏳
 * Kontrola dokumentace ⏳
 * Aktualizace Technical Backlog ⏳

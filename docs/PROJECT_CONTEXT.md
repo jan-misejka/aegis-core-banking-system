@@ -73,7 +73,7 @@ README.md
 
 ---
 
-## Aktuální fáze
+## Aktuální fáze: Fáze 3 - REST API
 
 ### Fáze 1 – Databáze
 
@@ -415,6 +415,6 @@ Ověření:
 - Konzistence dat ověřena v DBeaver.
 - Feature branche byly sloučeny do větve `main`.
 
-Další milestone:
+Následující krok / Další milestone:
 
-Project Review #1
+- PR-001 – Project Review po UC001
