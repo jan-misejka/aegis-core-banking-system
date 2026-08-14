@@ -44,7 +44,7 @@ Podrobný vývojový workflow je popsán v dokumentu:
 
 ## TECH-001 – Globální zpracování výjimek
 
-**Stav:** Plánováno
+**Stav:** ✅ Dokončeno
 
 **Popis:**
 Nahradit ruční vracení HTTP chyb ve všech controllerech centrálním zpracováním pomocí `@ControllerAdvice`.
@@ -93,13 +93,11 @@ Bankovní systémy standardně historická data fyzicky nemažou.
 ---
 
 ## Aktuální plán implementace
+### Dokončeno
+- TECH-001 – Globální zpracování výjimek
+
 ### Probíhá
-- Project Review #1
+- TECH-002 - Validace vstupních dat
 
 ### Následuje
-1. TECH-001 – Globální zpracování výjimek
-2. TECH-002 – Validace vstupních dat
-
-Po dokončení těchto položek bude zahájena implementace:
-
 - UC002 – Open Account

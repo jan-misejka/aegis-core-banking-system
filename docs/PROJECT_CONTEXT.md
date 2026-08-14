@@ -225,10 +225,12 @@ Vývoj REST API probíhá iterativně po jednotlivých business Use Casech.
 Aktuální stav:
 
 ✅ UC001 – Client Management (CRUD) – dokončeno
+✅ PR-001 – Project Review #1 – dokončeno
+✅ TECH-001 – Globální zpracování výjimek – dokončeno
 
 Následující krok:
 
-- Project Review #1
+- TECH-002 – Validace vstupních dat – probíhá
 
 Po dokončení Project Review budou implementovány všechny položky označené jako **High Priority** v dokumentu:
 
@@ -399,22 +401,14 @@ Při práci na tomto projektu:
 ---
 
 ## Aktuální milestone
-### UC001 – Client Management
+**UC001 – Client Management:** ✅ Dokončeno
+**PR-001 – Project Review:** ✅ Dokončeno
+**TECH-001 – Globální zpracování výjimek:** ✅ Dokončeno
 
-**Stav:** Dokončeno
+### Aktuálně probíhá:
+- TECH-002 - Validace vstupních dat
 
-Implementováno:
-- POST /clients
-- GET /clients
-- GET /clients/{id}
-- PUT /clients/{id}
-- DELETE /clients/{id}
+### Následující krok / Další milestone:
+- UC002 – Open Account
 
-Ověření:
-- Úspěšně otestováno v Postman.
-- Konzistence dat ověřena v DBeaver.
-- Feature branche byly sloučeny do větve `main`.
-
-Následující krok / Další milestone:
-
-- PR-001 – Project Review po UC001
+UC002 bude zahájeno až po dokončení všech High Priority položek definovaných v TECHNICAL_BACKLOG.md.

@@ -98,3 +98,14 @@
 - Zkouška nového postupu s AI - vložení dokumentace do Project Knowledge Base a vygenerování promptu pro pokračování v projektu.
 - Přejmenování Project Review #1 na PRXXX po UCXXX.
 - Aktualizace dokumentace.
+
+## 2026-08-14 - JM
+- Zpracování PR-001.
+- Implementace TECH-001 – Globální zpracování výjimek.
+- Přidána výjimka ClientNotFoundException pro neexistujícího klienta.
+- Přidán GlobalExceptionHandler pomocí @ControllerAdvice.
+- Odstraněno ruční vracení null/boolean při hledání neexistujícího klienta v ClientService.
+- Upraven ClientController tak, aby chybové scénáře řešil globální exception handler.
+- Přidány controller testy pro ověření HTTP 404 při GET, PUT a DELETE neexistujícího klienta.
+- Opraveny zastaralé assertions v AccountRepositoryTest a CardRepositoryTest (Jan → Honza).
+- Všechny Maven testy úspěšně prošly.

@@ -1,6 +1,7 @@
 package cz.aegis.corebanking.service;
 
 import cz.aegis.corebanking.dto.UpdateClientRequest;
+import cz.aegis.corebanking.exception.ClientNotFoundException;
 import cz.aegis.corebanking.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 
@@ -61,11 +62,7 @@ public class ClientService {
     }
 
     public ClientResponse getClientById(Long id) {
-        Client client = clientRepository.findById(id).orElse(null);
-
-        if (client == null) {
-            return null;
-        }
+        Client client = clientRepository.findById(id).orElseThrow(() -> new ClientNotFoundException(id));
 
         ClientResponse response = new ClientResponse();
 
@@ -80,11 +77,7 @@ public class ClientService {
     }
 
     public ClientResponse updateClient(Long id, UpdateClientRequest request) {
-        Client client = clientRepository.findById(id).orElse(null);
-
-        if (client == null) {
-            return null;
-        }
+        Client client = clientRepository.findById(id).orElseThrow(() -> new ClientNotFoundException(id));
 
         client.setFirstName(request.getFirstName());
         client.setLastName(request.getLastName());
@@ -105,15 +98,9 @@ public class ClientService {
         return response;
     }
 
-    public boolean deleteClient(Long id) {
-        Client client = clientRepository.findById(id).orElse(null);
-
-        if (client == null) {
-            return false;
-        }
+    public void deleteClient(Long id) {
+        Client client = clientRepository.findById(id).orElseThrow(() -> new ClientNotFoundException(id));
 
         clientRepository.delete(client);
-
-        return true;
     }
 }

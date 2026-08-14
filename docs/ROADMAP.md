@@ -26,12 +26,12 @@
 * Delete Client (DELETE /clients/{id}) ✅
 
 #### PR-001 - Project Review po UC001
-* Revize architektury projektu ⏳
-* Kontrola dokumentace ⏳
-* Aktualizace Technical Backlog ⏳
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Aktualizace Technical Backlog ✅
 
 #### High Priority (Technical Backlog)
-* TECH-001 – Globální zpracování výjimek ⏳
+* TECH-001 – Globální zpracování výjimek ✅
 * TECH-002 – Validace vstupních dat ⏳
 
 #### Další business funkcionalita
@@ -116,7 +116,7 @@ transfer_id
 * Byl dokončen základní JPA model databáze s entitami, jejich repository a relacemi (viz PROJECT_CONTEXT.md)
 
 * Byla dokončena první REST API funkcionalita:
-    - UC001 - Create Client
+    - UC001 - Client Management
 
 * Implementován endpoint:
     - POST /clients
@@ -165,13 +165,14 @@ Po dokončení významného milníku je nutné aktualizovat:
 **Dokončeno**
 
 ✅ UC001 – Client Management
+✅ PR-001 – Project Review po UC001
+✅ TECH-001 – Globální zpracování výjimek
 
 **Probíhá**
 
-🔄 Project Review #1
+🔄 TECH-002 – Validace vstupních dat
 
 **Následuje**
 
-1. TECH-001 – Globální zpracování výjimek
-2. TECH-002 – Validace vstupních dat
-3. UC002 – Open Account
+1. TECH-002 – Validace vstupních dat
+2. UC002 – Open Account

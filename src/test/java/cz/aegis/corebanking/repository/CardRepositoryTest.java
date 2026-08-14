@@ -31,7 +31,7 @@ class CardRepositoryTest {
         assertNotNull(card.getAccount().getClient());
 
         assertEquals(
-                "Jan",
+                "Honza",
                 card.getAccount()
                         .getClient()
                         .getFirstName()

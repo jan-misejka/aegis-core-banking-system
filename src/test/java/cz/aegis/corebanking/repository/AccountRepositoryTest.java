@@ -25,7 +25,7 @@ class AccountRepositoryTest {
 
         assertNotNull(account.getClient());
 
-        assertEquals("Jan",
+        assertEquals("Honza",
                 account.getClient().getFirstName());
     }
 }
