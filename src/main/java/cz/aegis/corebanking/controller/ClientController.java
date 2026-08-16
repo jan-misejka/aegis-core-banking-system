@@ -4,11 +4,15 @@ import cz.aegis.corebanking.dto.ClientResponse;
 import cz.aegis.corebanking.dto.CreateClientRequest;
 import cz.aegis.corebanking.dto.UpdateClientRequest;
 import cz.aegis.corebanking.service.ClientService;
+
+import java.util.List;
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/clients")
@@ -22,7 +26,7 @@ public class ClientController {
 
     //endpoint POST
     @PostMapping
-    public ResponseEntity<ClientResponse> createClient(@RequestBody CreateClientRequest request) {
+    public ResponseEntity<ClientResponse> createClient(@RequestBody @Valid CreateClientRequest request) {
 
         ClientResponse response = clientService.createClient(request);
 
@@ -54,7 +58,7 @@ public class ClientController {
     @PutMapping("/{id}")
     public ResponseEntity<ClientResponse> updateClient(
             @PathVariable Long id,
-            @RequestBody UpdateClientRequest request) {
+            @RequestBody @Valid UpdateClientRequest request) {
 
         ClientResponse response = clientService.updateClient(id, request);
 

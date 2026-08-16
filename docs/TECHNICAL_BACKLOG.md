@@ -56,7 +56,7 @@ Jednotnější chování API, méně duplicitního kódu a lepší dodržování
 
 ## TECH-002 – Validace vstupních dat
 
-**Stav:** Plánováno
+**Stav:** ✅ Dokončeno
 
 **Popis:**
 Přidat validaci DTO pomocí Jakarta Bean Validation (`@NotBlank`, `@Email`, `@Size` apod.).
@@ -95,9 +95,10 @@ Bankovní systémy standardně historická data fyzicky nemažou.
 ## Aktuální plán implementace
 ### Dokončeno
 - TECH-001 – Globální zpracování výjimek
+- TECH-002 – Validace vstupních dat
 
 ### Probíhá
-- TECH-002 - Validace vstupních dat
+- TECH-003 - 
 
 ### Následuje
 - UC002 – Open Account

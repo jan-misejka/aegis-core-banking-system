@@ -109,3 +109,15 @@
 - Přidány controller testy pro ověření HTTP 404 při GET, PUT a DELETE neexistujícího klienta.
 - Opraveny zastaralé assertions v AccountRepositoryTest a CardRepositoryTest (Jan → Honza).
 - Všechny Maven testy úspěšně prošly.
+
+## 2026-08-16 - JM
+- Zpracování TECH-002: ->
+- Dokončena implementace TECH-002 – Validace vstupních dat.
+- Přidána Jakarta Bean Validation podpora pomocí `spring-boot-starter-validation`.
+- Přidána validace `CreateClientRequest` a `UpdateClientRequest` pomocí `@NotBlank`, `@Email` a `@Size`.
+- Aktivována validace REST requestů pomocí `@Valid`.
+- Rozšířen `GlobalExceptionHandler` o zpracování `MethodArgumentNotValidException`.
+- Přidány automatické controller testy pro nevalidní POST a PUT requesty.
+- Validace ověřena manuálně pomocí Postmanu.
+- Ověřeno, že nevalidní POST/PUT requesty nevedou ke změně databázových dat.
+- Všechny Maven testy úspěšně prošly.

@@ -20,6 +20,6 @@ class ClientRepositoryTest {
 
         List<Client> clients = clientRepository.findAll();
 
-        assertEquals(10, clients.size());
+        assertEquals(11, clients.size());
     }
 }

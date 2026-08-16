@@ -32,7 +32,7 @@
 
 #### High Priority (Technical Backlog)
 * TECH-001 – Globální zpracování výjimek ✅
-* TECH-002 – Validace vstupních dat ⏳
+* TECH-002 – Validace vstupních dat ✅
 
 #### Další business funkcionalita
 * UC002 – Open Account ⏳
@@ -167,12 +167,12 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ UC001 – Client Management
 ✅ PR-001 – Project Review po UC001
 ✅ TECH-001 – Globální zpracování výjimek
+✅ TECH-002 - Validace vstupních dat
 
 **Probíhá**
 
-🔄 TECH-002 – Validace vstupních dat
+🔄 Dokončení TECH-002: dokumentace, Git
 
 **Následuje**
 
-1. TECH-002 – Validace vstupních dat
-2. UC002 – Open Account
+1. UC002 – Open Account

@@ -227,10 +227,11 @@ Aktuální stav:
 ✅ UC001 – Client Management (CRUD) – dokončeno
 ✅ PR-001 – Project Review #1 – dokončeno
 ✅ TECH-001 – Globální zpracování výjimek – dokončeno
+✅ TECH-002 - Validace vstupních dat - dokončeno
 
 Následující krok:
 
-- TECH-002 – Validace vstupních dat – probíhá
+- UC002 - Open Account
 
 Po dokončení Project Review budou implementovány všechny položky označené jako **High Priority** v dokumentu:
 
@@ -238,7 +239,7 @@ Po dokončení Project Review budou implementovány všechny položky označené
 
 Teprve poté bude zahájena implementace:
 
-✅ UC002 – Open Account
+⏳ UC002 – Open Account
 
 Podrobný postup vývoje projektu je popsán v dokumentu:
 
@@ -404,9 +405,10 @@ Při práci na tomto projektu:
 **UC001 – Client Management:** ✅ Dokončeno
 **PR-001 – Project Review:** ✅ Dokončeno
 **TECH-001 – Globální zpracování výjimek:** ✅ Dokončeno
+**TECH-002 - Validace vstupních dat:** ✅ Dokončeno
 
 ### Aktuálně probíhá:
-- TECH-002 - Validace vstupních dat
+- PR-002 - Project Review #2
 
 ### Následující krok / Další milestone:
 - UC002 – Open Account

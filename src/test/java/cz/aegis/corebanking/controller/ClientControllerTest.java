@@ -49,4 +49,38 @@ class ClientControllerTest {
         mockMvc.perform(delete("/clients/999999"))
                 .andExpect(status().isNotFound());
     }
+
+    //test na invalid input data pro POST endpoint
+    @Test
+    void shouldReturn400WhenCreatingClientWithInvalidData() throws Exception {
+
+        mockMvc.perform(post("/clients")
+                        .contentType(APPLICATION_JSON)
+                        .content("""
+                    {
+                        "firstName": "",
+                        "lastName": "Test",
+                        "email": "invalid-email",
+                        "phoneNumber": "123456789"
+                    }
+                    """))
+                .andExpect(status().isBadRequest());
+    }
+
+    //test na invalid input data pro PUT endpoint
+    @Test
+    void shouldReturn400WhenUpdatingClientWithInvalidData() throws Exception {
+
+        mockMvc.perform(put("/clients/999999")
+                        .contentType(APPLICATION_JSON)
+                        .content("""
+                    {
+                        "firstName": "",
+                        "lastName": "Test",
+                        "email": "invalid-email",
+                        "phoneNumber": "123456789"
+                    }
+                    """))
+                .andExpect(status().isBadRequest());
+    }
 }
