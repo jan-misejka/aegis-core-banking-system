@@ -168,6 +168,7 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-001 – Project Review po UC001
 ✅ TECH-001 – Globální zpracování výjimek
 ✅ TECH-002 - Validace vstupních dat
+✅ PR-002 – Project Review po TECH-002
 
 **Probíhá**
 

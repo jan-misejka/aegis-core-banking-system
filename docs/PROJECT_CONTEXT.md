@@ -228,6 +228,7 @@ Aktuální stav:
 ✅ PR-001 – Project Review #1 – dokončeno
 ✅ TECH-001 – Globální zpracování výjimek – dokončeno
 ✅ TECH-002 - Validace vstupních dat - dokončeno
+✅ PR-002 - Project Review #2 – dokončeno
 
 Následující krok:
 
@@ -406,9 +407,10 @@ Při práci na tomto projektu:
 **PR-001 – Project Review:** ✅ Dokončeno
 **TECH-001 – Globální zpracování výjimek:** ✅ Dokončeno
 **TECH-002 - Validace vstupních dat:** ✅ Dokončeno
+**PR-002 - Project Review #2:** ✅ Dokončeno
 
 ### Aktuálně probíhá:
-- PR-002 - Project Review #2
+- 
 
 ### Následující krok / Další milestone:
 - UC002 – Open Account

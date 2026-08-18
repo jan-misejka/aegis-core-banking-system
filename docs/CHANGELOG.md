@@ -121,3 +121,7 @@
 - Validace ověřena manuálně pomocí Postmanu.
 - Ověřeno, že nevalidní POST/PUT requesty nevedou ke změně databázových dat.
 - Všechny Maven testy úspěšně prošly.
+
+## 2026-08-18 - JM
+- PR-002: review provedeno -> prošlo, žádné nové změny nejsou potřeba a nebyly nalezeny žádné dluhy.
+- 
