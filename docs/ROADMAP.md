@@ -16,7 +16,6 @@
 * vytvoření repository vrstev ✅
 
 ## Fáze 3 – REST API
-
 ### Client API
 #### UC001 – Client Management
 * Create Client (POST /clients) ✅
@@ -34,9 +33,31 @@
 * TECH-001 – Globální zpracování výjimek ✅
 * TECH-002 – Validace vstupních dat ✅
 
+### Account API
+#### UC002 – Open Account
+* Create Account (POST /accounts) ✅
+* Validace existence klienta ✅
+* Validace typu účtu (CURRENT / SAVINGS) ✅
+* Validace měny (CZK / EUR / USD) ✅
+* Výchozí zůstatek účtu 0 ✅
+* Generování IBAN ✅
+* Ověření vytvoření účtu v databázi ✅
+
+#### PR-003 - Project Review po UC002
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Aktualizace Technical Backlog ✅
+* Rozhodnutí o High Priority položkách ✅
+
+#### High Priority (Technical Backlog)
+* Žádné
+
 #### Další business funkcionalita
-* UC002 – Open Account ✅
-* POST /accounts - vytvoření účtu pro klienta ✅
+* UC003 – Deposit Money ⏳
+* UC004 – Withdraw Money ⏳
+* UC005 – Transfer Money ⏳
+* UC006 – Issue Card ⏳
+* UC007 – Block Card ⏳
 
 ### Bankovní funkcionalita
 * API pro účty ⏳

@@ -132,4 +132,7 @@
 
 ## 2026-08-20 - JM
 - Aktualizace dokumentace po UC002.
-- 
+- Provedeno PR-003 – Project Review po UC002.
+- PR-003 neidentifikoval žádnou High Priority položku.
+- Do Technical Backlogu přidána položka TECH-005 – Automatizované testy UC002 s prioritou Medium.
+- TECH-003 a TECH-004 zůstávají ve stavu Medium Priority.
