@@ -443,11 +443,11 @@ Při práci na tomto projektu:
 **TECH-001 – Globální zpracování výjimek:** ✅ Dokončeno
 **TECH-002 - Validace vstupních dat:** ✅ Dokončeno
 **PR-002 - Project Review #2:** ✅ Dokončeno
+**UC002 - Open Account:** ✅ Dokončeno
+**PR-003 - Project Review po UC002:** ✅ Dokončeno
 
 ### Aktuálně probíhá:
-- 
+- Příprava na UC003 – Deposit Money
 
 ### Následující krok / Další milestone:
-- UC002 – Open Account
-
-UC002 bude zahájeno až po dokončení všech High Priority položek definovaných v TECHNICAL_BACKLOG.md.
+- UC003 – Deposit Money

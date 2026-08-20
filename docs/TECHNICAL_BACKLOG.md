@@ -90,15 +90,42 @@ Nahradit fyzické mazání klientů logickým mazáním pomocí příznaku `acti
 **Důvod:**
 Bankovní systémy standardně historická data fyzicky nemažou.
 
+## TECH-005 – Automatizované testy UC002
+
+**Stav:** Plánováno
+
+**Popis:**
+Doplnit automatizované testy pro funkcionalitu UC002 – Open Account.
+
+**Rozsah:**
+- test úspěšného vytvoření účtu,
+- test neexistujícího klienta,
+- test neplatného typu účtu,
+- test nepodporované měny,
+- test nevalidních vstupních dat.
+
+**Důvod:**
+UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru. Automatizované testy zaměřené přímo na business scénáře UC002 zvýší regresní pokrytí při dalších změnách.
+
 ---
 
 ## Aktuální plán implementace
 ### Dokončeno
+- UC001 – Client Management
+- PR-001 – Project Review po UC001
 - TECH-001 – Globální zpracování výjimek
 - TECH-002 – Validace vstupních dat
+- PR-002 – Project Review po TECH-002
+- UC002 – Open Account
+- PR-003 – Project Review po UC002
 
-### Probíhá
-- UC002 - Open Account
+### High Priority
+- Žádné
+
+### Medium Priority
+- TECH-003 – Refaktoring mapování DTO
+- TECH-004 – Soft Delete klientů
+- TECH-005 – Automatizované testy UC002
 
 ### Následuje
-- TECH003 - Refactoring mapování DTO
+- UC003 – Deposit Money
