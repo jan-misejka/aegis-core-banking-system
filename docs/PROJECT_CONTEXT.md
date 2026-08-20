@@ -227,20 +227,55 @@ Aktuální stav:
 ✅ UC001 – Client Management (CRUD) – dokončeno
 ✅ PR-001 – Project Review #1 – dokončeno
 ✅ TECH-001 – Globální zpracování výjimek – dokončeno
-✅ TECH-002 - Validace vstupních dat - dokončeno
-✅ PR-002 - Project Review #2 – dokončeno
+✅ TECH-002 – Validace vstupních dat – dokončeno
+✅ PR-002 – Project Review #2 – dokončeno
+✅ UC002 – Open Account – implementováno a otestováno
 
-Následující krok:
+### UC002 – Open Account
 
-- UC002 - Open Account
+Implementováno:
+
+- POST /accounts
+- vytvoření účtu pro existujícího klienta
+- validace accountType:
+  - CURRENT
+  - SAVINGS
+- validace currency:
+  - CZK
+  - EUR
+  - USD
+- počáteční balance = 0
+- automatické nastavení createdAt pomocí @PrePersist
+- generování realistického českého IBANu
+- kontrola unikátnosti IBANu
+- HTTP 404 pro neexistujícího klienta
+- HTTP 400 pro neplatný typ účtu nebo měnu
+- HTTP 400 pro nevalidní request podle Bean Validation
+
+Testování:
+
+- Maven testy úspěšně prošly.
+- Pozitivní scénář POST /accounts byl úspěšně ověřen pomocí Postmanu.
+- Negativní scénáře byly úspěšně ověřeny pomocí Postmanu.
+- Uložení vytvořeného účtu a správnost dat byly ověřeny pomocí DBeaveru.
+
+### Další krok
+
+Po dokončení Git workflow pro UC002 bude následovat Project Review po UC002 podle dokumentu DEVELOPMENT_WORKFLOW.md.
+
+Project Review zahrne:
+
+- kontrolu architektury,
+- kontrolu dokumentace,
+- kontrolu technického dluhu,
+- aktualizaci Technical Backlog,
+- rozhodnutí o případných High Priority položkách.
 
 Po dokončení Project Review budou implementovány všechny položky označené jako **High Priority** v dokumentu:
 
 `TECHNICAL_BACKLOG.md`
 
-Teprve poté bude zahájena implementace:
-
-⏳ UC002 – Open Account
+Teprve poté bude zahájen další Use Case.
 
 Podrobný postup vývoje projektu je popsán v dokumentu:
 

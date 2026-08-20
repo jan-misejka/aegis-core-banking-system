@@ -35,7 +35,8 @@
 * TECH-002 – Validace vstupních dat ✅
 
 #### Další business funkcionalita
-* UC002 – Open Account ⏳
+* UC002 – Open Account ✅
+* POST /accounts - vytvoření účtu pro klienta ✅
 
 ### Bankovní funkcionalita
 * API pro účty ⏳

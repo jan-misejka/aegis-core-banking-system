@@ -124,4 +124,12 @@
 
 ## 2026-08-18 - JM
 - PR-002: review provedeno -> prošlo, žádné nové změny nejsou potřeba a nebyly nalezeny žádné dluhy.
+- UC002: Implementace.
+
+## 2026-08-19 - JM
+- Pokračování implementace UC002: Controller, Service, Exceptions.
+- Pozitivní testing, negativní testing
+
+## 2026-08-20 - JM
+- Aktualizace dokumentace po UC002.
 - 

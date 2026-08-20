@@ -1,45 +1,23 @@
-package cz.aegis.corebanking.entity;
+package cz.aegis.corebanking.dto;
 
-import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "accounts")
-public class Account {
+public class AccountResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id")
     private Long accountId;
-
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
-
-    @Column(name = "iban")
+    private Long clientId;
     private String iban;
-
-    @Column(name = "account_type")
     private String accountType;
-
-    @Column(name = "balance")
     private BigDecimal balance;
-
-    @Column(name = "currency")
     private String currency;
-
-    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    public Account() {
+    //Konstruktory
+    public AccountResponse() {
     }
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
-
+    //Gettery a settery
     public Long getAccountId() {
         return accountId;
     }
@@ -47,11 +25,11 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getClientId() {
+        return clientId;
     }
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getIban() {

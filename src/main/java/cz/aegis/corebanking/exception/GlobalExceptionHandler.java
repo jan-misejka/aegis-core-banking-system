@@ -18,4 +18,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Void> handleValidationException(MethodArgumentNotValidException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+
+    @ExceptionHandler(InvalidAccountDataException.class)
+    public ResponseEntity<Void> handleInvalidAccountData(InvalidAccountDataException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 }
