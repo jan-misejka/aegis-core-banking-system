@@ -26,13 +26,39 @@ Bankovní pracovník vytvoří nového klienta.
 
 ### UC002 – Založení účtu
 Bankovní pracovník založí účet existujícímu klientovi.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
 
-**Předpoklady implementace:**
+**Implementováno:**
 
 - Dokončený Project Review #1
 - Implementovaný TECH-001
 - Implementovaný TECH-002
+- POST /accounts
+- účet je vždy přiřazen existujícímu klientovi
+- accountType:
+    - CURRENT
+    - SAVINGS
+- currency:
+    - CZK
+    - EUR
+    - USD
+- počáteční balance = 0
+- automatické vytvoření createdAt
+- generování IBAN
+- kontrola unikátnosti IBAN
+
+**HTTP chování:**
+
+- 201 Created – účet byl úspěšně vytvořen
+- 400 Bad Request – nevalidní vstup nebo nepovolený typ účtu/měna
+- 404 Not Found – klient neexistuje
+
+**Ověření:**
+
+- Maven testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Uložení a správnost dat byly ověřeny pomocí DBeaveru.
 
 ### UC003 – Vklad peněz
 Na účet jsou vloženy peníze.

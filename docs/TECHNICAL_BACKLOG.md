@@ -98,7 +98,7 @@ Bankovní systémy standardně historická data fyzicky nemažou.
 - TECH-002 – Validace vstupních dat
 
 ### Probíhá
-- TECH-003 - 
+- UC002 - Open Account
 
 ### Následuje
-- UC002 – Open Account
+- TECH003 - Refactoring mapování DTO
