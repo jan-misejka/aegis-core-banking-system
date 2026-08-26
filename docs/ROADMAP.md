@@ -33,6 +33,12 @@
 * TECH-001 – Globální zpracování výjimek ✅
 * TECH-002 – Validace vstupních dat ✅
 
+#### PR-002 - Project Review po TECH-001,002
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Aktualizace Technical Backlog ✅
+* High Priority položky ✅
+
 ### Account API
 #### UC002 – Open Account
 * Create Account (POST /accounts) ✅
@@ -191,11 +197,13 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ TECH-001 – Globální zpracování výjimek
 ✅ TECH-002 - Validace vstupních dat
 ✅ PR-002 – Project Review po TECH-002
+✅ UC002 - Open Account
+✅ PR-003 - Project Review po UC002
 
 **Probíhá**
 
-🔄 Dokončení TECH-002: dokumentace, Git
+🔄 UC003 - Deposit Money
 
 **Následuje**
 
-1. UC002 – Open Account
+1. Bude rozhodnuto
