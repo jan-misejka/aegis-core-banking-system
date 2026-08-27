@@ -58,8 +58,21 @@
 #### High Priority (Technical Backlog)
 * Žádné
 
+#### UC003 - Deposit Money
+* POST /accounts/{id}/deposit ✅
+* Validace částky ✅
+* Navýšení balance účtu ✅
+* Vytvoření DEPOSIT transaction ✅
+* Ověření dat v databázi ✅
+* Automatizované controller testy ✅
+
+#### PR-004 - Project Review po UC003
+* Revize architektury projektu ⏳
+* Kontrola dokumentace ⏳
+* Aktualizace Technical Backlog ⏳
+* Rozhodnutí o High Priority položkách ⏳
+
 #### Další business funkcionalita
-* UC003 – Deposit Money ⏳
 * UC004 – Withdraw Money ⏳
 * UC005 – Transfer Money ⏳
 * UC006 – Issue Card ⏳
@@ -206,4 +219,4 @@ Po dokončení významného milníku je nutné aktualizovat:
 
 **Následuje**
 
-1. Bude rozhodnuto
+1. PR-004 - Project Review po UC003

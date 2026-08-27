@@ -232,7 +232,6 @@ Aktuální stav:
 ✅ UC002 – Open Account – implementováno a otestováno
 
 ### UC002 – Open Account
-
 Implementováno:
 
 - POST /accounts
@@ -259,9 +258,34 @@ Testování:
 - Negativní scénáře byly úspěšně ověřeny pomocí Postmanu.
 - Uložení vytvořeného účtu a správnost dat byly ověřeny pomocí DBeaveru.
 
+### UC003 - Deposit Money
+Implementováno:
+
+- POST /accounts/{id}/deposit
+- validace existence účtu
+- validace částky pomocí Jakarta Bean Validation
+- minimální částka vkladu 0.01
+- navýšení balance účtu
+- vytvoření Transaction se type DEPOSIT
+- přiřazení Transaction ke konkrétnímu účtu
+- automatické nastavení času transakce
+- použití @Transactional pro společné uložení změny účtu a transakce
+- HTTP 200 při úspěšném vkladu
+- HTTP 400 při nevalidní částce
+- HTTP 404 při neexistujícím účtu
+
+Testování:
+
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Správnost změny balance ověřena pomocí DBeaveru.
+- Vytvoření DEPOSIT transaction ověřeno pomocí DBeaveru.
+- Automatizované controller testy vytvořeny pro pozitivní a negativní scénáře.
+- Automatizované testy ověřily HTTP 200, HTTP 400 a HTTP 404.
+
 ### Další krok
 
-Po dokončení Git workflow pro UC002 bude následovat Project Review po UC002 podle dokumentu DEVELOPMENT_WORKFLOW.md.
+Po dokončení Git workflow pro aktuální UCXXX bude následovat Project Review po UCXXX podle dokumentu DEVELOPMENT_WORKFLOW.md.
 
 Project Review zahrne:
 
@@ -447,7 +471,8 @@ Při práci na tomto projektu:
 **PR-003 - Project Review po UC002:** ✅ Dokončeno
 
 ### Aktuálně probíhá:
-- Příprava na UC003 – Deposit Money
+- Dokončení dokumentace po UC003 - Deposit Money
+- Příprava na Project Review #4
 
 ### Následující krok / Další milestone:
-- UC003 – Deposit Money
+- PR-004 - Project Review po UC003

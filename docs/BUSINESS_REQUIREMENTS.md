@@ -62,7 +62,34 @@ Bankovní pracovník založí účet existujícímu klientovi.
 
 ### UC003 – Vklad peněz
 Na účet jsou vloženy peníze.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Implementováno:**
+
+- POST /accounts/{id}/deposit
+- účet musí existovat
+- částka musí být větší než 0
+- minimální částka vkladu je 0.01
+- balance účtu je navýšen o vloženou částku
+- při vkladu je vytvořena Transaction
+- Transaction má typ DEPOSIT
+- Transaction je přiřazena ke konkrétnímu účtu
+- datum a čas transakce je uložen
+- změna účtu a vytvoření transakce probíhají v rámci jedné databázové transakce
+
+**HTTP chování:**
+
+- 200 OK – vklad byl úspěšně proveden
+- 400 Bad Request – částka je nevalidní
+- 404 Not Found – účet neexistuje
+
+**Ověření:**
+
+- Maven/JUnit testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Změna balance byla ověřena pomocí DBeaveru.
+- Vytvoření DEPOSIT transaction a její vazba na účet byly ověřeny pomocí DBeaveru.
 
 ### UC004 – Výběr peněz
 Z účtu jsou vybrány peníze.

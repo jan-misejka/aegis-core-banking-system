@@ -2,10 +2,12 @@ package cz.aegis.corebanking.controller;
 
 import cz.aegis.corebanking.dto.AccountResponse;
 import cz.aegis.corebanking.dto.CreateAccountRequest;
+import cz.aegis.corebanking.dto.DepositMoneyRequest;
 import cz.aegis.corebanking.service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +30,14 @@ public class AccountController {
         AccountResponse response = accountService.createAccount(request);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    //endpoint POST - deposit
+    @PostMapping("/{id}/deposit")
+    public ResponseEntity<AccountResponse> depositMoney(@PathVariable Long id, @RequestBody @Valid DepositMoneyRequest request) {
+
+        AccountResponse response = accountService.depositMoney(id, request);
+
+        return ResponseEntity.ok(response);
     }
 }

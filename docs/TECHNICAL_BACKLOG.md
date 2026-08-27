@@ -129,3 +129,6 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 
 ### Následuje
 - UC003 – Deposit Money
+
+### Poznámky:
+Během implementace a automatizovaného testování UC003 bylo zjištěno, že integrační testy používají stejnou MySQL databázi jako aplikace a mohou měnit persistentní testovací data. Tento problém bude vyhodnocen během PR-004 a případně bude vytvořena samostatná položka Technical Backlog s odpovídající prioritou.

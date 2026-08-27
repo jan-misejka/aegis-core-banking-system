@@ -136,3 +136,20 @@
 - PR-003 neidentifikoval žádnou High Priority položku.
 - Do Technical Backlogu přidána položka TECH-005 – Automatizované testy UC002 s prioritou Medium.
 - TECH-003 a TECH-004 zůstávají ve stavu Medium Priority.
+
+## 2026-08-26 - JM
+- Aktualizace dokumentace (ROADMAP.md).
+- Návrh a implementace UC003 - Deposit Money.
+- Přidán DepositMoneyRequest s validací částky pomocí Jakarta Bean Validation.
+
+## 2026-08-27 - JM
+- Přidána AccountNotFoundException pro neexistující účet.
+- Rozšířen AccountService o funkci depositMoney().
+- Přidáno vytvoření DEPOSIT Transaction při provedení vkladu.
+- Přidána databázová transakce pomocí @Transactional pro změnu balance a vytvoření Transaction.
+- Přidán endpoint POST /accounts/{id}/deposit.
+- Implementovány automatizované controller testy pro pozitivní a negativní scénáře UC003.
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Změna balance a vytvoření DEPOSIT Transaction ověřeny pomocí DBeaveru.
+- Během automatizovaného testování identifikován problém s izolací testovací databáze; bude vyhodnocen během PR-004.
