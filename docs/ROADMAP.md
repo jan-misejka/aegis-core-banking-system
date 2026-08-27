@@ -217,11 +217,13 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-002 – Project Review po TECH-002
 ✅ UC002 - Open Account
 ✅ PR-003 - Project Review po UC002
+✅ UC003 - Deposit Money
+✅ PR-004 - Project Review po UC003
 
 **Probíhá**
 
-🔄 UC003 - Deposit Money
+🔄 TECH-006 - Izolace testovací databáze
 
 **Následuje**
 
-1. PR-004 - Project Review po UC003
+⏳ UC004 - Withdraw Money
