@@ -153,3 +153,11 @@
 - Negativní scénáře ověřeny pomocí Postmanu.
 - Změna balance a vytvoření DEPOSIT Transaction ověřeny pomocí DBeaveru.
 - Během automatizovaného testování identifikován problém s izolací testovací databáze; bude vyhodnocen během PR-004.
+- Zpracování PR-004: Project Review #4 po UC003.
+
+## 2026-08-28 - JM
+- Dokončeno PR-004.
+- Do Technical Backlogu přidána položka TECH-006 - Izolace testovací databáze.
+- TECH-006 označena jako High Priority.
+- Aktualizace zdrojů pro ChatGPT.
+- 

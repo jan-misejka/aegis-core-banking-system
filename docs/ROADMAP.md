@@ -67,10 +67,15 @@
 * Automatizované controller testy ✅
 
 #### PR-004 - Project Review po UC003
-* Revize architektury projektu ⏳
-* Kontrola dokumentace ⏳
-* Aktualizace Technical Backlog ⏳
-* Rozhodnutí o High Priority položkách ⏳
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Aktualizace Technical Backlog ✅
+* Identifikace TECH-006 - Izolace testovací databáze ✅
+* Rozhodnutí o High Priority položkách ✅
+
+#### High Priority (Technical Backlog)
+* TECH-006 - Izolace testovací databáze ⏳
 
 #### Další business funkcionalita
 * UC004 – Withdraw Money ⏳

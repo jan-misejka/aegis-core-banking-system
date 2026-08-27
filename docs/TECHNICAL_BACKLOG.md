@@ -66,6 +66,21 @@ V současnosti API přijímá i neplatná vstupní data.
 
 ---
 
+## TECH-006 – Izolace testovací databáze
+
+**Stav:** Plánováno
+
+**Popis:**
+Oddělit automatizované integrační testy od persistentních aplikačních/testovacích dat tak, aby jednotlivé testy nebyly navzájem ovlivňovány změnami databázového stavu.
+
+**Důvod:**
+Současné integrační testy používají stejnou MySQL databázi a mohou měnit persistentní data. To způsobuje závislost testů na pořadí jejich spuštění a může vést k nepředvídatelným výsledkům.
+
+**Cíl:**
+Zajistit izolované a opakovatelné automatizované testy.
+
+---
+
 # Střední priorita
 
 ## TECH-003 – Refaktoring mapování DTO
@@ -89,6 +104,8 @@ Nahradit fyzické mazání klientů logickým mazáním pomocí příznaku `acti
 
 **Důvod:**
 Bankovní systémy standardně historická data fyzicky nemažou.
+
+---
 
 ## TECH-005 – Automatizované testy UC002
 
@@ -118,9 +135,11 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 - PR-002 – Project Review po TECH-002
 - UC002 – Open Account
 - PR-003 – Project Review po UC002
+- UC003 - Deposit Money
+- PR-004 - Project Review po UC003
 
 ### High Priority
-- Žádné
+- TECH-006 - Izolace testovací databáze
 
 ### Medium Priority
 - TECH-003 – Refaktoring mapování DTO
@@ -128,7 +147,8 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 - TECH-005 – Automatizované testy UC002
 
 ### Následuje
-- UC003 – Deposit Money
+- TECH-006 - Izolace testovací databáze
+- UC004 - další Use Case po dokončení PR-004
 
 ### Poznámky:
-Během implementace a automatizovaného testování UC003 bylo zjištěno, že integrační testy používají stejnou MySQL databázi jako aplikace a mohou měnit persistentní testovací data. Tento problém bude vyhodnocen během PR-004 a případně bude vytvořena samostatná položka Technical Backlog s odpovídající prioritou.
+- 

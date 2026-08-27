@@ -449,7 +449,8 @@ Při práci na tomto projektu:
 * 
 * Bylo ověřeno uložení dat do databáze pomocí DBeaveru.
 
-* Dalším plánovaným krokem je dokončení Project Review #1.
+## Project Reviews
+* Dalším plánovaným krokem po dokončení aktuálního úkolu (UCXXX/TECH-XXX) je Project Review #X.
 
 * Součástí Project Review je:
   - kontrola architektury projektu,
@@ -457,22 +458,32 @@ Při práci na tomto projektu:
   - aktualizace Technical Backlog,
   - implementace všech položek označených jako High Priority.
 
-* Po úspěšném dokončení Project Review bude zahájena implementace UC002 – Open Account podle postupu definovaného v dokumentu DEVELOPMENT_WORKFLOW.md.
+* Po úspěšném dokončení Project Review bude zahájena implementace dalšího UCXXX+1/TECH-XXX+1 podle postupu definovaného v dokumentu DEVELOPMENT_WORKFLOW.md.
 
 ---
 
 ## Aktuální milestone
 **UC001 – Client Management:** ✅ Dokončeno
+
 **PR-001 – Project Review:** ✅ Dokončeno
+
 **TECH-001 – Globální zpracování výjimek:** ✅ Dokončeno
+
 **TECH-002 - Validace vstupních dat:** ✅ Dokončeno
+
 **PR-002 - Project Review #2:** ✅ Dokončeno
+
 **UC002 - Open Account:** ✅ Dokončeno
+
 **PR-003 - Project Review po UC002:** ✅ Dokončeno
 
+**UC003 - Deposit Money:** ✅ Dokončeno
+
+**PR-004 - Project Review po UC003:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- Dokončení dokumentace po UC003 - Deposit Money
-- Příprava na Project Review #4
+- Příprava na implementaci TECH-006 - Izolace testovací databáze
 
 ### Následující krok / Další milestone:
-- PR-004 - Project Review po UC003
+- TECH-006 - Izolace testovací databáze
+- následně UC004 - Withdraw Money
