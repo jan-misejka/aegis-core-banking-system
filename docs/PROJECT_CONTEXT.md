@@ -230,6 +230,11 @@ Aktuální stav:
 ✅ TECH-002 – Validace vstupních dat – dokončeno
 ✅ PR-002 – Project Review #2 – dokončeno
 ✅ UC002 – Open Account – implementováno a otestováno
+✅ PR-003 - Project Review #3 - dokončeno
+✅ UC003 - Deposit Money - dokončeno
+✅ PR-004 - Project Review #4 - dokončeno
+✅ TECH-006 - Izolace testovací databáze - dokončeno
+✅ 
 
 ### UC002 – Open Account
 Implementováno:
@@ -252,7 +257,6 @@ Implementováno:
 - HTTP 400 pro nevalidní request podle Bean Validation
 
 Testování:
-
 - Maven testy úspěšně prošly.
 - Pozitivní scénář POST /accounts byl úspěšně ověřen pomocí Postmanu.
 - Negativní scénáře byly úspěšně ověřeny pomocí Postmanu.
@@ -275,13 +279,35 @@ Implementováno:
 - HTTP 404 při neexistujícím účtu
 
 Testování:
-
 - Pozitivní scénář ověřen pomocí Postmanu.
 - Negativní scénáře ověřeny pomocí Postmanu.
 - Správnost změny balance ověřena pomocí DBeaveru.
 - Vytvoření DEPOSIT transaction ověřeno pomocí DBeaveru.
 - Automatizované controller testy vytvořeny pro pozitivní a negativní scénáře.
 - Automatizované testy ověřily HTTP 200, HTTP 400 a HTTP 404.
+
+### TECH-006 - Izolace testovací databáze
+Implementováno:
+
+- byla vytvořena samostatná testovací databáze `aegiscore_banking_test`
+- byla vytvořena testovací konfigurace v `application-test.properties`
+- testovací prostředí používá Spring profil `test`
+- byl vytvořen společný základ `TestDatabaseReset` pro integrační testy
+- před každým testem se provádí reset testovací databáze pomocí SQL skriptu
+- testovací databáze je před každým testem naplněna deterministickým datasetem
+- testy již nejsou závislé na stavu databáze po předchozích testech
+- byl vytvořen testovací resetovací skript `test_reset.sql`
+- testovací resetovací skript je umístěn v:
+  - `database/test_reset.sql`
+  - `src/test/resources/test_reset.sql`
+- byly upraveny integrační testy tak, aby používaly testovací profil a společný reset databáze
+- byla upravena databázová struktura kvůli správnému pořadí mazání dat při respektování FK vazeb
+- bylo upraveno globální zpracování výjimek tak, aby odpovídalo očekávaným HTTP statusům integračních testů
+
+Testování:
+- Maven testy úspěšně prošly.
+- Testovací databáze je izolována od vývojové databáze.
+- Integrační testy jsou deterministické a lze je spouštět opakovaně.
 
 ### Další krok
 
@@ -481,9 +507,11 @@ Při práci na tomto projektu:
 
 **PR-004 - Project Review po UC003:** ✅ Dokončeno
 
+**TECH-006 - Izolace testovací databáze:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- Příprava na implementaci TECH-006 - Izolace testovací databáze
+- Dokončení Git workflow a dokumentace po TECH-006
 
 ### Následující krok / Další milestone:
-- TECH-006 - Izolace testovací databáze
+- Project Review po TECH-OO6: PR-005
 - následně UC004 - Withdraw Money

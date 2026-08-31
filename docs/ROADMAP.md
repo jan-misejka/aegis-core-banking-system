@@ -75,7 +75,13 @@
 * Rozhodnutí o High Priority položkách ✅
 
 #### High Priority (Technical Backlog)
-* TECH-006 - Izolace testovací databáze ⏳
+* TECH-006 - Izolace testovací databáze ✅
+
+#### PR-005 - Project Review po TECH-006
+* Revize architektury projektu ⏳
+* Kontrola dokumentace ⏳
+* Kontrola technického dluhu ⏳
+* Aktualizace Technical Backlog ⏳
 
 #### Další business funkcionalita
 * UC004 – Withdraw Money ⏳
@@ -107,69 +113,28 @@
 ---
 
 ## Aktuální stav
-* Logický databázový model verze 1 byl schválen.
-* Model obsahuje entity:
-    - Client
-    - Account
-    - Card
-    - Transaction
-    - Transfer
+* Fáze 1 – Databáze: dokončena.
+* Fáze 2 – Backend: dokončena základní JPA vrstva.
+* Fáze 3 – REST API: probíhá.
 
-* Byly schváleny atributy všech entit.
-* Byly definovány základní business hodnoty:
-    - Account Type
-        - CURRENT
-        - SAVINGS
+Dokončené milníky:
+* UC001 – Client Management
+* PR-001 – Project Review po UC001
+* TECH-001 – Globální zpracování výjimek
+* TECH-002 – Validace vstupních dat
+* PR-002 – Project Review po TECH-001,002
+* UC002 – Open Account
+* PR-003 – Project Review po UC002
+* UC003 – Deposit Money
+* PR-004 – Project Review po UC003
+* TECH-006 – Izolace testovací databáze
 
-    - Card Status
-        - ACTIVE
-        - BLOCKED
-        - EXPIRED
+Aktuálně:
+* dokončování dokumentace k TECH-006
+* následovat bude PR-005
 
-    - Transaction Type (tx_type)
-        - DEPOSIT
-        - WITHDRAWAL
-        - INBOUND
-        - OUTBOUND
-
-    - Transfer Status
-        - PENDING
-        - COMPLETED
-        - FAILED
-
-* Detailní popis modelu je uložen v:
-  docs/DATABASE_MODEL.md
-
-* Byla vytvořena první verze testovacích dat.
-* Testovací dataset obsahuje:
-    * 10 klientů
-    * 15 účtů
-    * 12 platebních karet
-    * 20 převodů
-    * 50 transakcí
-
-* Byly ověřeny vazby mezi všemi entitami databázového modelu.
-* Byla doplněna vazba:
-  Transfer → Transaction
-
-prostřednictvím atributu:
-```
-transfer_id
-```
-* Byly vytvořeny SQL cvičení a validační testy pro všechny entity a jejich vazby. Cvičení a testy jsou uloženy v:
-  docs/SQL_EXERCISES.md
-  docs/SQL_VALIDATION.md
-* Byl dokončen základní JPA model databáze s entitami, jejich repository a relacemi (viz PROJECT_CONTEXT.md)
-
-* Byla dokončena první REST API funkcionalita:
-    - UC001 - Client Management
-
-* Implementován endpoint:
-    - POST /clients
-
-* Funkčnost endpointu byla ověřena pomocí Postmanu.
-* Bylo ověřeno správné ukládání dat do databáze pomocí DBeaveru.
-
+Další business funkcionalita:
+* UC004 – Withdraw Money
 
 ## Poznámka
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
@@ -189,7 +154,7 @@ Doporučený postup:
 
 Každá Feature Branch by měla představovat jednu logicky uzavřenou funkcionalitu projektu.
 
-Po dokončení každého business Use Casu probíhá Project Review.
+Po dokončení každého business Use Casu nebo významného technického milníku probíhá Project Review.
 
 Teprve po jeho dokončení a implementaci všech položek označených jako **High Priority** začíná implementace dalšího Use Casu.
 
@@ -219,10 +184,11 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-003 - Project Review po UC002
 ✅ UC003 - Deposit Money
 ✅ PR-004 - Project Review po UC003
+✅ TECH-006 - Izolace testovací databáze
 
 **Probíhá**
 
-🔄 TECH-006 - Izolace testovací databáze
+🔄 PR-005 - Project Review po TECH-006
 
 **Následuje**
 

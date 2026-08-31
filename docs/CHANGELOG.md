@@ -160,4 +160,15 @@
 - Do Technical Backlogu přidána položka TECH-006 - Izolace testovací databáze.
 - TECH-006 označena jako High Priority.
 - Aktualizace zdrojů pro ChatGPT.
-- 
+
+## 2026-08-31 - JM
+- TECH-006: implementace izolace testovací databáze.
+- Úprava schema.sql - tabulka transactions má FK na tabulku transfers, která je vytvořena až po transactions -> oprava pořadí definice tabulek.
+- Vytvoření testovací databáze aegiscore_banking_test a jejího testovacího datasetu.
+- Vytvoření souboru application-test.properties pro konfiguraci testovacího prostředí.
+- Vytvoření souboru test_reset.sql pro resetování a naplnění testovací databáze před každým testem.
+- Vytvoření třídy TestDatabaseReset pro automatické spuštění resetovacího SQL skriptu před každým testem.
+- Úprava integračních testů pro použití testovacího profilu a společného TestDatabaseReset.
+- Úprava GlobalExceptionHandler pro správné vracení HTTP 404 při výjimkách typu ClientNotFoundException.
+- Úprava existujících integračních testů podle nového deterministického testovacího datasetu.
+- Ověření opakovatelnosti integračních testů pomocí Maven testů.

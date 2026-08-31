@@ -121,7 +121,7 @@ Platební karta je zablokována.
 
 Business Use Casy jsou implementovány postupně.
 
-Po dokončení každého Use Casu následuje:
+Po dokončení každého Use Casu nebo významného technického milníku následuje:
 1. Project Review.
 2. Aktualizace dokumentace.
 3. Aktualizace Technical Backlog.
