@@ -1,14 +1,18 @@
 package cz.aegis.corebanking.repository;
 
+import cz.aegis.corebanking.TestDatabaseReset;
 import cz.aegis.corebanking.entity.Card;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class CardRepositoryTest {
+@ActiveProfiles("test")
+class CardRepositoryTest extends TestDatabaseReset {
 
     @Autowired
     private CardRepository cardRepository;
@@ -31,7 +35,7 @@ class CardRepositoryTest {
         assertNotNull(card.getAccount().getClient());
 
         assertEquals(
-                "Honza",
+                "Jan",
                 card.getAccount()
                         .getClient()
                         .getFirstName()

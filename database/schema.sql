@@ -47,6 +47,32 @@ CONSTRAINT chk_card_status
     CHECK (card_status IN ('ACTIVE', 'BLOCKED', 'EXPIRED'))
 );
 
+CREATE TABLE transfers (
+transfer_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+source_acc_id BIGINT NOT NULL,
+target_acc_id BIGINT NOT NULL,
+amount DECIMAL(15,2) NOT NULL,
+transfer_status VARCHAR(20) NOT NULL,
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+CONSTRAINT fk_transfer_source
+    FOREIGN KEY (source_acc_id)
+        REFERENCES accounts(account_id),
+
+CONSTRAINT fk_transfer_target
+    FOREIGN KEY (target_acc_id)
+        REFERENCES accounts(account_id),
+
+CONSTRAINT chk_transfer_amount
+    CHECK (amount > 0),
+
+CONSTRAINT chk_transfer_accounts
+    CHECK (source_acc_id <> target_acc_id),
+
+CONSTRAINT chk_transfer_status
+    CHECK (transfer_status IN ('PENDING', 'COMPLETED', 'FAILED'))
+);
+
 CREATE TABLE transactions (
 tx_id BIGINT AUTO_INCREMENT PRIMARY KEY,
 account_id BIGINT NOT NULL,
@@ -69,30 +95,4 @@ CONSTRAINT chk_tx_type
 
 CONSTRAINT chk_tx_amount
     CHECK (amount > 0)
-);
-
-CREATE TABLE transfers (
-transfer_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-source_acc_id BIGINT NOT NULL,
-target_acc_id BIGINT NOT NULL,
-amount DECIMAL(15,2) NOT NULL,
-transfer_status VARCHAR(20) NOT NULL,
-created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-CONSTRAINT fk_transfer_source
-    FOREIGN KEY (source_acc_id)
-    REFERENCES accounts(account_id),
-
-CONSTRAINT fk_transfer_target
-    FOREIGN KEY (target_acc_id)
-    REFERENCES accounts(account_id),
-
-CONSTRAINT chk_transfer_amount
-    CHECK (amount > 0),
-
-CONSTRAINT chk_transfer_accounts
-    CHECK (source_acc_id <> target_acc_id),
-
-CONSTRAINT chk_transfer_status
-    CHECK (transfer_status IN ('PENDING', 'COMPLETED', 'FAILED'))
 );

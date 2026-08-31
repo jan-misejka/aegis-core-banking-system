@@ -16,12 +16,13 @@ Každý business Use Case (UC) prochází následujícím životním cyklem:
 2. Vytvoření Git Feature Branch.
 3. Implementace funkcionality.
 4. Manuální testování (Postman + DBeaver).
-5. Aktualizace dokumentace.
-6. Commit změn.
-7. Merge do větve `main`.
-8. Project Review.
+5. Commit změn.
+6. Merge do větve `main`.
+7. Project Review.
+8. Aktualizace dokumentace (včetně označení případných položek High Priority v Technical Backlog).
 9. Implementace položek označených jako High Priority v Technical Backlog.
-10. Zahájení dalšího Use Casu.
+10. Project Review po implementaci High Priority položek.
+11. Zahájení dalšího Use Casu.
 
 Žádný nový Use Case nezačíná před dokončením předchozího.
 
@@ -77,6 +78,7 @@ Cílem Project Review je:
 - rozhodnout o implementaci položek s vysokou prioritou.
 
 Project Review je považován za součást dokončení Use Casu.
+Project Review může následovat také po dokončení samostatného technického milníku označeného jako TECH-XXX, pokud tento úkol ovlivňuje architekturu, testování, infrastrukturu nebo budoucí vývoj projektu.
 
 ---
 
@@ -117,7 +119,7 @@ Use Case je považován za dokončený pouze tehdy, pokud:
 - dokumentace byla aktualizována,
 - Feature Branch byla sloučena do větve `main`,
 - proběhl Project Review,
-- byly implementovány všechny položky označené jako High Priority.
+- všechny relevantní Hight Priority položky byly implementovány a následně ověřeny.
 
 Teprve poté začíná implementace dalšího Use Casu.
 
@@ -125,7 +127,7 @@ Teprve poté začíná implementace dalšího Use Casu.
 
 Před návrhem jakékoliv změny je nutné:
 
-1. Prostředovat aktuální projektovou dokumentaci.
+1. Prostudovat aktuální projektovou dokumentaci.
 2. Určit aktuální milestone podle PROJECT_CONTEXT.md.
 3. Ověřit další plánovaný krok v ROADMAP.md.
 4. Zkontrolovat BUSINESS_REQUIREMENTS.md.

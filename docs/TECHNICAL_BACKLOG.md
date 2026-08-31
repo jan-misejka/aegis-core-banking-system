@@ -68,7 +68,7 @@ V současnosti API přijímá i neplatná vstupní data.
 
 ## TECH-006 – Izolace testovací databáze
 
-**Stav:** Plánováno
+**Stav:** ✅ Dokončeno
 
 **Popis:**
 Oddělit automatizované integrační testy od persistentních aplikačních/testovacích dat tak, aby jednotlivé testy nebyly navzájem ovlivňovány změnami databázového stavu.
@@ -137,9 +137,10 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 - PR-003 – Project Review po UC002
 - UC003 - Deposit Money
 - PR-004 - Project Review po UC003
+- TECH-006 - Izolace testovací databáze
 
 ### High Priority
-- TECH-006 - Izolace testovací databáze
+- 
 
 ### Medium Priority
 - TECH-003 – Refaktoring mapování DTO
@@ -147,8 +148,8 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 - TECH-005 – Automatizované testy UC002
 
 ### Následuje
-- TECH-006 - Izolace testovací databáze
-- UC004 - další Use Case po dokončení PR-004
+- PR-005 - Project Review po TECH-006
+- UC004 - Withdraw Money
 
 ### Poznámky:
 - 
