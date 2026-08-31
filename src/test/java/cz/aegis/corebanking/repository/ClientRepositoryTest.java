@@ -1,16 +1,19 @@
 package cz.aegis.corebanking.repository;
 
+import cz.aegis.corebanking.TestDatabaseReset;
 import cz.aegis.corebanking.entity.Client;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class ClientRepositoryTest {
+@ActiveProfiles("test")
+class ClientRepositoryTest extends TestDatabaseReset {
 
     @Autowired
     private ClientRepository clientRepository;
@@ -20,6 +23,6 @@ class ClientRepositoryTest {
 
         List<Client> clients = clientRepository.findAll();
 
-        assertEquals(11, clients.size());
+        assertEquals(10, clients.size());
     }
 }
