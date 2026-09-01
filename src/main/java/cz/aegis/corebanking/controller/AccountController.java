@@ -3,6 +3,7 @@ package cz.aegis.corebanking.controller;
 import cz.aegis.corebanking.dto.AccountResponse;
 import cz.aegis.corebanking.dto.CreateAccountRequest;
 import cz.aegis.corebanking.dto.DepositMoneyRequest;
+import cz.aegis.corebanking.dto.WithdrawMoneyRequest;
 import cz.aegis.corebanking.service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -37,6 +38,15 @@ public class AccountController {
     public ResponseEntity<AccountResponse> depositMoney(@PathVariable Long id, @RequestBody @Valid DepositMoneyRequest request) {
 
         AccountResponse response = accountService.depositMoney(id, request);
+
+        return ResponseEntity.ok(response);
+    }
+
+    //endpoint POST - withdraw
+    @PostMapping("/{id}/withdraw")
+    public ResponseEntity<AccountResponse> withdrawMoney(@PathVariable Long id, @RequestBody @Valid WithdrawMoneyRequest request) {
+
+        AccountResponse response = accountService.withdrawMoney(id, request);
 
         return ResponseEntity.ok(response);
     }

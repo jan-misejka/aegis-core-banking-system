@@ -19,6 +19,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
+    @ExceptionHandler(InsufficientBalanceException.class)
+    public ResponseEntity<Void> handleInsufficientBalance(InsufficientBalanceException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Void> handleValidationException(MethodArgumentNotValidException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
