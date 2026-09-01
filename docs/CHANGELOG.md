@@ -172,3 +172,8 @@
 - Úprava GlobalExceptionHandler pro správné vracení HTTP 404 při výjimkách typu ClientNotFoundException.
 - Úprava existujících integračních testů podle nového deterministického testovacího datasetu.
 - Ověření opakovatelnosti integračních testů pomocí Maven testů.
+
+## 2026-09-01 - JM
+- Zpracování PR-005: Project Review #5 po TECH-006.
+- Dokončení PR-005: nový dluh TECH-007 - Odstranění duplicity testovacích dat.
+- 

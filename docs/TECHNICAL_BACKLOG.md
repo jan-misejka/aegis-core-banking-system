@@ -126,6 +126,23 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 
 ---
 
+# Nízká priorita
+
+## TECH-007 – Odstranění duplicity testovacích dat
+
+**Stav:** Plánováno
+
+**Popis:**
+Odstranit duplicitu mezi `database/test_reset.sql` a `src/test/resources/test_reset.sql`.
+
+**Důvod:**
+Stejný dataset je udržován ve dvou souborech, což může vést k jejich nekonzistenci.
+
+**Cíl:**
+Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
+
+---
+
 ## Aktuální plán implementace
 ### Dokončeno
 - UC001 – Client Management
@@ -140,16 +157,17 @@ UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru
 - TECH-006 - Izolace testovací databáze
 
 ### High Priority
-- 
 
 ### Medium Priority
 - TECH-003 – Refaktoring mapování DTO
 - TECH-004 – Soft Delete klientů
 - TECH-005 – Automatizované testy UC002
 
+### Low Priority
+- TECH-007 – Odstranění duplicity testovacích dat
+
 ### Následuje
 - PR-005 - Project Review po TECH-006
 - UC004 - Withdraw Money
 
 ### Poznámky:
-- 
