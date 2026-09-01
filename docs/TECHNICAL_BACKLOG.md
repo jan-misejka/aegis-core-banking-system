@@ -156,6 +156,8 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - PR-004 - Project Review po UC003
 - TECH-006 - Izolace testovací databáze
 - PR-005 - Project Review po TECH-006
+- UC004 - Withdraw Money
+- PR-006 - Project Review po UC004
 
 ### High Priority
 
@@ -168,6 +170,6 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - TECH-007 – Odstranění duplicity testovacích dat
 
 ### Následuje
-- UC004 - Withdraw Money
+- UC005 - Transfer Money
 
 ### Poznámky:

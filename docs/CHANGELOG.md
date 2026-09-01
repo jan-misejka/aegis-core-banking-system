@@ -176,4 +176,15 @@
 ## 2026-09-01 - JM
 - Zpracování PR-005: Project Review #5 po TECH-006.
 - Dokončení PR-005: nový dluh TECH-007 - Odstranění duplicity testovacích dat.
-- 
+- Dokončena implementace UC004 - Withdraw Money.
+- Přidán endpoint POST /accounts/{id}/withdraw.
+- Přidán WithdrawMoneyRequest s validací částky.
+- Přidána kontrola dostatečného balance před provedením výběru.
+- Přidána InsufficientBalanceException a její zpracování v GlobalExceptionHandler.
+- Přidáno vytvoření WITHDRAWAL transaction při úspěšném výběru.
+- Přidány automatizované controller testy pro UC004.
+- Ověřeny pozitivní a negativní scénáře pomocí Postmanu.
+- Ověřena změna balance a vytvoření WITHDRAWAL transaction pomocí DBeaveru.
+- Ověřeno, že zamítnutý výběr nemění balance ani nevytváří novou transaction.
+- Proveden PR-006 - Project Review po UC004.
+- PR-006 neidentifikoval žádnou High Priority položku.

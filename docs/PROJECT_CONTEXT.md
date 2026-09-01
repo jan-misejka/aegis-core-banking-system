@@ -156,6 +156,8 @@ database/
 
 REST API zatím nebylo implementováno.
 
+---
+
 ### Fáze 2 - Backend
 
 * Spring Boot aplikace byla vytvořena a základní struktura projektu byla nastavena.
@@ -193,6 +195,8 @@ REST API zatím nebylo implementováno.
 * Byl vytvořen první integrační test pro entitu Card.
 * Byl vytvořen první integrační test pro entitu Transfer.
 * Byl vytvořen první integrační test pro entitu Transaction.
+
+---
 
 ### Fáze 3 - REST API
 
@@ -234,7 +238,9 @@ Aktuální stav:
 ✅ UC003 - Deposit Money - dokončeno
 ✅ PR-004 - Project Review #4 - dokončeno
 ✅ TECH-006 - Izolace testovací databáze - dokončeno
-✅ 
+✅ PR-005 - Project Review #5 - dokončeno
+✅ UC004 - Withdraw Money - dokončeno
+✅ PR-006 - Project Review #6 - dokončeno
 
 ### UC002 – Open Account
 Implementováno:
@@ -309,6 +315,38 @@ Testování:
 - Testovací databáze je izolována od vývojové databáze.
 - Integrační testy jsou deterministické a lze je spouštět opakovaně.
 
+### UC004 - Withdraw Money
+
+Byl implementován endpoint POST /accounts/{id}/withdraw pro výběr peněz z bankovního účtu.
+
+Implementace:
+- WithdrawMoneyRequest s validací částky.
+- Kontrola existence účtu.
+- Kontrola dostatečného zůstatku účtu.
+- Snížení balance o vybranou částku.
+- Vytvoření WITHDRAWAL transaction.
+- Uložení změny účtu a transakce v rámci jedné databázové transakce.
+- HTTP 400 při nevalidní částce nebo nedostatečném zůstatku.
+- HTTP 404 při neexistujícím účtu.
+
+Testování:
+- Maven/JUnit testy pro pozitivní a negativní scénáře.
+- Ověření úspěšného výběru pomocí Postmanu.
+- Ověření negativních scénářů pomocí Postmanu.
+- Ověření změny balance pomocí DBeaveru.
+- Ověření vytvoření WITHDRAWAL transaction pomocí DBeaveru.
+- Ověření, že zamítnutý výběr nezmění balance ani nevytvoří transaction.
+
+### PR-006 - Project Review po UC004
+
+- Revize architektury projektu.
+- Kontrola dokumentace.
+- Kontrola technického dluhu.
+- Rozhodnutí o High Priority položkách.
+- Nebyla identifikována žádná nová High Priority položka.
+
+---
+
 ### Další krok
 
 Po dokončení Git workflow pro aktuální UCXXX bude následovat Project Review po UCXXX podle dokumentu DEVELOPMENT_WORKFLOW.md.
@@ -330,6 +368,7 @@ Teprve poté bude zahájen další Use Case.
 Podrobný postup vývoje projektu je popsán v dokumentu:
 
 `DEVELOPMENT_WORKFLOW.md`
+
 ---
 
 ## Filosofie učení
@@ -511,8 +550,12 @@ Při práci na tomto projektu:
 
 **PR-005 - Project Review po TECH-006:** ✅ Dokončeno
 
+**UC004 - Withdraw Money:** ✅ Dokončeno
+
+**PR-006 - Project Review po UC004:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- Dokončení Git workflow a dokumentace po PR-005
+- Aktualizace dokumentace po PR-006
 
 ### Následující krok / Další milestone:
-- následně UC004 - Withdraw Money
+- UC005 - Transfer Money

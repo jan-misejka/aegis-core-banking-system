@@ -24,6 +24,8 @@ Bankovní pracovník vytvoří nového klienta.
 - Ověření dat v DBeaver.
 - CRUD funkcionalita dokončena.
 
+---
+
 ### UC002 – Založení účtu
 Bankovní pracovník založí účet existujícímu klientovi.
 **Stav:** ✅ Dokončeno
@@ -60,6 +62,8 @@ Bankovní pracovník založí účet existujícímu klientovi.
 - Negativní scénáře byly ověřeny pomocí Postmanu.
 - Uložení a správnost dat byly ověřeny pomocí DBeaveru.
 
+---
+
 ### UC003 – Vklad peněz
 Na účet jsou vloženy peníze.
 **Stav:** ✅ Dokončeno
@@ -91,9 +95,42 @@ Na účet jsou vloženy peníze.
 - Změna balance byla ověřena pomocí DBeaveru.
 - Vytvoření DEPOSIT transaction a její vazba na účet byly ověřeny pomocí DBeaveru.
 
+---
+
 ### UC004 – Výběr peněz
 Z účtu jsou vybrány peníze.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Implementováno:**
+
+- POST /accounts/{id}/withdraw
+- účet musí existovat
+- částka musí být větší než 0
+- minimální částka výběru je 0.01
+- balance účtu je snížen o vybranou částku
+- výběr nesmí překročit aktuální balance účtu
+- při výběru je vytvořena Transaction
+- Transaction má typ WITHDRAWAL
+- Transaction je přiřazena ke konkrétnímu účtu
+- datum a čas transakce je uložen
+- změna účtu a vytvoření transakce probíhají v rámci jedné databázové transakce
+
+**HTTP chování:**
+
+- 200 OK – výběr byl úspěšně proveden
+- 400 Bad Request – částka je nevalidní nebo není dostatečný balance
+- 404 Not Found – účet neexistuje
+
+**Ověření:**
+
+- Maven/JUnit testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Změna balance byla ověřena pomocí DBeaveru.
+- Vytvoření WITHDRAWAL transaction a její vazba na účet byly ověřeny pomocí DBeaveru.
+- Ověřeno, že zamítnutý výběr nezmění balance ani nevytvoří novou transaction.
+
+---
 
 ### UC005 – Převod peněz
 Peníze jsou převedeny mezi dvěma účty.

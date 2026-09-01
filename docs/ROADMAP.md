@@ -83,8 +83,26 @@
 * Kontrola technického dluhu ✅
 * Aktualizace Technical Backlog ✅
 
+#### UC004 - Withdraw Money
+* POST /accounts/{id}/withdraw ✅
+* Validace částky ✅
+* Kontrola existence účtu ✅
+* Kontrola dostatečného balance ✅
+* Snížení balance účtu ✅
+* Vytvoření WITHDRAWAL transaction ✅
+* Ověření dat v databázi ✅
+* Automatizované controller testy ✅
+
+#### PR-006 - Project Review po UC004
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Rozhodnutí o High Priority položkách ✅
+
+#### High Priority (Technical Backlog)
+* Žádné
+
 #### Další business funkcionalita
-* UC004 – Withdraw Money ⏳
 * UC005 – Transfer Money ⏳
 * UC006 – Issue Card ⏳
 * UC007 – Block Card ⏳
@@ -129,12 +147,14 @@ Dokončené milníky:
 * PR-004 – Project Review po UC003
 * TECH-006 – Izolace testovací databáze
 * PR-005 – Project Review po TECH-006
+* UC004 - Withdraw Money
+* PR-006 - Project Review po UC004
 
 Aktuálně:
-* UC004 – Withdraw Money
+* Aktualizace projektové dokumentace po PR-006
 
 Další business funkcionalita:
-* 
+* UC005 - Transfer Money
 
 ## Poznámka
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
@@ -147,10 +167,14 @@ Doporučený postup:
 1. vytvoření nové větve z main
 2. implementace funkcionality
 3. lokální testování
-4. aktualizace dokumentace
-5. commit
-6. merge do větve main
-7. odstranění dokončené větve
+4. commit
+5. merge do větve main
+6. Project Review
+7. aktualizace dokumentace
+8. implementace všech relevantních High Priority položek
+9. Project Review po Hight Priority položkách
+10. odstranění dokončené větve
+11. push na GitHub
 
 Každá Feature Branch by měla představovat jednu logicky uzavřenou funkcionalitu projektu.
 
@@ -186,11 +210,13 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-004 - Project Review po UC003
 ✅ TECH-006 - Izolace testovací databáze
 ✅ PR-005 - Project Review po TECH-006
+✅ UC004 - Withdraw Money
+✅ PR-006 - Project Review po UC004
 
 **Probíhá**
 
-🔄 UC004 - Withdraw Money
+🔄 Aktualizace projektové dokumentace po PR-006
 
 **Následuje**
 
-⏳ 
+⏳ UC005 - Transfer Money
