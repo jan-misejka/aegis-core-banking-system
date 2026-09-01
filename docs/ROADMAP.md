@@ -78,10 +78,10 @@
 * TECH-006 - Izolace testovací databáze ✅
 
 #### PR-005 - Project Review po TECH-006
-* Revize architektury projektu ⏳
-* Kontrola dokumentace ⏳
-* Kontrola technického dluhu ⏳
-* Aktualizace Technical Backlog ⏳
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Aktualizace Technical Backlog ✅
 
 #### Další business funkcionalita
 * UC004 – Withdraw Money ⏳
@@ -130,8 +130,7 @@ Dokončené milníky:
 * TECH-006 – Izolace testovací databáze
 
 Aktuálně:
-* dokončování dokumentace k TECH-006
-* následovat bude PR-005
+* dokončování dokumentace a Git workflow po PR-005
 
 Další business funkcionalita:
 * UC004 – Withdraw Money

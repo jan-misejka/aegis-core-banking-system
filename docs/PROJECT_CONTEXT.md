@@ -509,9 +509,10 @@ Při práci na tomto projektu:
 
 **TECH-006 - Izolace testovací databáze:** ✅ Dokončeno
 
+**PR-005 - Project Review po TECH-006:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- Dokončení Git workflow a dokumentace po TECH-006
+- Dokončení Git workflow a dokumentace po PR-005
 
 ### Následující krok / Další milestone:
-- Project Review po TECH-OO6: PR-005
 - následně UC004 - Withdraw Money
