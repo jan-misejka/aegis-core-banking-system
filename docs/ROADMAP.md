@@ -128,12 +128,13 @@ Dokončené milníky:
 * UC003 – Deposit Money
 * PR-004 – Project Review po UC003
 * TECH-006 – Izolace testovací databáze
+* PR-005 – Project Review po TECH-006
 
 Aktuálně:
-* dokončování dokumentace a Git workflow po PR-005
+* UC004 – Withdraw Money
 
 Další business funkcionalita:
-* UC004 – Withdraw Money
+* 
 
 ## Poznámka
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
@@ -184,11 +185,12 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ UC003 - Deposit Money
 ✅ PR-004 - Project Review po UC003
 ✅ TECH-006 - Izolace testovací databáze
+✅ PR-005 - Project Review po TECH-006
 
 **Probíhá**
 
-🔄 PR-005 - Project Review po TECH-006
+🔄 UC004 - Withdraw Money
 
 **Následuje**
 
-⏳ UC004 - Withdraw Money
+⏳ 
