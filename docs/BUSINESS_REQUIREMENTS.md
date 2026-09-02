@@ -134,7 +134,44 @@ Z účtu jsou vybrány peníze.
 
 ### UC005 – Převod peněz
 Peníze jsou převedeny mezi dvěma účty.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Implementováno:**
+
+- POST /transfers
+- zdrojový účet musí existovat
+- cílový účet musí existovat
+- zdrojový a cílový účet nesmí být stejný
+- částka musí být větší než 0
+- minimální částka převodu je 0.01
+- zdrojový účet musí mít dostatečný balance
+- balance zdrojového účtu je snížen o převáděnou částku
+- balance cílového účtu je navýšen o převáděnou částku
+- při převodu je vytvořen Transfer se stavem COMPLETED
+- při převodu je vytvořena OUTBOUND Transaction na zdrojovém účtu
+- při převodu je vytvořena INBOUND Transaction na cílovém účtu
+- obě Transaction jsou navázány na konkrétní Transfer
+- datum a čas vytvoření Transferu je uložen
+- změna balance, vytvoření Transferu a vytvoření Transaction probíhají v rámci jedné databázové transakce
+
+**HTTP chování:**
+
+- 201 Created – převod byl úspěšně proveden
+- 400 Bad Request – částka je nevalidní, účty jsou stejné nebo není dostatečný balance
+- 404 Not Found – zdrojový nebo cílový účet neexistuje
+
+**Ověření:**
+
+- Maven/JUnit testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Změna balance zdrojového a cílového účtu byla ověřena pomocí DBeaveru.
+- Vytvoření Transferu a jeho stav COMPLETED byly ověřeny pomocí DBeaveru.
+- Vytvoření OUTBOUND a INBOUND Transaction bylo ověřeno pomocí DBeaveru.
+- Vazba obou Transaction na konkrétní Transfer byla ověřena pomocí DBeaveru.
+- Ověřeno, že zamítnutý převod nezmění balance, nevytvoří Transfer ani Transaction.
+
+---
 
 ### UC006 – Vydání platební karty
 K účtu je vydána platební karta.

@@ -241,6 +241,8 @@ Aktuální stav:
 ✅ PR-005 - Project Review #5 - dokončeno
 ✅ UC004 - Withdraw Money - dokončeno
 ✅ PR-006 - Project Review #6 - dokončeno
+✅ UC005 - Transfer Money - dokončeno
+✅ PR-007 - Project Review #7 - dokončeno
 
 ### UC002 – Open Account
 Implementováno:
@@ -344,6 +346,31 @@ Testování:
 - Kontrola technického dluhu.
 - Rozhodnutí o High Priority položkách.
 - Nebyla identifikována žádná nová High Priority položka.
+
+### UC005 - Transfer Money
+
+- Implementován endpoint POST /transfers.
+- Přidán TransferMoneyRequest s validací vstupních dat.
+- Přidán TransferResponse pro odpověď API.
+- Přidán TransferService pro zpracování převodů.
+- Přidána kontrola existence zdrojového a cílového účtu.
+- Přidána kontrola, že zdrojový a cílový účet nejsou stejné.
+- Přidána kontrola dostatečného balance zdrojového účtu.
+- Implementováno snížení balance zdrojového účtu.
+- Implementováno navýšení balance cílového účtu.
+- Implementováno vytvoření Transfer se stavem COMPLETED.
+- Implementováno vytvoření OUTBOUND Transaction na zdrojovém účtu.
+- Implementováno vytvoření INBOUND Transaction na cílovém účtu.
+- Obě Transaction jsou navázány na konkrétní Transfer.
+- Transfer automaticky nastavuje createdAt pomocí JPA callbacku @PrePersist.
+- Celá operace převodu je provedena v rámci jedné databázové transakce pomocí @Transactional.
+- Přidána SameAccountTransferException pro převod mezi stejným účtem.
+- Rozšířen GlobalExceptionHandler o zpracování SameAccountTransferException.
+- Přidány automatizované controller testy pro pozitivní a negativní scénáře UC005.
+- Ověřeno, že zamítnutý převod nemění balance a nevytváří Transfer ani Transaction.
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Změny balance, vytvoření Transfer a souvisejících Transaction ověřeny pomocí DBeaveru.
 
 ---
 
@@ -554,8 +581,12 @@ Při práci na tomto projektu:
 
 **PR-006 - Project Review po UC004:** ✅ Dokončeno
 
+**UC005 - Transfer Money:** ✅ Dokončeno
+
+**PR-007 - Project Review po UC005:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- Aktualizace dokumentace po PR-006
+- UC005 - Transfer Money
 
 ### Následující krok / Další milestone:
-- UC005 - Transfer Money
+- PR-007 - Project Review po UC005

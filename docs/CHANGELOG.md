@@ -188,3 +188,24 @@
 - Ověřeno, že zamítnutý výběr nemění balance ani nevytváří novou transaction.
 - Proveden PR-006 - Project Review po UC004.
 - PR-006 neidentifikoval žádnou High Priority položku.
+
+## 2026-09-02 - JM
+- Implementace UC005 - Transfer Money:
+- Přidán endpoint POST /transfers.
+- Přidán TransferMoneyRequest s validací vstupních dat.
+- Přidán TransferResponse.
+- Přidán TransferService pro zpracování převodů.
+- Přidána kontrola existence zdrojového a cílového účtu.
+- Přidána kontrola, že zdrojový a cílový účet nejsou stejné.
+- Přidána kontrola dostatečného balance zdrojového účtu.
+- Implementováno snížení balance zdrojového účtu a navýšení balance cílového účtu.
+- Implementováno vytvoření Transfer se stavem COMPLETED.
+- Implementováno vytvoření OUTBOUND Transaction na zdrojovém účtu.
+- Implementováno vytvoření INBOUND Transaction na cílovém účtu.
+- Přidáno automatické nastavení createdAt Transferu pomocí @PrePersist.
+- Přidána SameAccountTransferException a její zpracování v GlobalExceptionHandler.
+- Přidány automatizované controller testy pro pozitivní a negativní scénáře UC005.
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Změny balance, vytvoření Transfer a souvisejících Transaction ověřeny pomocí DBeaveru.
+- Během implementace identifikován technický dluh TECH-008.

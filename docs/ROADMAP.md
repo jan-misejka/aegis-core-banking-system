@@ -102,8 +102,28 @@
 #### High Priority (Technical Backlog)
 * Žádné
 
+#### UC005 - Transfer Money
+* POST /transfers ✅
+* Validace částky ✅
+* Kontrola existence zdrojového účtu ✅
+* Kontrola existence cílového účtu ✅
+* Kontrola, že zdrojový a cílový účet nejsou stejné ✅
+* Kontrola dostatečného balance zdrojového účtu ✅
+* Snížení balance zdrojového účtu ✅
+* Navýšení balance cílového účtu ✅
+* Vytvoření COMPLETED Transfer ✅
+* Vytvoření OUTBOUND transaction ✅
+* Vytvoření INBOUND transaction ✅
+* Ověření vazby Transaction → Transfer ✅
+* Ověření dat v databázi ✅
+* Automatizované controller testy ✅
+* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
+
+
+
+---
+
 #### Další business funkcionalita
-* UC005 – Transfer Money ⏳
 * UC006 – Issue Card ⏳
 * UC007 – Block Card ⏳
 
@@ -134,27 +154,6 @@
 * Fáze 1 – Databáze: dokončena.
 * Fáze 2 – Backend: dokončena základní JPA vrstva.
 * Fáze 3 – REST API: probíhá.
-
-Dokončené milníky:
-* UC001 – Client Management
-* PR-001 – Project Review po UC001
-* TECH-001 – Globální zpracování výjimek
-* TECH-002 – Validace vstupních dat
-* PR-002 – Project Review po TECH-001,002
-* UC002 – Open Account
-* PR-003 – Project Review po UC002
-* UC003 – Deposit Money
-* PR-004 – Project Review po UC003
-* TECH-006 – Izolace testovací databáze
-* PR-005 – Project Review po TECH-006
-* UC004 - Withdraw Money
-* PR-006 - Project Review po UC004
-
-Aktuálně:
-* Aktualizace projektové dokumentace po PR-006
-
-Další business funkcionalita:
-* UC005 - Transfer Money
 
 ## Poznámka
 Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
@@ -212,11 +211,14 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-005 - Project Review po TECH-006
 ✅ UC004 - Withdraw Money
 ✅ PR-006 - Project Review po UC004
+✅ UC005 - Transfer Money
+✅ PR-007 - Project Review po UC005
 
 **Probíhá**
 
-🔄 Aktualizace projektové dokumentace po PR-006
+🔄 Aktualizace projektové dokumentace po PR-007
 
 **Následuje**
 
-⏳ UC005 - Transfer Money
+⏳ UC006 - Issue Card
+⏳ UC007 - Block Card

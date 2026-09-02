@@ -33,6 +33,11 @@ public class Transfer {
     public Transfer() {
     }
 
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+
     public Long getTransferId() {
         return transferId;
     }

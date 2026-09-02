@@ -124,6 +124,32 @@ Doplnit automatizované testy pro funkcionalitu UC002 – Open Account.
 **Důvod:**
 UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru. Automatizované testy zaměřené přímo na business scénáře UC002 zvýší regresní pokrytí při dalších změnách.
 
+## TECH-008 – Refaktorizace endpointů Deposit/Withdraw
+
+**Stav:** Plánováno
+
+**Popis:**
+Refaktorovat endpointy pro vklad a výběr peněz z `/accounts/{id}/deposit` a `/accounts/{id}/withdraw` na transakčně orientované endpointy.
+
+**Navrhovaný cílový design:**
+- POST /transactions/deposit
+- POST /transactions/withdraw
+
+**Důvod:**
+Deposit a Withdraw vytvářejí finanční Transaction a z pohledu doménového návrhu je vhodnější, aby jejich API odpovědnost odpovídala transakční doméně.
+
+**Rozsah:**
+- vytvoření TransactionController,
+- přesun odpovědnosti pro Deposit/Withdraw z AccountController,
+- odpovídající úprava service vrstvy,
+- zachování stávající business funkcionality a testovacího pokrytí,
+- aktualizace související dokumentace a Postman requestů.
+
+**Priorita:** Medium
+
+**Poznámka:**
+Refaktorizace není součástí žádného UC a bude řešena jako samostatný technický úkol.
+
 ---
 
 # Nízká priorita
@@ -158,6 +184,7 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - PR-005 - Project Review po TECH-006
 - UC004 - Withdraw Money
 - PR-006 - Project Review po UC004
+- UC005 - Transfer Money
 
 ### High Priority
 
@@ -170,6 +197,6 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - TECH-007 – Odstranění duplicity testovacích dat
 
 ### Následuje
-- UC005 - Transfer Money
+- PR-007 – Project Review po UC005
 
 ### Poznámky:
