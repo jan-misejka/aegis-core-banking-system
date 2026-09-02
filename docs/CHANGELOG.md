@@ -209,3 +209,5 @@
 - Negativní scénáře ověřeny pomocí Postmanu.
 - Změny balance, vytvoření Transfer a souvisejících Transaction ověřeny pomocí DBeaveru.
 - Během implementace identifikován technický dluh TECH-008.
+- Proveden PR-007 - Project Review po UC005.
+- PR-007 neidentifikoval žádnou High Priority položku.

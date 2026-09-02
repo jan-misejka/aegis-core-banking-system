@@ -372,6 +372,15 @@ Testování:
 - Negativní scénáře ověřeny pomocí Postmanu.
 - Změny balance, vytvoření Transfer a souvisejících Transaction ověřeny pomocí DBeaveru.
 
+### PR-007 - Project Review po UC005
+
+- Revize architektury projektu.
+- Kontrola dokumentace.
+- Kontrola technického dluhu.
+- Aktualizace Technical Backlog.
+- Nebyla identifikována žádná nová High Priority položka.
+- TECH-008 - Refaktorizace endpointů Deposit/Withdraw byl zařazen do Medium Priority.
+
 ---
 
 ### Další krok
@@ -586,7 +595,7 @@ Při práci na tomto projektu:
 **PR-007 - Project Review po UC005:** ✅ Dokončeno
 
 ### Aktuálně probíhá:
-- UC005 - Transfer Money
+- UC006 - Issue Card
 
 ### Následující krok / Další milestone:
-- PR-007 - Project Review po UC005
+- UC006 - Issue Card

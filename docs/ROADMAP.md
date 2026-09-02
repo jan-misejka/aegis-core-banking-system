@@ -119,7 +119,15 @@
 * Automatizované controller testy ✅
 * Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
 
+#### PR-007 - Project Review po UC005
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Aktualizace Technical Backlog ✅
+* Rozhodnutí o High Priority položkách ✅
 
+#### High Priority (Technical Backlog)
+* Žádné
 
 ---
 
@@ -216,7 +224,7 @@ Po dokončení významného milníku je nutné aktualizovat:
 
 **Probíhá**
 
-🔄 Aktualizace projektové dokumentace po PR-007
+🔄 Příprama implementace UC006 - Issue Card
 
 **Následuje**
 

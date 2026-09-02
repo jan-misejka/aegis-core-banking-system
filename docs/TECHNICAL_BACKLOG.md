@@ -185,6 +185,7 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - UC004 - Withdraw Money
 - PR-006 - Project Review po UC004
 - UC005 - Transfer Money
+- PR-007 - Project Review po UC005
 
 ### High Priority
 
@@ -192,11 +193,12 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - TECH-003 – Refaktoring mapování DTO
 - TECH-004 – Soft Delete klientů
 - TECH-005 – Automatizované testy UC002
+- TECH-008 – Refaktorizace endpointů Deposit/Withdraw
 
 ### Low Priority
 - TECH-007 – Odstranění duplicity testovacích dat
 
 ### Následuje
-- PR-007 – Project Review po UC005
+- UC006 - Issue Card
 
 ### Poznámky:
