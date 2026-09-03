@@ -243,6 +243,8 @@ Aktuální stav:
 ✅ PR-006 - Project Review #6 - dokončeno
 ✅ UC005 - Transfer Money - dokončeno
 ✅ PR-007 - Project Review #7 - dokončeno
+✅ UC-006 - Issue Card - dokončeno
+✅ PR-008 - Project Review #8 - dokončeno
 
 ### UC002 – Open Account
 Implementováno:
@@ -380,6 +382,42 @@ Testování:
 - Aktualizace Technical Backlog.
 - Nebyla identifikována žádná nová High Priority položka.
 - TECH-008 - Refaktorizace endpointů Deposit/Withdraw byl zařazen do Medium Priority.
+
+### UC006 - Issue Card
+
+- Implementován endpoint POST /cards.
+- Přidán CreateCardRequest s accountId.
+- Přidán CardResponse pro odpověď API.
+- Přidán CardService pro zpracování vydání karty.
+- Přidán CardController pro REST API endpoint.
+- Doplněn atribut createdAt do entity Card.
+- Automatické nastavení createdAt pomocí JPA callbacku @PrePersist.
+- Implementováno ověření existence účtu před vydáním karty.
+- Implementováno generování unikátního 16místného čísla karty.
+- Nová karta je při vydání nastavena do stavu ACTIVE.
+- Implementována expirace karty 10 let od data vydání se stejným dnem a měsícem.
+- Implementováno ověření unikátnosti čísla karty prostřednictvím CardRepository.
+- Přidána validace accountId pomocí Jakarta Bean Validation.
+- HTTP 201 při úspěšném vydání karty.
+- HTTP 400 při nevalidním requestu.
+- HTTP 404 při neexistujícím účtu.
+- Automatizované controller testy vytvořeny pro pozitivní a negativní scénáře UC006.
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Uložení karty, vazba na účet, status, číslo karty, createdAt a expiryDate ověřeny pomocí DBeaveru.
+- Ověřena unikátnost čísel karet v databázi.
+- Ověřeno vydání více karet ke stejnému účtu.
+
+### PR-008 - Project Review po UC006
+
+- Revize architektury projektu.
+- Kontrola dokumentace.
+- Kontrola technického dluhu.
+- Aktualizace Technical Backlog.
+- Nebyla identifikována žádná nová technická položka.
+- Nebyla identifikována žádná High Priority položka.
+- Stávající Medium a Low Priority položky zůstávají v Technical Backlogu.
+- Projekt je připraven na další Use Case.
 
 ---
 
@@ -594,8 +632,12 @@ Při práci na tomto projektu:
 
 **PR-007 - Project Review po UC005:** ✅ Dokončeno
 
+**UC006 - Issue Card:** ✅ Dokončeno
+
+**PR-008 - Project Review po UC006:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- UC006 - Issue Card
+- UC007 - Block Card
 
 ### Následující krok / Další milestone:
-- UC006 - Issue Card
+- UC007 - Block Card

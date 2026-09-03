@@ -211,3 +211,22 @@
 - Během implementace identifikován technický dluh TECH-008.
 - Proveden PR-007 - Project Review po UC005.
 - PR-007 neidentifikoval žádnou High Priority položku.
+
+## 2026-09-03 - JM
+- Implementace UC006 - Issue Card:
+- Přidán endpoint POST /cards.
+- Přidán CreateCardRequest s validací accountId pomocí Jakarta Bean Validation.
+- Přidán CardResponse.
+- Přidán CardService pro zpracování vydání platební karty.
+- Přidána kontrola existence účtu.
+- Implementováno generování unikátního 16místného čísla karty.
+- Nová karta je při vydání nastavena do stavu ACTIVE.
+- Přidáno automatické nastavení createdAt pomocí JPA callbacku @PrePersist.
+- Implementováno nastavení expiryDate na 10 let od data vydání.
+- Ověřeno vydání více karet ke stejnému účtu.
+- Přidány automatizované controller testy pro pozitivní a negativní scénáře UC006.
+- Pozitivní a negativní scénáře ověřeny pomocí Postmanu.
+- Uložení karty, vazba na účet, stav ACTIVE, createdAt, expiryDate a unikátnost čísla karty ověřeny pomocí DBeaveru.
+- Proveden PR-008 - Project Review po UC006.
+- PR-008 neidentifikoval žádnou novou technickou položku ani High Priority položku.
+- Stávající Technical Backlog zůstává beze změny.

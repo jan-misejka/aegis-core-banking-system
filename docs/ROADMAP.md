@@ -129,10 +129,32 @@
 #### High Priority (Technical Backlog)
 * Žádné
 
+#### UC006 - Issue Card
+* POST /cards ✅
+* Validace existence účtu ✅
+* Validace accountId pomocí Bean Validation ✅
+* Generování unikátního 16místného čísla karty ✅
+* Nastavení card_status = ACTIVE při vydání ✅
+* Nastavení created_at pomocí @PrePersist ✅
+* Nastavení expiry_date na 10 let od data vydání ✅
+* Ověření vydání více karet ke stejnému účtu ✅
+* Ověření dat v databázi ✅
+* Automatizované controller testy ✅
+* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
+
+#### PR-008 - Project Review po UC006
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Aktualizace Technical Backlog ✅
+* Rozhodnutí o High Priority položkách ✅
+
+#### High Priority (Technical Backlog)
+* Žádné
+
 ---
 
 #### Další business funkcionalita
-* UC006 – Issue Card ⏳
 * UC007 – Block Card ⏳
 
 ### Bankovní funkcionalita
@@ -221,12 +243,10 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-006 - Project Review po UC004
 ✅ UC005 - Transfer Money
 ✅ PR-007 - Project Review po UC005
+✅ UC006 - Issue Card - implementováno a otestováno
+✅ PR-008 - Project Review po UC006
 
 **Probíhá**
 
-🔄 Příprama implementace UC006 - Issue Card
-
 **Následuje**
-
-⏳ UC006 - Issue Card
 ⏳ UC007 - Block Card

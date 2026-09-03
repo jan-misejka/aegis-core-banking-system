@@ -175,7 +175,38 @@ Peníze jsou převedeny mezi dvěma účty.
 
 ### UC006 – Vydání platební karty
 K účtu je vydána platební karta.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Implementováno:**
+
+- POST /cards
+- karta je vydána k existujícímu účtu
+- accountId je předáván v requestu
+- validace accountId pomocí Jakarta Bean Validation
+- generování unikátního 16místného čísla karty
+- nová karta je při vydání nastavena do stavu ACTIVE
+- automatické nastavení createdAt pomocí JPA callbacku @PrePersist
+- expiryDate je nastaveno na 10 let od data vydání
+- vydání více karet ke stejnému účtu je podporováno
+
+**HTTP chování:**
+
+- 201 Created – karta byla úspěšně vydána
+- 400 Bad Request – accountId je nevalidní nebo chybí
+- 404 Not Found – účet neexistuje
+
+**Ověření:**
+
+- Maven/JUnit testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Uložení karty a její vazba na účet byly ověřeny pomocí DBeaveru.
+- Stav ACTIVE byl ověřen pomocí DBeaveru.
+- createdAt a expiryDate byly ověřeny pomocí DBeaveru.
+- Unikátnost čísel karet byla ověřena pomocí DBeaveru.
+- Ověřeno vydání více karet ke stejnému účtu.
+
+---
 
 ### UC007 – Blokace platební karty
 Platební karta je zablokována.

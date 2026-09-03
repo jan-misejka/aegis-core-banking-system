@@ -186,6 +186,7 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - PR-006 - Project Review po UC004
 - UC005 - Transfer Money
 - PR-007 - Project Review po UC005
+- UC006 - Issue Card
 
 ### High Priority
 
@@ -199,6 +200,6 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 - TECH-007 – Odstranění duplicity testovacích dat
 
 ### Následuje
-- UC006 - Issue Card
+- PR-008 - Project Review po UC006
 
 ### Poznámky:
