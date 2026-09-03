@@ -1,42 +1,32 @@
-package cz.aegis.corebanking.entity;
+package cz.aegis.corebanking.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "cards")
-public class Card {
+public class CardResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "card_id")
     private Long cardId;
-
-    @ManyToOne
-    @JoinColumn(name = "account_id")
-    private Account account;
-
-    @Column(name = "card_number")
+    private Long accountId;
     private String cardNumber;
-
-    @Column(name = "card_status")
     private String cardStatus;
-
-    @Column(name = "expiry_date")
     private LocalDate expiryDate;
-
-    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    public Card() {
+    //Konstruktory
+    public CardResponse() {
     }
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
+    public CardResponse(Long cardId, Long accountId, String cardNumber,
+                        String cardStatus, LocalDate expiryDate, LocalDateTime createdAt) {
+        this.cardId = cardId;
+        this.accountId = accountId;
+        this.cardNumber = cardNumber;
+        this.cardStatus = cardStatus;
+        this.expiryDate = expiryDate;
+        this.createdAt = createdAt;
     }
 
+    //Gettery a settery
     public Long getCardId() {
         return cardId;
     }
@@ -44,11 +34,11 @@ public class Card {
         this.cardId = cardId;
     }
 
-    public Account getAccount() {
-        return account;
+    public Long getAccountId() {
+        return accountId;
     }
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
     }
 
     public String getCardNumber() {
