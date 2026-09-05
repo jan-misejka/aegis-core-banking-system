@@ -154,7 +154,7 @@ database/
     - docs/SQL_EXERCISES.md
     - docs/SQL_VALIDATION.md
 
-REST API zatím nebylo implementováno.
+REST API v době dokončení Fáze 1 ještě nebylo implementováno.
 
 ---
 
@@ -245,6 +245,8 @@ Aktuální stav:
 ✅ PR-007 - Project Review #7 - dokončeno
 ✅ UC-006 - Issue Card - dokončeno
 ✅ PR-008 - Project Review #8 - dokončeno
+✅ UC007 - Block Card - dokončeno
+✅ PR-009 - Project Review po UC007 - dokončeno
 
 ### UC002 – Open Account
 Implementováno:
@@ -417,6 +419,44 @@ Testování:
 - Nebyla identifikována žádná nová technická položka.
 - Nebyla identifikována žádná High Priority položka.
 - Stávající Medium a Low Priority položky zůstávají v Technical Backlogu.
+- Projekt je připraven na další Use Case.
+
+### UC007 - Block Card
+
+- Implementován endpoint PATCH /cards/{cardId}/block.
+- Přidána metoda blockCard do CardController.
+- Přidána metoda blockCard do CardService.
+- Implementována kontrola existence karty.
+- Implementováno blokování karty pouze ze stavu ACTIVE.
+- Stav ACTIVE je změněn na BLOCKED.
+- Implementována kontrola již blokované karty.
+- Implementována kontrola expirované karty.
+- Přidány výjimky:
+  - CardNotFoundException
+  - CardAlreadyBlockedException
+  - ExpiredCardException
+- Rozšířen GlobalExceptionHandler o zpracování nových výjimek.
+- HTTP 200 při úspěšném zablokování karty.
+- HTTP 404 při neexistující kartě.
+- HTTP 400 při pokusu zablokovat již blokovanou kartu.
+- HTTP 400 při pokusu zablokovat expirovanou kartu.
+- Ověřeno, že při blokaci se mění pouze card_status.
+- Ověřeno, že account_id, card_number, expiry_date a created_at zůstávají nezměněny.
+- Přidány automatizované controller testy pro pozitivní a negativní scénáře UC007.
+- Pozitivní scénář ověřen pomocí Postmanu.
+- Negativní scénáře ověřeny pomocí Postmanu.
+- Změna card_status a zachování ostatních atributů ověřeny pomocí DBeaveru.
+
+### PR-009 - Project Review po UC007
+
+- Revize architektury projektu.
+- Kontrola dokumentace.
+- Kontrola technického dluhu.
+- Aktualizace Technical Backlog.
+- Nebyla identifikována žádná nová technická položka.
+- Nebyla identifikována žádná High Priority položka.
+- Stávající Medium a Low Priority položky zůstávají v Technical Backlogu.
+- Nebyl vytvořen nový technický dluh; ruční DTO mapping v CardService je pokryt stávající položkou TECH-003.
 - Projekt je připraven na další Use Case.
 
 ---
@@ -636,8 +676,12 @@ Při práci na tomto projektu:
 
 **PR-008 - Project Review po UC006:** ✅ Dokončeno
 
+**UC007 - Block Card:** ✅ Dokončeno
+
+**PR-009 - Project Review po UC007:** ✅ Dokončeno
+
 ### Aktuálně probíhá:
-- UC007 - Block Card
+- Další Use Case dle ROADMAP.md
 
 ### Následující krok / Další milestone:
-- UC007 - Block Card
+- Zahájení dalšího Use Case podle ROADMAP.md a BUSINESS_REQUIREMENTS.md

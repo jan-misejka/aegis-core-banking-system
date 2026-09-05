@@ -210,7 +210,32 @@ K účtu je vydána platební karta.
 
 ### UC007 – Blokace platební karty
 Platební karta je zablokována.
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Implementováno:**
+
+- PATCH /cards/{cardId}/block
+- karta musí existovat
+- kartu ve stavu BLOCKED nelze znovu zablokovat
+- kartu ve stavu EXPIRED nelze zablokovat
+- karta ve stavu ACTIVE je změněna do stavu BLOCKED
+- při blokaci se mění pouze card_status
+
+**HTTP chování:**
+
+- 200 OK – karta byla úspěšně zablokována
+- 400 Bad Request – karta je již zablokována nebo je expirovaná
+- 404 Not Found – karta neexistuje
+
+**Ověření:**
+
+- Maven/JUnit testy prošly.
+- Pozitivní scénář byl ověřen pomocí Postmanu.
+- Negativní scénáře byly ověřeny pomocí Postmanu.
+- Změna card_status byla ověřena pomocí DBeaveru.
+- Ověřeno, že account_id, card_number, expiry_date a created_at zůstávají při blokaci nezměněny.
+
+---
 
 ## Business pravidla
 

@@ -230,3 +230,19 @@
 - Proveden PR-008 - Project Review po UC006.
 - PR-008 neidentifikoval žádnou novou technickou položku ani High Priority položku.
 - Stávající Technical Backlog zůstává beze změny.
+
+## 2026-09-05 - JM
+- Implementace UC007 - Block Card:
+- Přidán endpoint PATCH /cards/{cardId}/block.
+- Přidána kontrola existence karty.
+- Přidána kontrola, že karta není již BLOCKED.
+- Přidána kontrola, že karta není EXPIRED.
+- Implementována změna card_status z ACTIVE na BLOCKED.
+- Přidány CardNotFoundException, CardAlreadyBlockedException a ExpiredCardException.
+- Rozšířen GlobalExceptionHandler o zpracování nových výjimek.
+- Přidány automatizované controller testy pro pozitivní a negativní scénáře UC007.
+- Pozitivní a negativní scénáře ověřeny pomocí Postmanu.
+- Změna card_status a zachování ostatních atributů karty ověřeny pomocí DBeaveru.
+- Proveden PR-009 - Project Review po UC007.
+- PR-009 neidentifikoval žádnou novou technickou položku ani High Priority položku.
+- Stávající Technical Backlog zůstává beze změny.

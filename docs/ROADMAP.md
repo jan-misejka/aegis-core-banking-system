@@ -152,10 +152,31 @@
 #### High Priority (Technical Backlog)
 * Žádné
 
+#### UC007 - Block Card
+* PATCH /cards/{cardId}/block ✅
+* Kontrola existence karty ✅
+* Kontrola, že karta není již BLOCKED ✅
+* Kontrola, že karta není EXPIRED ✅
+* Změna card_status z ACTIVE na BLOCKED ✅
+* Ověření, že ostatní atributy karty zůstávají nezměněny ✅
+* Ověření dat v databázi ✅
+* Automatizované controller testy ✅
+* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
+
+#### PR-009 - Project Review po UC007
+* Revize architektury projektu ✅
+* Kontrola dokumentace ✅
+* Kontrola technického dluhu ✅
+* Aktualizace Technical Backlog ✅
+* Rozhodnutí o High Priority položkách ✅
+
+#### High Priority (Technical Backlog)
+* Žádné
+
 ---
 
 #### Další business funkcionalita
-* UC007 – Block Card ⏳
+* 
 
 ### Bankovní funkcionalita
 * API pro účty ⏳
@@ -245,8 +266,10 @@ Po dokončení významného milníku je nutné aktualizovat:
 ✅ PR-007 - Project Review po UC005
 ✅ UC006 - Issue Card - implementováno a otestováno
 ✅ PR-008 - Project Review po UC006
+✅ UC007 - Block Card - implementováno a otestováno
+✅ PR-009 - Project Review po UC007
 
 **Probíhá**
 
 **Následuje**
-⏳ UC007 - Block Card
+⏳ Další Use Case dle ROADMAP.md a BUSINESS_REQUIREMENTS.md
