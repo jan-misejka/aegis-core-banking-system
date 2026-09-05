@@ -1,6 +1,6 @@
 # Dokumentace
-
 Tento adresář obsahuje projektovou dokumentaci k projektu Aegis Core Banking System.
+
 ## Dokumenty
 ### PROJECT_CONTEXT.md
 Aktuální stav projektu, cíle projektu a kontext pro AI.
@@ -51,7 +51,6 @@ Po dokončení významného milníku projektu je navíc vhodné zkontrolovat:
 Dokumentace musí vždy odpovídat aktuálnímu stavu projektu.
 
 ## Vývojový workflow
-
 Projekt využívá standardizovaný vývojový workflow popsaný v dokumentu:
 
 `DEVELOPMENT_WORKFLOW.md`
@@ -65,3 +64,29 @@ Tento dokument definuje:
 - Definition of Done.
 
 Všechny nové funkcionality projektu musí být implementovány v souladu s tímto workflow.
+
+## Studijní workflow
+Aegis je Level 01 – Foundation dlouhodobého projektového studia.
+
+Projekt je veden jako guided learning projekt, ve kterém AI poskytuje významnou část vysvětlení a návrhu, zatímco uživatel postupně přebírá větší odpovědnost za implementaci, testování a rozhodování.
+
+Vývoj jednotlivých funkcionalit probíhá podle workflow:
+
+1. Requirement / Task
+2. Analysis
+3. Proposal
+4. Approval
+5. Implementation
+6. Testing / Verification
+7. Review
+8. Documentation
+9. Git / Version Control
+10. Retrospective
+
+Podrobnosti jsou popsány v:
+
+`DEVELOPMENT_WORKFLOW.md`
+
+Dlouhodobý studijní model je definován v:
+
+`AI_projects_workflow.md`

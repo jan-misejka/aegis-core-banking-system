@@ -1,9 +1,24 @@
 # Technický backlog
 
 ## Účel
+
 Tento dokument obsahuje technická zlepšení, která byla během vývoje identifikována, ale záměrně odložena na pozdější fázi projektu.
 
 Cílem je oddělit vývoj nové funkcionality od refaktoringu a architektonických úprav, aby jednotlivé feature branche řešily vždy pouze jeden konkrétní úkol.
+
+Technical Backlog vzniká především během Project Review.
+
+Project Review může identifikovat také:
+
+* technické problémy,
+* architektonická zlepšení,
+* problémy testovatelnosti,
+* bezpečnostní problémy,
+* dokumentační nedostatky,
+* opakující se technické problémy.
+
+Pouze položky, které mají charakter dlouhodobého technického úkolu, se zapisují do Technical Backlogu.
+Ostatní zjištění se řeší v rámci aktuálního Use Casu, Project Review, dokumentace nebo retrospektivy.
 
 ---
 

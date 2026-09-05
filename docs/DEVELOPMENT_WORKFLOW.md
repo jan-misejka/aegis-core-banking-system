@@ -28,6 +28,94 @@ Každý business Use Case (UC) prochází následujícím životním cyklem:
 
 ---
 
+# Studijní workflow
+
+Aegis je zároveň studijní projekt. Vývoj funkcionality proto neslouží pouze k vytvoření kódu, ale také k získání praktického porozumění použitým konceptům.
+
+Každá významná funkcionalita by měla podle možností projít následujícím postupem:
+
+1. Requirement / Task
+2. Analysis
+3. Proposal
+4. Approval
+5. Implementation
+6. Testing / Verification
+7. Review
+8. Documentation
+9. Git / Version Control
+10. Retrospective
+
+### Requirement / Task
+
+Nejprve musí být jasně definováno:
+
+- co má být vytvořeno,
+- proč to systém potřebuje,
+- jaký business problém řeší,
+- jaké jsou acceptance criteria.
+
+### Analysis
+
+Před implementací se určí:
+
+- které komponenty budou ovlivněny,
+- které koncepty jsou již známé,
+- které koncepty jsou nové,
+- jaké existují předpoklady,
+- jaká jsou rizika.
+
+### Proposal
+
+Před implementací musí existovat návrh řešení.
+
+V Aegisu poskytuje AI většinu návrhu, ale zároveň musí vysvětlit:
+
+- proč je řešení navrženo,
+- jak funguje,
+- jak souvisí s business požadavkem,
+- jak ovlivní testování.
+
+### Approval
+
+Implementace nezačíná před schválením návrhu.
+
+### Testing / Verification
+
+Ověření má podle relevance zahrnovat:
+
+- funkční chování,
+- negativní scénáře,
+- boundary conditions,
+- API chování,
+- databázový stav,
+- integrační chování,
+- error handling,
+- bezpečnostní dopady.
+
+### Review
+
+Po implementaci musí být provedeno review zaměřené na:
+
+- defekty,
+- chybějící požadavky,
+- technický dluh,
+- architekturu,
+- testovatelnost,
+- bezpečnostní problémy,
+- dokumentační mezery,
+- koncepty vyžadující další procvičení.
+
+### Retrospective
+
+Po významném milníku se stručně zaznamená:
+
+- co bylo naučeno,
+- co bylo obtížné,
+- co je potřeba zopakovat,
+- co je potřeba přenést do dalšího projektu.
+
+---
+
 # Git Workflow
 
 Každá nová funkcionalita je implementována ve vlastní Git Feature Branch.
@@ -62,6 +150,22 @@ Po dokončení vývoje:
 3. Commit.
 4. Merge do `main`.
 5. Odstranění Feature Branch.
+
+### Git jako součást studijního procesu
+
+Git workflow neslouží pouze ke správě zdrojového kódu.
+
+Git historie má zároveň dokumentovat vývoj projektu a jednotlivé logicky uzavřené změny.
+
+Každý významný krok by měl být:
+
+- implementován v odpovídající branch,
+- otestován,
+- smysluplně commitnut,
+- sloučen do `main`,
+- následně zachycen v projektové dokumentaci.
+
+Commit messages mají popisovat skutečný účel změny.
 
 ---
 
@@ -120,6 +224,10 @@ Use Case je považován za dokončený pouze tehdy, pokud:
 - Feature Branch byla sloučena do větve `main`,
 - proběhl Project Review,
 - všechny relevantní Hight Priority položky byly implementovány a následně ověřeny.
+- byly vysvětleny a pochopeny nové koncepty použité v rámci Use Casu,
+- existuje evidence provedeného ověření,
+- byly identifikovány případné koncepty vyžadující opakování,
+- byla provedena stručná retrospektiva významného milníku.
 
 Teprve poté začíná implementace dalšího Use Casu.
 

@@ -16,6 +16,32 @@
 * vytvoření repository vrstev ✅
 
 ## Fáze 3 – REST API
+
+### Studijní cíl Level 01 – Foundation
+
+Aegis má během této fáze prokázat porozumění:
+
+* Java
+* Spring Boot
+* Maven
+* REST API
+* HTTP
+* JSON
+* SQL
+* MySQL
+* DBeaver
+* Postman
+* Git/GitHub
+* Jira
+* requirements
+* Use Cases
+* základní software architecture
+* testing
+* documentation
+* SDLC
+
+Cílem není pouze implementovat jednotlivé endpointy, ale pochopit celý proces od business požadavku přes návrh a implementaci až po testování, review, dokumentaci a Git workflow.
+
 ### Client API
 #### UC001 – Client Management
 * Create Client (POST /clients) ✅
@@ -173,8 +199,6 @@
 #### High Priority (Technical Backlog)
 * Žádné
 
----
-
 #### Další business funkcionalita
 * 
 
@@ -182,6 +206,56 @@
 * API pro účty ⏳
 * API pro transakce ⏳
 * API pro platební karty ⏳
+
+---
+
+## Level 01 – Aegis Exit Gate
+
+Aegis / Level 01 je považován za dokončený, pokud projekt prokáže:
+
+* funkční základní bankovní aplikace,
+* funkční REST API,
+* základní business Use Cases,
+* databázovou vrstvu,
+* SQL znalosti a databázové ověřování,
+* pozitivní a negativní testování,
+* práci s Postmanem,
+* práci s Git/GitHub,
+* dokumentovaný vývojový workflow,
+* průběžně aktualizovanou projektovou dokumentaci,
+* evidenci technického dluhu,
+* Project Reviews,
+* schopnost vysvětlit použité technologie a návrhová rozhodnutí.
+
+### Portfolio rozsah
+
+Pro portfolio má projekt navíc prokazovat:
+
+* realistické business požadavky,
+* Use Cases,
+* testovací scénáře,
+* bug reporting,
+* evidence testování,
+* konzistentní projektovou dokumentaci,
+* Git historii odpovídající vývoji projektu,
+* schopnost nového člověka pochopit projekt z dokumentace.
+
+### Bonus / Bridge
+
+Volitelně může být provedena pouze malá příprava na následující projekt.
+
+Bonus nesmí změnit Aegis na nový integrační nebo automatizační projekt.
+
+Příklady:
+
+* návrh HTTP/API kontraktu,
+* jednoduchá test matrix,
+* návrh struktury dokumentace pro další projekt,
+* krátký zápis o převzetí projektu novým členem týmu.
+
+Bonus nesmí nahradit hlavní učivo následujícího projektu.
+
+---
 
 ## Fáze 4 – Testování API
 * vytvoření Postman kolekcí ⏳
@@ -198,6 +272,21 @@
 * dávkové zpracování (Batch Processing) ⏳
 * základní koncepty mainframe prostředí ⏳
 * základní koncepty COBOLu ⏳
+
+### Poznámka
+
+Fáze 4 a Fáze 5 nejsou pouze technické úkoly.
+
+Jejich cílem je vytvořit portfolio důkazů o schopnosti:
+
+* odvodit testy z business požadavků,
+* testovat API,
+* pracovat s pozitivními i negativními scénáři,
+* reprodukovat chybu,
+* vytvořit bug report,
+* provést regresní ověření,
+* zdokumentovat výsledek testování,
+* formulovat evidence-based závěr.
 
 ---
 

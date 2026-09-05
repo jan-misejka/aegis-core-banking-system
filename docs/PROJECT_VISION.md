@@ -23,7 +23,16 @@ Projekt si klade za cíl simulovat nejen výslednou aplikaci, ale také realisti
 
 ## Hlavní cíl
 
-Připravit se na pozici Junior IT tester v bankovním prostředí.
+Vybudovat praktický základ pro vstup do bankovního IT a postupný rozvoj směrem k:
+
+* banking systems
+* legacy / mainframe / COBOL
+* hybrid enterprise infrastructure
+* cloud engineering
+* cloud security
+* cloud security architecture
+
+Testování a QA představují důležitou vstupní a podpůrnou profesní schopnost, nikoliv konečný kariérní cíl.
 
 ## Vedlejší cíle
 - zlepšit znalosti SQL
@@ -32,6 +41,20 @@ Připravit se na pozici Junior IT tester v bankovním prostředí.
 - vytvořit realistický portfolio projekt
 - osvojit si standardní workflow vývoje softwaru používané v profesionálních vývojových týmech
 - naučit se udržovat konzistentní projektovou dokumentaci během celého životního cyklu projektu
+
+## Studijní princip
+Projekt je součástí dlouhodobého projektového studia.
+
+Nové technologie a koncepty se nemají učit izolovaně pouze jednou.
+
+Každý další projekt má navazovat na předchozí projekty, znovu používat již známé technologie a postupně snižovat míru vedení AI.
+
+Cílem je postupný přechod:
+
+AI učí a demonstruje
+→ uživatel aplikuje s vedením
+→ uživatel navrhuje a AI reviewuje
+→ uživatel pracuje samostatně a AI funguje především jako reviewer.
 
 ## Budoucí směřování
 

@@ -246,3 +246,5 @@
 - Proveden PR-009 - Project Review po UC007.
 - PR-009 neidentifikoval žádnou novou technickou položku ani High Priority položku.
 - Stávající Technical Backlog zůstává beze změny.
+
+- Aktualizace dokumentace: doplnění syllabu projektu.

@@ -4,6 +4,24 @@
 
 Systém představuje zjednodušenou platformu pro správu osobního bankovnictví.
 
+## Pravidla pro Use Cases
+
+Každý Use Case musí být definován tak, aby bylo možné jednoznačně určit:
+
+* business účel,
+* požadované chování,
+* validační pravidla,
+* očekávané HTTP chování,
+* očekávaný stav databáze,
+* pozitivní scénáře,
+* negativní scénáře,
+* relevantní boundary conditions,
+* způsob ověření.
+
+Acceptance criteria musí být dostatečně konkrétní, aby podle nich bylo možné vytvořit testovací scénáře a jednoznačně rozhodnout, zda je Use Case splněn.
+
+Důkaz o splnění požadavku musí vycházet z provedeného testování nebo jiného ověření, nikoliv pouze z předpokladu, že implementace funguje.
+
 ## Případy užití
 
 ### UC001 – Vytvoření klienta

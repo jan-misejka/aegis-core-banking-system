@@ -4,9 +4,26 @@
 
 Aegis Core Banking System je dlouhodobý studijní projekt navržený pro simulaci realistického bankovního prostředí.
 
-Hlavním cílem projektu je příprava na pozici Junior IT Tester v bankovním a enterprise prostředí.
+Hlavním cílem projektu je vybudovat praktický základ pro práci v bankovním IT, který propojuje:
 
-Projekt by se měl postupně vyvíjet od návrhu databáze a testování k pokročilejším bankovním konceptům.
+* business požadavky
+* návrh databází
+* SQL
+* backendový vývoj
+* REST API
+* testování
+* Git/GitHub
+* dokumentaci
+* základní software architecture
+* SDLC
+
+Projekt zároveň slouží jako první úroveň dlouhodobého projektového studia definovaného v dokumentu `AI_projects_workflow.md`.
+
+Aegis představuje Level 01 – Foundation.
+
+Projekt je primárně veden jako guided learning projekt. AI poskytuje významnou část vysvětlení, návrhů a review, ale cílem není nahrazovat porozumění uživatele.
+
+Projekt se má postupně vyvíjet od databáze a backendu přes REST API a testování k pokročilejším bankovním konceptům.
 
 ---
 
@@ -23,6 +40,36 @@ Vytvořit realistický bankovní systém, který lze využít pro:
 * procvičování business analýzy
 
 Projekt by měl svým charakterem připomínat systémy běžně používané v bankách.
+
+---
+
+## Studijní režim
+
+Aegis je první projekt dlouhodobého projektového workflow.
+
+### Úroveň samostatnosti
+
+Aegis používá guided learning model:
+
+* AI poskytuje většinu návrhu a vysvětlení.
+* Uživatel implementuje jednotlivé kroky s vedením AI.
+* Každý nový koncept musí být nejprve vysvětlen a předveden.
+* Uživatel nemá být nucen samostatně implementovat koncept, který dosud nebyl vysvětlen nebo procvičen.
+* Úroveň samostatnosti se má postupně zvyšovat.
+
+Cílem není maximalizovat rychlost implementace, ale postupně převádět odpovědnost za návrh a rozhodování na uživatele.
+
+### Princip opakování
+
+Důležité technologie a koncepty se nemají naučit pouze jednou.
+
+Koncepty z Aegisu budou v dalších projektech znovu použity s postupně menší mírou vedení AI.
+
+Typicky:
+
+* první použití – AI vysvětluje a demonstruje,
+* další použití – uživatel část řešení navrhuje,
+* pozdější použití – uživatel navrhuje řešení a AI provádí review.
 
 ---
 
@@ -73,7 +120,7 @@ README.md
 
 ---
 
-## Aktuální fáze: Fáze 3 - REST API
+## Aktuální fáze: Level 01 - Foundation / Fáze 3 - REST API
 
 ### Fáze 1 – Databáze
 
@@ -569,11 +616,33 @@ Při práci na tomto projektu:
 
 1. Považuj tento dokument za hlavní zdroj informací o projektu.
 2. Před návrhy si vždy přečti dostupnou projektovou dokumentaci.
-3. Zaměř se na bankovní testování a výuku databází.
-4. Preferuj realistické bankovní scénáře.
-5. Vyhýbej se zbytečné složitosti.
-6. Navrhuj další logický milník projektu.
-7. Udržuj doporučení v souladu s aktuální fází projektu.
+3. Ověř aktuální stav projektu podle PROJECT_CONTEXT.md.
+4. Ověř další plánovaný krok podle ROADMAP.md.
+5. Ověř business požadavky podle BUSINESS_REQUIREMENTS.md.
+6. Ověř technický dluh podle TECHNICAL_BACKLOG.md.
+7. Udržuj všechny dokumenty navzájem konzistentní.
+8. Zaměř se na realistické bankovní scénáře.
+9. Vyhýbej se zbytečné složitosti.
+10. Navrhuj další logický milník projektu.
+11. Neimplementuj nový koncept bez předchozího vysvětlení jeho principu a důvodu použití.
+12. Před implementací vysvětli business kontext, technický důvod návrhu a dopad na testování.
+13. Preferuj porozumění principu před rychlostí implementace.
+14. Při review aktivně hledej:
+  - chyby,
+  - chybějící požadavky,
+  - technický dluh,
+  - nekonzistenci dokumentace,
+  - bezpečnostní problémy,
+  - problémy testovatelnosti,
+  - koncepty, které je potřeba znovu procvičit.
+15. Návrh řešení musí předcházet implementaci.
+16. Implementace nezačíná před schválením navrženého řešení.
+17. Po významném milníku musí být aktualizována relevantní dokumentace.
+18. Každý dokončený milník má obsahovat stručné vyhodnocení:
+  - co bylo naučeno,
+  - co bylo obtížné,
+  - co je potřeba zopakovat,
+  - co se má přenést do dalšího projektu.
 
 ---
 

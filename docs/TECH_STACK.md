@@ -65,3 +65,20 @@ Vzdálený repozitář projektu a "centrální zdroj pravdy".
 
 ### WSL
 Linuxové prostředí používané ve Windows pro práci s terminálem a vývojářskými nástroji.
+
+## Role technologií v Level 01
+
+Použité technologie nejsou cílem samy o sobě.
+
+V Aegisu slouží jako prostředek k pochopení:
+
+* vývoje bankovní aplikace,
+* práce s databází,
+* REST API,
+* testování,
+* Git workflow,
+* základní architektury,
+* SDLC,
+* projektové dokumentace.
+
+Technologie pro další úrovně, například Docker, microservices, cloud, COBOL nebo mainframe, nejsou součástí současného Aegis scope, pokud nejsou výslovně přidány jako řízený Bonus / Bridge.
