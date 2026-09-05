@@ -6,10 +6,7 @@ import cz.aegis.corebanking.service.CardService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cards")
@@ -28,5 +25,14 @@ public class CardController {
         CardResponse response = cardService.createCard(request);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    //endpoint PATCH - blokování karty
+    @PatchMapping("/{cardId}/block")
+    public ResponseEntity<CardResponse> blockCard(@PathVariable Long cardId) {
+
+        CardResponse response = cardService.blockCard(cardId);
+
+        return ResponseEntity.ok(response);
     }
 }

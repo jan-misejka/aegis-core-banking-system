@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,7 +32,8 @@ public class CardControllerTest extends TestDatabaseReset {
     @Autowired
     private CardRepository cardRepository;
 
-    //Pozitivní testy - úspěšné vydání karty
+    //Pozitivní testy:
+    //Úspěšné vydání karty
     @Test
     void shouldIssueCardSuccessfully() throws Exception {
 
@@ -71,6 +73,30 @@ public class CardControllerTest extends TestDatabaseReset {
                 savedCard.getCreatedAt().toLocalDate().plusYears(10),
                 savedCard.getExpiryDate()
         );
+    }
+
+    //Úspěšné zablokování karty
+    @Test
+    void shouldBlockActiveCardSuccessfully() throws Exception {
+
+        Card cardBefore = cardRepository.findById(1L).orElseThrow();
+
+        Long accountIdBefore = cardBefore.getAccount().getAccountId();
+        String cardNumberBefore = cardBefore.getCardNumber();
+        LocalDate expiryDateBefore = cardBefore.getExpiryDate();
+        LocalDateTime createdAtBefore = cardBefore.getCreatedAt();
+
+        assertEquals("ACTIVE", cardBefore.getCardStatus());
+
+        mockMvc.perform(patch("/cards/1/block")).andExpect(status().isOk());
+
+        Card cardAfter = cardRepository.findById(1L).orElseThrow();
+
+        assertEquals("BLOCKED", cardAfter.getCardStatus());
+        assertEquals(accountIdBefore, cardAfter.getAccount().getAccountId());
+        assertEquals(cardNumberBefore, cardAfter.getCardNumber());
+        assertEquals(expiryDateBefore, cardAfter.getExpiryDate());
+        assertEquals(createdAtBefore, cardAfter.getCreatedAt());
     }
 
     //Negativní testy
@@ -125,5 +151,47 @@ public class CardControllerTest extends TestDatabaseReset {
                 12,
                 cardRepository.count()
         );
+    }
+
+    @Test
+    void shouldReturn404WhenBlockingNonExistingCard() throws Exception {
+
+        mockMvc.perform(patch("/cards/999999/block"))
+                .andExpect(status().isNotFound());
+
+        assertEquals(
+                12,
+                cardRepository.count()
+        );
+    }
+
+    @Test
+    void shouldReturn400WhenBlockingAlreadyBlockedCard() throws Exception {
+
+        Card cardBefore = cardRepository.findById(5L).orElseThrow();
+
+        assertEquals("BLOCKED", cardBefore.getCardStatus());
+
+        mockMvc.perform(patch("/cards/5/block"))
+                .andExpect(status().isBadRequest());
+
+        Card cardAfter = cardRepository.findById(5L).orElseThrow();
+
+        assertEquals("BLOCKED", cardAfter.getCardStatus());
+    }
+
+    @Test
+    void shouldReturn400WhenBlockingExpiredCard() throws Exception {
+
+        Card cardBefore = cardRepository.findById(7L).orElseThrow();
+
+        assertEquals("EXPIRED", cardBefore.getCardStatus());
+
+        mockMvc.perform(patch("/cards/7/block"))
+                .andExpect(status().isBadRequest());
+
+        Card cardAfter = cardRepository.findById(7L).orElseThrow();
+
+        assertEquals("EXPIRED", cardAfter.getCardStatus());
     }
 }

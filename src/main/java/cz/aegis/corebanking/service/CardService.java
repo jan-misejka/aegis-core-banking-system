@@ -5,6 +5,9 @@ import cz.aegis.corebanking.dto.CreateCardRequest;
 import cz.aegis.corebanking.entity.Account;
 import cz.aegis.corebanking.entity.Card;
 import cz.aegis.corebanking.exception.AccountNotFoundException;
+import cz.aegis.corebanking.exception.CardAlreadyBlockedException;
+import cz.aegis.corebanking.exception.CardNotFoundException;
+import cz.aegis.corebanking.exception.ExpiredCardException;
 import cz.aegis.corebanking.repository.AccountRepository;
 import cz.aegis.corebanking.repository.CardRepository;
 import org.springframework.stereotype.Service;
@@ -42,6 +45,34 @@ public class CardService {
         card.setCardNumber(cardNumber);
         card.setCardStatus("ACTIVE");
         card.setExpiryDate(LocalDate.now().plusYears(10));
+
+        Card savedCard = cardRepository.save(card);
+
+        CardResponse response = new CardResponse();
+
+        response.setCardId(savedCard.getCardId());
+        response.setAccountId(savedCard.getAccount().getAccountId());
+        response.setCardNumber(savedCard.getCardNumber());
+        response.setCardStatus(savedCard.getCardStatus());
+        response.setExpiryDate(savedCard.getExpiryDate());
+        response.setCreatedAt(savedCard.getCreatedAt());
+
+        return response;
+    }
+
+    //Metoda pro zablokování karty
+    @Transactional
+    public CardResponse blockCard(Long cardId) {
+
+        Card card = cardRepository.findById(cardId).orElseThrow(() -> new CardNotFoundException(cardId));
+        if ("BLOCKED".equals(card.getCardStatus())) {
+            throw new CardAlreadyBlockedException(cardId);
+        }
+        if ("EXPIRED".equals(card.getCardStatus())) {
+            throw new ExpiredCardException(cardId);
+        }
+
+        card.setCardStatus("BLOCKED");
 
         Card savedCard = cardRepository.save(card);
 

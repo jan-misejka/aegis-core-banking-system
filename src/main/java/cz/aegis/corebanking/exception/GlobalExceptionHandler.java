@@ -38,4 +38,19 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Void> handleInvalidAccountData(InvalidAccountDataException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+
+    @ExceptionHandler(CardNotFoundException.class)
+    public ResponseEntity<Void> handleCardNotFound(CardNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @ExceptionHandler(CardAlreadyBlockedException.class)
+    public ResponseEntity<Void> handleCardAlreadyBlocked(CardAlreadyBlockedException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @ExceptionHandler(ExpiredCardException.class)
+    public ResponseEntity<Void> handleExpiredCard(ExpiredCardException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
 }
