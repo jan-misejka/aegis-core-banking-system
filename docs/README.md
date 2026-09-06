@@ -1,92 +1,128 @@
 # Dokumentace
-Tento adresář obsahuje projektovou dokumentaci k projektu Aegis Core Banking System.
+Tento adresář obsahuje projektovou dokumentaci k projektu Aegis Core Banking System. Dokumentace je rozdělena podle účelu jednotlivých dokumentů.
 
-## Dokumenty
-### PROJECT_CONTEXT.md
-Aktuální stav projektu, cíle projektu a kontext pro AI.
+---
 
-### PROJECT_VISION.md
-Dlouhodobá vize projektu a jeho směřování.
+## Projekt
+### `project/PROJECT_VISION.md`
 
-### BUSINESS_REQUIREMENTS.md
-Business požadavky a případy užití (Use Cases).
+Dlouhodobá vize projektu, hlavní cíle a budoucí směřování.
 
-### ROADMAP.md
-Milníky projektu a jednotlivé fáze implementace.
+### `project/PROJECT_CONTEXT.md`
+Stabilní kontext projektu, jeho účel, doména, technický kontext a vztah k profesnímu cíli.
 
-### TECH_STACK.md
+### `project/CURRENT_STATE.md`
+Aktuální stav projektu, dokončené milníky, další Use Case, stav technického dluhu a stav dokumentace.
+
+### `project/ROADMAP.md`
+Plán vývoje projektu, jednotlivé části, fáze, Use Cases, technické úkoly a budoucí rozšíření.
+
+---
+
+## Business
+### `business/BUSINESS_REQUIREMENTS.md`
+Business požadavky projektu a definice jednotlivých Use Cases.
+
+---
+
+## Development
+### `development/DEVELOPMENT_WORKFLOW.md`
+Standardizovaný workflow projektu včetně životního cyklu Use Case, Git workflow, Project Review, Technical Backlog, Definition of Done a pravidel práce s AI.
+
+---
+
+## Technical
+### `technical/TECH_STACK.md`
 Používané technologie, nástroje a vývojové prostředí.
 
-### DATABASE_MODEL.md
-Popisuje první verzi logického databázového modelu projektu Aegis Core Banking System.
+### `technical/DATABASE_MODEL.md`
+Logický a fyzický kontext databázového modelu projektu včetně entit, vztahů, atributů a databázových omezení.
 
-### DEVELOPMENT_WORKFLOW.md
-Popisuje standardizovaný vývojový workflow projektu, Git workflow, Project Review, práci s Technical Backlog a Definition of Done.
+### `technical/TECHNICAL_BACKLOG.md`
+Evidence technického dluhu, architektonických zlepšení a plánovaných technických úkolů.
 
-### TECHNICAL_BACKLOG.md
-Obsahuje seznam technického dluhu, architektonických zlepšení a plánovaných refaktoringů projektu.
+---
 
-## Účel
-Dokumentace slouží jako hlavní zdroj informací o projektu.
+## QA
+### `qa/TEST_PLAN.md`
+Testovací plán, cíle, rozsah, strategie, testovací úrovně, prostředí, entry/exit criteria a rizika.
 
-Veškerá důležitá rozhodnutí, změny architektury a změny rozsahu projektu by měly být zaznamenány v těchto dokumentech.
+### `qa/TEST_CASES.md`
+Konkrétní testovací scénáře pro jednotlivé Use Cases.
 
-## Pravidla aktualizace dokumentace
-Dokumentace je nedílnou součástí vývoje projektu.
+### `qa/TEST_DATA.md`
+Přehled účelu a použití testovacích dat pro jednotlivé testovací scénáře.
 
-Po dokončení každého business Use Casu je nutné zkontrolovat a případně aktualizovat:
+### `qa/TEST_RUNS.md`
+Evidence skutečně provedených Test Runs a jejich výsledků.
 
-- PROJECT_CONTEXT.md
-- BUSINESS_REQUIREMENTS.md
-- ROADMAP.md
-- TECHNICAL_BACKLOG.md
-- CHANGELOG.md
+### `qa/TRACEABILITY.md`
+Vazby mezi business požadavky, Use Cases, Test Cases, Test Data, Test Runs a bug reporty.
 
-Po dokončení významného milníku projektu je navíc vhodné zkontrolovat:
+### `qa/RELEASE_ASSESSMENT.md`
+Závěrečné QA vyhodnocení testované verze a release-like rozhodnutí.
 
-- PROJECT_VISION.md
-- TECH_STACK.md
-- README.md
+---
 
-Dokumentace musí vždy odpovídat aktuálnímu stavu projektu.
+## Další projektové artefakty
+### `CHANGELOG.md`
+Historie významných změn projektu.
 
-## Vývojový workflow
-Projekt využívá standardizovaný vývojový workflow popsaný v dokumentu:
+---
 
-`DEVELOPMENT_WORKFLOW.md`
+## Praktická metodika testování
+### `../testing/TESTING.md`
 
-Tento dokument definuje:
+Praktická metodika manuálního testování používaná v projektu.
 
-- životní cyklus každého Use Casu,
-- Git workflow,
-- Project Review,
-- práci s Technical Backlog,
-- Definition of Done.
+Obsahuje principy:
+- přípravy testování
+- API testování
+- databázového ověřování
+- pozitivních, negativních a hraničních scénářů
+- regresního testování
+- evidence důkazů
+- reprodukce chyb
+- QA Review
 
-Všechny nové funkcionality projektu musí být implementovány v souladu s tímto workflow.
+---
 
-## Studijní workflow
-Aegis je Level 01 – Foundation dlouhodobého projektového studia.
+## Související adresáře
+### `../database/`
+Databázové artefakty projektu:
+- `schema.sql`
+- `test_data.sql`
+- `test_data_part2.sql`
+- `test_reset.sql`
+- `SQL_EXERCISES.md`
+- `SQL_VALIDATION.md`
 
-Projekt je veden jako guided learning projekt, ve kterém AI poskytuje významnou část vysvětlení a návrhu, zatímco uživatel postupně přebírá větší odpovědnost za implementaci, testování a rozhodování.
+### `../jira/`
+Evidence bug reportů:
+- `BUG_REPORTS.md`
 
-Vývoj jednotlivých funkcionalit probíhá podle workflow:
+### `../postman/`
+Postman artefakty používané pro testování REST API.
 
-1. Requirement / Task
-2. Analysis
-3. Proposal
-4. Approval
-5. Implementation
-6. Testing / Verification
-7. Review
-8. Documentation
-9. Git / Version Control
-10. Retrospective
+---
 
-Podrobnosti jsou popsány v:
+## Zdroj pravdy
+Dokumentace projektu je rozdělena podle účelu jednotlivých artefaktů.
 
-`DEVELOPMENT_WORKFLOW.md`
+Aktuální stav projektu je veden v:
+`project/CURRENT_STATE.md`
 
-Dlouhodobý studijní model je definován v:
+Plán projektu je veden v:
+`project/ROADMAP.md`
 
-`AI_projects_workflow.md`
+Business požadavky jsou vedeny v:
+`business/BUSINESS_REQUIREMENTS.md`
+
+Technický dluh je veden v:
+`technical/TECHNICAL_BACKLOG.md`
+
+Testovací dokumentace je vedena v:
+`qa/`
+
+Pravidla vývojového workflow jsou vedena v:
+`development/DEVELOPMENT_WORKFLOW.md`

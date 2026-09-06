@@ -247,4 +247,11 @@
 - PR-009 neidentifikoval žádnou novou technickou položku ani High Priority položku.
 - Stávající Technical Backlog zůstává beze změny.
 
-- Aktualizace dokumentace: doplnění syllabu projektu.
+## 2026-09-06 - JM
+- Dokončen významný refaktoring projektové dokumentace.
+- Dokumentace rozdělena do oblastí `project`, `business`, `development`, `technical` a `qa`.
+- Oddělena praktická metodika testování do `testing/TESTING.md`.
+- Přidány QA artefakty pro Test Plan, Test Cases, Test Data, Test Runs, Traceability a Release Assessment.
+- Přidána evidence Bug Reports do `jira/BUG_REPORTS.md`.
+- SQL výukové a validační artefakty sjednoceny v adresáři `database/`.
+- Aktualizovány vazby mezi projektovou, business, technickou a QA dokumentací.
