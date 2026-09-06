@@ -19,7 +19,7 @@ Dokument představuje QA hodnocení konkrétního stavu projektu, nikoliv obecn�
 ## 2. Hodnocený rozsah
 Release assessment musí vždy uvádět konkrétní rozsah, který byl hodnocen.
 
-### Implementovaný rozsah
+### Implementovaný a plánovaný rozsah
 - **UC001 – Client Management:** TBD
 - **UC002 – Open Account:** TBD
 - **UC003 – Deposit Money:** TBD

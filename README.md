@@ -141,7 +141,7 @@ POST   /accounts/{accountId}/withdraw
 
 POST   /transfers
 
-POST   /accounts/{accountId}/cards
+POST   /cards
 
 PATCH  /cards/{cardId}/block
 ```

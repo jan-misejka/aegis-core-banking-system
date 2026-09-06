@@ -262,7 +262,7 @@ Pokud vznikla, změnila se nebo byla uzavřena položka technického dluhu.
 
 ### 6.5 Testování
 Aktualizovat relevantní QA dokumentaci podle provedeného testování v :
-`docs/testing/...`
+`docs/qa/...`
 
 ### 6.6 Changelog
 Aktualizovat:

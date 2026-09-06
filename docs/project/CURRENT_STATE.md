@@ -50,13 +50,13 @@
 - manuální API ověřování
 
 ### QA portfolio
-- Test Plan – bude doplněn
-- Traceability – bude doplněna
-- Test Cases – budou doplněny
-- Test Runs – budou doplněny
-- Test Data – bude doplněno
-- Bug Reports – budou doplněny podle nalezených chyb
-- Release-like assessment – bude doplněno
+- Test Plan – dokončeno
+- Traceability – dokončeno
+- Test Cases – dokončeno
+- Test Runs – připraveno pro evidenci skutečných testovacích běhů
+- Test Data – dokončeno
+- Bug Reports – připraveno pro evidenci skutečných vad
+- Release-like assessment – připraveno pro závěrečné QA hodnocení
 
 ---
 
@@ -76,18 +76,18 @@
 ---
 
 ## Dokumentace
-- PROJECT_VISION.md – dokončeno
-- PROJECT_CONTEXT.md – dokončeno
+- PROJECT_VISION.md – dokončena aktualizace
+- PROJECT_CONTEXT.md – dokončena aktualizace
 - CURRENT_STATE.md – aktuální
-- ROADMAP.md – čeká na refaktor
-- BUSINESS_REQUIREMENTS.md – čeká na aktualizaci
-- DEVELOPMENT_WORKFLOW.md – čeká na refaktor
-- TECH_STACK.md – existuje
-- DATABASE_MODEL.md – existuje
-- TECHNICAL_BACKLOG.md – existuje
-- TEST_PLAN.md – bude vytvořen
-- testing/TESTING.md – bude vytvořen
-- jira/BUG_REPORTS.md – bude vytvořen
+- ROADMAP.md – dokončena aktualizace
+- BUSINESS_REQUIREMENTS.md – dokončena aktualizace
+- DEVELOPMENT_WORKFLOW.md – dokončena aktualizace
+- TECH_STACK.md – dokončena aktualizace
+- DATABASE_MODEL.md – dokončena aktualizace
+- TECHNICAL_BACKLOG.md – dokončena aktualizace
+- TEST_PLAN.md – dokončena aktualizace
+- testing/TESTING.md – dokončena aktualizace
+- jira/BUG_REPORTS.md – dokončena aktualizace
 
 ---
 

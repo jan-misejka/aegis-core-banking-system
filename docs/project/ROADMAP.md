@@ -68,11 +68,11 @@ Povinný rozsah projektu zaměřený na vytvoření funkčního bankovního syst
 Rozšíření projektu zaměřené na vytvoření realistického QA portfolia.
 
 ## Fáze 4 – QA dokumentace
-- Test Strategy – plánováno
-- Test Plan – plánováno
-- Traceability Matrix – plánováno
-- Test Cases – plánováno
-- Test Data – plánováno
+- Test Plan včetně Test Strategy – dokončeno
+- Traceability Matrix – dokončeno
+- Test Cases – dokončeno
+- Test Data – dokončeno
+- Test Runs – připraveno pro evidenci skutečných běhů
 
 ## Fáze 5 – Testovací pokrytí
 - Happy-path scénáře – plánováno

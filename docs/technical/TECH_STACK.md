@@ -97,4 +97,6 @@ Technický postup spuštění aplikace a testů je popsán v `docs/development/D
 
 Databázový model je popsán v `docs/technical/DATABASE_MODEL.md`.
 
-Testovací postupy a QA artefakty jsou vedeny v adresáři `testing/`.
+Praktická metodika testování je vedena v `testing/TESTING.md`.
+
+QA artefakty jsou vedeny v `docs/qa/`.

@@ -207,9 +207,8 @@ Testovací data musí být připravena tak, aby bylo možné reprodukovat konkr�
 ---
 
 ## 8. Testovací artefakty
-QA dokumentace projektu bude postupně obsahovat zejména:
-- Test Plan
-- Test Strategy
+QA dokumentace projektu obsahuje zejména:
+- Test Plan včetně Test Strategy
 - Traceability
 - Test Cases
 - Test Data
