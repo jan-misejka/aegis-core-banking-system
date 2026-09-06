@@ -6,62 +6,54 @@ Aegis Core Banking System
 
 ## Vize
 
-Vytvořit realistický bankovní systém, který bude sloužit k výuce a procvičování:
+Vytvořit realistický bankovní systém, který slouží jako dlouhodobý studijní a portfolio projekt pro simulaci práce s enterprise business systémem.
 
+Projekt kombinuje:
+
+- návrh a práci s relační databází
 - SQL
-- návrhu databází
-- REST API
+- backendový vývoj a REST API
 - testování API
-- práce s Postman
-- práce s Jira
-- návrhu testovacích scénářů
-- tvorby bug reportů
+- návrh testovacích scénářů
+- tvorbu bug reportů
+- práci s testovacími daty
+- ověřování business pravidel
 
-Projekt by měl svým charakterem připomínat enterprise bankovní systémy používané v reálných organizacích.
-Projekt není určen k výuce cloudových technologií ani cloudové bezpečnosti. Tyto oblasti budou řešeny v samostatných projektech.
-Projekt si klade za cíl simulovat nejen výslednou aplikaci, ale také realistický proces jejího vývoje. Součástí projektu je využívání Git Feature Branch workflow, průběžných Project Review, řízení technického dluhu pomocí Technical Backlog a průběžná aktualizace projektové dokumentace.
+Projekt má svým charakterem připomínat systémy používané v reálném bankovním prostředí.
+
+Aegis je primárně zaměřen na oblast testování a kvality business systémů. Projekt není určen k výuce cloudových technologií ani cloudové bezpečnosti. Tyto oblasti budou řešeny v samostatných projektech.
 
 ## Hlavní cíl
 
-Vybudovat praktický základ pro vstup do bankovního IT a postupný rozvoj směrem k:
+Připravit se na pozici Junior IT Tester v bankovním a enterprise prostředí.
 
-* banking systems
-* legacy / mainframe / COBOL
-* hybrid enterprise infrastructure
-* cloud engineering
-* cloud security
-* cloud security architecture
+Důraz je kladen především na schopnost:
 
-Testování a QA představují důležitou vstupní a podpůrnou profesní schopnost, nikoliv konečný kariérní cíl.
+- porozumět business požadavkům
+- převést požadavky do testovatelných scénářů
+- ověřovat chování systému
+- pracovat s API a databází
+- identifikovat a popsat chyby
+- pracovat s testovacími daty
+- uvažovat nad pozitivními, negativními a hraničními scénáři
 
 ## Vedlejší cíle
+
 - zlepšit znalosti SQL
 - osvojit si základy backendového vývoje
-- pochopit business procesy v bankovnictví
+- pochopit základní business procesy v bankovním prostředí
 - vytvořit realistický portfolio projekt
-- osvojit si standardní workflow vývoje softwaru používané v profesionálních vývojových týmech
-- naučit se udržovat konzistentní projektovou dokumentaci během celého životního cyklu projektu
-
-## Studijní princip
-Projekt je součástí dlouhodobého projektového studia.
-
-Nové technologie a koncepty se nemají učit izolovaně pouze jednou.
-
-Každý další projekt má navazovat na předchozí projekty, znovu používat již známé technologie a postupně snižovat míru vedení AI.
-
-Cílem je postupný přechod:
-
-AI učí a demonstruje
-→ uživatel aplikuje s vedením
-→ uživatel navrhuje a AI reviewuje
-→ uživatel pracuje samostatně a AI funguje především jako reviewer.
+- osvojit si práci s nástroji používanými při vývoji a testování softwaru
+- naučit se pracovat s technickou a projektovou dokumentací
 
 ## Budoucí směřování
 
-Po dokončení verze zaměřené na testování může být projekt rozšířen o:
+Po dokončení verze zaměřené na testování může být projekt rozšířen o koncepty spojené s legacy a mainframe prostředím, zejména:
 
 - koncepty mainframe prostředí
-- koncepty COBOLu
-- koncepty JCL
+- COBOL
+- JCL
 - dávkové zpracování (batch processing)
 - simulaci legacy bankovních systémů
+
+Tato rozšíření mají navazovat na původní bankovní doménu projektu a vytvořit most mezi moderním backendovým systémem a legacy prostředím.

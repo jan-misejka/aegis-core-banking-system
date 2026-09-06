@@ -1,281 +1,220 @@
 # Business požadavky
-
 ## Rozsah systému
 
 Systém představuje zjednodušenou platformu pro správu osobního bankovnictví.
 
 ## Pravidla pro Use Cases
-
 Každý Use Case musí být definován tak, aby bylo možné jednoznačně určit:
 
-* business účel,
-* požadované chování,
-* validační pravidla,
-* očekávané HTTP chování,
-* očekávaný stav databáze,
-* pozitivní scénáře,
-* negativní scénáře,
-* relevantní boundary conditions,
-* způsob ověření.
+- business účel,
+- požadované chování,
+- validační pravidla,
+- očekávané HTTP chování,
+- očekávaný stav databáze,
+- pozitivní scénáře,
+- negativní scénáře,
+- relevantní boundary conditions,
+- způsob ověření.
 
 Acceptance criteria musí být dostatečně konkrétní, aby podle nich bylo možné vytvořit testovací scénáře a jednoznačně rozhodnout, zda je Use Case splněn.
 
 Důkaz o splnění požadavku musí vycházet z provedeného testování nebo jiného ověření, nikoliv pouze z předpokladu, že implementace funguje.
 
 ## Případy užití
-
 ### UC001 – Vytvoření klienta
 Bankovní pracovník vytvoří nového klienta.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- POST /clients
-- GET /clients
-- GET /clients/{id}
-- PUT /clients/{id}
-- DELETE /clients/{id}
-
-**Ověření:**
-
-- Manuální testování v Postman.
-- Ověření dat v DBeaver.
-- CRUD funkcionalita dokončena.
+**Požadované chování:**
+- systém umožní vytvořit klienta
+- systém umožní zobrazit seznam klientů
+- systém umožní zobrazit detail klienta
+- systém umožní upravit údaje klienta
+- systém umožní klienta odstranit
 
 ---
 
 ### UC002 – Založení účtu
 Bankovní pracovník založí účet existujícímu klientovi.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- Dokončený Project Review #1
-- Implementovaný TECH-001
-- Implementovaný TECH-002
-- POST /accounts
-- účet je vždy přiřazen existujícímu klientovi
-- accountType:
-    - CURRENT
-    - SAVINGS
-- currency:
-    - CZK
-    - EUR
-    - USD
-- počáteční balance = 0
-- automatické vytvoření createdAt
-- generování IBAN
-- kontrola unikátnosti IBAN
+**Požadované chování:**
+- účet musí být přiřazen existujícímu klientovi
+- účet musí mít typ CURRENT nebo SAVINGS
+- účet musí mít podporovanou měnu CZK, EUR nebo USD
+- počáteční balance účtu je 0
+- účet má vytvořen čas založení
+- účet má unikátní IBAN
 
 **HTTP chování:**
-
 - 201 Created – účet byl úspěšně vytvořen
-- 400 Bad Request – nevalidní vstup nebo nepovolený typ účtu/měna
+- 400 Bad Request – nevalidní vstup nebo nepovolený typ účtu či měna
 - 404 Not Found – klient neexistuje
-
-**Ověření:**
-
-- Maven testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Uložení a správnost dat byly ověřeny pomocí DBeaveru.
 
 ---
 
 ### UC003 – Vklad peněz
 Na účet jsou vloženy peníze.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- POST /accounts/{id}/deposit
+**Požadované chování:**
 - účet musí existovat
 - částka musí být větší než 0
 - minimální částka vkladu je 0.01
-- balance účtu je navýšen o vloženou částku
-- při vkladu je vytvořena Transaction
-- Transaction má typ DEPOSIT
-- Transaction je přiřazena ke konkrétnímu účtu
-- datum a čas transakce je uložen
-- změna účtu a vytvoření transakce probíhají v rámci jedné databázové transakce
+- balance účtu se navýší o vloženou částku
+- při vkladu vznikne DEPOSIT transaction
+- transaction je přiřazena ke konkrétnímu účtu
+- transaction obsahuje datum a čas
+- změna balance a vytvoření transaction musí proběhnout jako jedna operace
 
 **HTTP chování:**
-
 - 200 OK – vklad byl úspěšně proveden
 - 400 Bad Request – částka je nevalidní
 - 404 Not Found – účet neexistuje
-
-**Ověření:**
-
-- Maven/JUnit testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Změna balance byla ověřena pomocí DBeaveru.
-- Vytvoření DEPOSIT transaction a její vazba na účet byly ověřeny pomocí DBeaveru.
 
 ---
 
 ### UC004 – Výběr peněz
 Z účtu jsou vybrány peníze.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- POST /accounts/{id}/withdraw
+**Požadované chování:**
 - účet musí existovat
 - částka musí být větší než 0
 - minimální částka výběru je 0.01
-- balance účtu je snížen o vybranou částku
 - výběr nesmí překročit aktuální balance účtu
-- při výběru je vytvořena Transaction
-- Transaction má typ WITHDRAWAL
-- Transaction je přiřazena ke konkrétnímu účtu
-- datum a čas transakce je uložen
-- změna účtu a vytvoření transakce probíhají v rámci jedné databázové transakce
+- balance účtu se sníží o vybranou částku
+- při výběru vznikne WITHDRAWAL transaction
+- transaction je přiřazena ke konkrétnímu účtu
+- transaction obsahuje datum a čas
+- zamítnutý výběr nesmí změnit balance ani vytvořit transaction
+- změna balance a vytvoření transaction musí proběhnout jako jedna operace
 
 **HTTP chování:**
-
 - 200 OK – výběr byl úspěšně proveden
 - 400 Bad Request – částka je nevalidní nebo není dostatečný balance
 - 404 Not Found – účet neexistuje
-
-**Ověření:**
-
-- Maven/JUnit testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Změna balance byla ověřena pomocí DBeaveru.
-- Vytvoření WITHDRAWAL transaction a její vazba na účet byly ověřeny pomocí DBeaveru.
-- Ověřeno, že zamítnutý výběr nezmění balance ani nevytvoří novou transaction.
 
 ---
 
 ### UC005 – Převod peněz
 Peníze jsou převedeny mezi dvěma účty.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- POST /transfers
+**Požadované chování:**
 - zdrojový účet musí existovat
 - cílový účet musí existovat
 - zdrojový a cílový účet nesmí být stejný
 - částka musí být větší než 0
 - minimální částka převodu je 0.01
 - zdrojový účet musí mít dostatečný balance
-- balance zdrojového účtu je snížen o převáděnou částku
-- balance cílového účtu je navýšen o převáděnou částku
-- při převodu je vytvořen Transfer se stavem COMPLETED
-- při převodu je vytvořena OUTBOUND Transaction na zdrojovém účtu
-- při převodu je vytvořena INBOUND Transaction na cílovém účtu
-- obě Transaction jsou navázány na konkrétní Transfer
-- datum a čas vytvoření Transferu je uložen
-- změna balance, vytvoření Transferu a vytvoření Transaction probíhají v rámci jedné databázové transakce
+- balance zdrojového účtu se sníží o převáděnou částku
+- balance cílového účtu se navýší o převáděnou částku
+- vznikne Transfer se stavem COMPLETED
+- vznikne OUTBOUND transaction na zdrojovém účtu
+- vznikne INBOUND transaction na cílovém účtu
+- obě transaction jsou navázány na konkrétní Transfer
+- Transfer obsahuje datum a čas vytvoření
+- zamítnutý převod nesmí změnit balance ani vytvořit Transfer nebo transaction
+- změna balance, vytvoření Transferu a vytvoření transaction musí proběhnout jako jedna operace
 
 **HTTP chování:**
-
 - 201 Created – převod byl úspěšně proveden
 - 400 Bad Request – částka je nevalidní, účty jsou stejné nebo není dostatečný balance
 - 404 Not Found – zdrojový nebo cílový účet neexistuje
-
-**Ověření:**
-
-- Maven/JUnit testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Změna balance zdrojového a cílového účtu byla ověřena pomocí DBeaveru.
-- Vytvoření Transferu a jeho stav COMPLETED byly ověřeny pomocí DBeaveru.
-- Vytvoření OUTBOUND a INBOUND Transaction bylo ověřeno pomocí DBeaveru.
-- Vazba obou Transaction na konkrétní Transfer byla ověřena pomocí DBeaveru.
-- Ověřeno, že zamítnutý převod nezmění balance, nevytvoří Transfer ani Transaction.
 
 ---
 
 ### UC006 – Vydání platební karty
 K účtu je vydána platební karta.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- POST /cards
+**Požadované chování:**
 - karta je vydána k existujícímu účtu
-- accountId je předáván v requestu
-- validace accountId pomocí Jakarta Bean Validation
-- generování unikátního 16místného čísla karty
-- nová karta je při vydání nastavena do stavu ACTIVE
-- automatické nastavení createdAt pomocí JPA callbacku @PrePersist
-- expiryDate je nastaveno na 10 let od data vydání
-- vydání více karet ke stejnému účtu je podporováno
+- karta má unikátní 16místné číslo
+- nová karta má stav ACTIVE
+- karta má datum vytvoření
+- karta má datum expirace
+- datum expirace je nastaveno na 10 let od data vydání
+- k jednomu účtu lze vydat více karet
 
 **HTTP chování:**
-
 - 201 Created – karta byla úspěšně vydána
 - 400 Bad Request – accountId je nevalidní nebo chybí
 - 404 Not Found – účet neexistuje
-
-**Ověření:**
-
-- Maven/JUnit testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Uložení karty a její vazba na účet byly ověřeny pomocí DBeaveru.
-- Stav ACTIVE byl ověřen pomocí DBeaveru.
-- createdAt a expiryDate byly ověřeny pomocí DBeaveru.
-- Unikátnost čísel karet byla ověřena pomocí DBeaveru.
-- Ověřeno vydání více karet ke stejnému účtu.
 
 ---
 
 ### UC007 – Blokace platební karty
 Platební karta je zablokována.
+
 **Stav:** ✅ Dokončeno
 
-**Implementováno:**
-
-- PATCH /cards/{cardId}/block
+**Požadované chování:**
 - karta musí existovat
 - kartu ve stavu BLOCKED nelze znovu zablokovat
 - kartu ve stavu EXPIRED nelze zablokovat
 - karta ve stavu ACTIVE je změněna do stavu BLOCKED
-- při blokaci se mění pouze card_status
+- při blokaci se mění pouze stav karty
 
 **HTTP chování:**
-
 - 200 OK – karta byla úspěšně zablokována
 - 400 Bad Request – karta je již zablokována nebo je expirovaná
 - 404 Not Found – karta neexistuje
 
-**Ověření:**
+---
 
-- Maven/JUnit testy prošly.
-- Pozitivní scénář byl ověřen pomocí Postmanu.
-- Negativní scénáře byly ověřeny pomocí Postmanu.
-- Změna card_status byla ověřena pomocí DBeaveru.
-- Ověřeno, že account_id, card_number, expiry_date a created_at zůstávají při blokaci nezměněny.
+### UC008 – Odblokování platební karty
+Bankovní pracovník obnoví použití dříve zablokované aktivní karty.
+
+**Stav:** ⏳ Plánováno
+
+---
+
+### UC009 – Zobrazení detailu účtu
+Bankovní pracovník zobrazí účet včetně vlastníka, měny, IBANu a aktuálního zůstatku.
+
+**Stav:** ⏳ Plánováno
+
+---
+
+### UC010 – Zobrazení účtů klienta
+Bankovní pracovník zobrazí všechny účty vybraného klienta.
+
+**Stav:** ⏳ Plánováno
+
+---
+
+### UC011 – Zobrazení historie transakcí účtu
+Bankovní pracovník zobrazí transakce konkrétního účtu včetně typu, částky, času a vazby na převod.
+
+**Stav:** ⏳ Plánováno
+
+---
+
+### UC012 – Zobrazení detailu převodu
+Bankovní pracovník zobrazí převod včetně zdrojového účtu, cílového účtu, částky, stavu a souvisejících transakcí.
+
+**Stav:** ⏳ Plánováno
+
+---
+
+### UC013 – Uzavření účtu
+Bankovní pracovník uzavře účet pouze tehdy, pokud neporuší definovaná business pravidla a auditní historii.
+
+**Stav:** ⏳ Plánováno
 
 ---
 
 ## Business pravidla
-
 - Účet musí patřit konkrétnímu klientovi.
 - Transakce musí být přiřazena ke konkrétnímu účtu.
 - Převod musí mít zdrojový a cílový účet.
 - Zablokovanou kartu nelze použít.
-- Zůstatek na účtu nesmí být záporný, pokud není implementována podpora kontokorentu.
-
----
-
-# Implementační pořadí
-
-Business Use Casy jsou implementovány postupně.
-
-Po dokončení každého Use Casu nebo významného technického milníku následuje:
-1. Project Review.
-2. Aktualizace dokumentace.
-3. Aktualizace Technical Backlog.
-4. Implementace položek označených jako High Priority.
-5. Zahájení dalšího Use Casu.
-
-Podrobný vývojový postup je popsán v dokumentu:
-
-`DEVELOPMENT_WORKFLOW.md`
+- Zůstatek účtu nesmí být záporný, pokud není implementován kontokorent.

@@ -1,12 +1,6 @@
 # Technický backlog
-
 ## Účel
-
-Tento dokument obsahuje technická zlepšení, která byla během vývoje identifikována, ale záměrně odložena na pozdější fázi projektu.
-
-Cílem je oddělit vývoj nové funkcionality od refaktoringu a architektonických úprav, aby jednotlivé feature branche řešily vždy pouze jeden konkrétní úkol.
-
-Technical Backlog vzniká především během Project Review.
+Tento dokument obsahuje technická zlepšení, která byla během vývoje identifikována, ale záměrně odložena na pozdější fázi projektu. Cílem je oddělit vývoj nové funkcionality od refaktoringu a architektonických úprav, aby jednotlivé feature branche řešily vždy pouze jeden konkrétní úkol. Technical Backlog vzniká především během Project Review.
 
 Project Review může identifikovat také:
 
@@ -55,10 +49,8 @@ Podrobný vývojový workflow je popsán v dokumentu:
 
 ---
 
-# Vysoká priorita
-
-## TECH-001 – Globální zpracování výjimek
-
+## High  Priority
+### TECH-001 – Globální zpracování výjimek
 **Stav:** ✅ Dokončeno
 
 **Popis:**
@@ -67,10 +59,7 @@ Nahradit ruční vracení HTTP chyb ve všech controllerech centrálním zpracov
 **Důvod:**
 Jednotnější chování API, méně duplicitního kódu a lepší dodržování doporučených postupů Spring Boot.
 
----
-
-## TECH-002 – Validace vstupních dat
-
+### TECH-002 – Validace vstupních dat
 **Stav:** ✅ Dokončeno
 
 **Popis:**
@@ -79,10 +68,7 @@ Přidat validaci DTO pomocí Jakarta Bean Validation (`@NotBlank`, `@Email`, `@S
 **Důvod:**
 V současnosti API přijímá i neplatná vstupní data.
 
----
-
-## TECH-006 – Izolace testovací databáze
-
+### TECH-006 – Izolace testovací databáze
 **Stav:** ✅ Dokončeno
 
 **Popis:**
@@ -96,10 +82,8 @@ Zajistit izolované a opakovatelné automatizované testy.
 
 ---
 
-# Střední priorita
-
-## TECH-003 – Refaktoring mapování DTO
-
+## Střední priorita
+### TECH-003 – Refaktoring mapování DTO
 **Stav:** Plánováno
 
 **Popis:**
@@ -108,10 +92,7 @@ Vytvořit společnou metodu pro převod `Client` → `ClientResponse`.
 **Důvod:**
 Stejný mapovací kód se opakuje ve více metodách služby.
 
----
-
-## TECH-004 – Soft Delete klientů
-
+### TECH-004 – Soft Delete klientů
 **Stav:** Plánováno
 
 **Popis:**
@@ -120,10 +101,7 @@ Nahradit fyzické mazání klientů logickým mazáním pomocí příznaku `acti
 **Důvod:**
 Bankovní systémy standardně historická data fyzicky nemažou.
 
----
-
-## TECH-005 – Automatizované testy UC002
-
+### TECH-005 – Automatizované testy UC002
 **Stav:** Plánováno
 
 **Popis:**
@@ -139,8 +117,7 @@ Doplnit automatizované testy pro funkcionalitu UC002 – Open Account.
 **Důvod:**
 UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru. Automatizované testy zaměřené přímo na business scénáře UC002 zvýší regresní pokrytí při dalších změnách.
 
-## TECH-008 – Refaktorizace endpointů Deposit/Withdraw
-
+### TECH-008 – Refaktorizace endpointů Deposit/Withdraw
 **Stav:** Plánováno
 
 **Popis:**
@@ -160,17 +137,10 @@ Deposit a Withdraw vytvářejí finanční Transaction a z pohledu doménového 
 - zachování stávající business funkcionality a testovacího pokrytí,
 - aktualizace související dokumentace a Postman requestů.
 
-**Priorita:** Medium
-
-**Poznámka:**
-Refaktorizace není součástí žádného UC a bude řešena jako samostatný technický úkol.
-
 ---
 
-# Nízká priorita
-
-## TECH-007 – Odstranění duplicity testovacích dat
-
+## Nízká priorita
+### TECH-007 – Odstranění duplicity testovacích dat
 **Stav:** Plánováno
 
 **Popis:**
@@ -184,39 +154,5 @@ Zajistit jediný zdroj testovacích dat a odstranit duplicitní údržbu.
 
 ---
 
-## Aktuální plán implementace
-### Dokončeno
-- UC001 – Client Management
-- PR-001 – Project Review po UC001
-- TECH-001 – Globální zpracování výjimek
-- TECH-002 – Validace vstupních dat
-- PR-002 – Project Review po TECH-002
-- UC002 – Open Account
-- PR-003 – Project Review po UC002
-- UC003 - Deposit Money
-- PR-004 - Project Review po UC003
-- TECH-006 - Izolace testovací databáze
-- PR-005 - Project Review po TECH-006
-- UC004 - Withdraw Money
-- PR-006 - Project Review po UC004
-- UC005 - Transfer Money
-- PR-007 - Project Review po UC005
-- UC006 - Issue Card
-- PR-008 - Project Review po UC006
-- UC007 - Block Card
-- PR-009 - Project Review po UC007
-
-### High Priority
-
-### Medium Priority
-- TECH-003 – Refaktoring mapování DTO
-- TECH-004 – Soft Delete klientů
-- TECH-005 – Automatizované testy UC002
-- TECH-008 – Refaktorizace endpointů Deposit/Withdraw
-
-### Low Priority
-- TECH-007 – Odstranění duplicity testovacích dat
-
-### Následuje
-
-### Poznámky:
+## Poznámky:
+- Refaktorizace není součástí žádného UC a bude řešena jako samostatný technický úkol.

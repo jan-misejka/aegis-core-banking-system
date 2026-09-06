@@ -1,26 +1,24 @@
-# Databázový Model
-
+# Databázový model
 ## Aegis Core Banking System
-
 ### Účel dokumentu
-Tento dokument popisuje první verzi logického databázového modelu projektu Aegis Core Banking System.
+Tento dokument popisuje logický databázový model projektu Aegis Core Banking System.
 
 Cílem modelu je vytvořit realistický základ pro:
+- návrh databáze
+- výuku SQL
+- databázové testování
+- návrh REST API
+- testování API
+- business analýzu
 
-* výuku SQL
-* návrh databází
-* databázové testování
-* návrh REST API
-* testování API
-* business analýzu
+Dokument popisuje logický model a jeho business význam.
 
-Tento dokument popisuje logický model systému.
-Neobsahuje SQL implementaci.
+Fyzická implementace databáze je uložena v `database/schema.sql`.
 
 ---
 
-# Entity Overview
-První verze systému obsahuje následující entity:
+## Entity Overview
+Databázový model obsahuje následující entity:
 
 1. Client
 2. Account
@@ -30,291 +28,273 @@ První verze systému obsahuje následující entity:
 
 ---
 
-# Entity: Client
-
-## Účel
+## Entity: Client
+### Účel
 Reprezentuje klienta banky.
-Klient je vlastníkem jednoho nebo více bankovních účtů.
 
-## Business význam
-Bez klienta nemůže existovat účet.
-Každý účet musí být přiřazen konkrétnímu klientovi.
+### Business význam
+Klient je vlastníkem jednoho nebo více bankovních účtů. Bez klienta nemůže existovat účet.
 
 ---
 
-# Entity: Account
+## Entity: Account
+### Účel
+Reprezentuje bankovní účet. Účet slouží k ukládání finančních prostředků a provádění bankovních operací.
 
-## Účel
-Reprezentuje bankovní účet.
-Účet slouží k ukládání finančních prostředků a provádění bankovních operací.
-
-## Business význam
+### Business význam
 Nad účtem probíhají:
-* vklady
-* výběry
-* převody
-* práce s platebními kartami
+- vklady
+- výběry
+- převody
+- práce s platebními kartami
+
+#### Atributy
+- `account_id`
+- `client_id`
+- `iban`
+- `account_type`
+- `balance`
+- `currency`
+- `created_at`
+
+#### Povolené typy účtu
+- `CURRENT`
+- `SAVINGS`
+
+#### Currency
+Účet obsahuje atribut `currency` reprezentující měnu účtu. V aktuálním testovacím datasetu jsou účty vedeny v měně `CZK`.
 
 ---
 
-# Entity: Card
-
-## Účel
+## Entity: Card
+### Účel
 Reprezentuje platební kartu vydanou k účtu.
 
-## Business význam
+### Business význam
 Karta umožňuje klientovi přístup k prostředkům na účtu.
-Karta může být:
 
-* aktivní (ACTIVE)
-* blokovaná (BLOCKED)
-* expirovaná (EXPIRED)
+#### Atributy
+- `card_id`
+- `account_id`
+- `card_number`
+- `card_status`
+- `expiry_date`
+- `created_at`
+
+#### Povolené stavy
+- `ACTIVE`
+- `BLOCKED`
+- `EXPIRED`
 
 ---
 
-# Entity: Transaction
-
-## Účel
+## Entity: Transaction
+### Účel
 Reprezentuje finanční pohyb na účtu.
 
-## Business význam
-Každá změna zůstatku musí být evidována formou transakce.
-Příklady:
+### Business význam
+Každá změna zůstatku musí být evidována formou transakce. 
 
-* vklad (DEPOSIT)
-* výběr (WITHDRAWAL)
-* příchozí převod (INBOUND)
-* odchozí převod (OUTBOUND)
+Příklady:
+- `DEPOSIT`
+- `WITHDRAWAL`
+- `INBOUND`
+- `OUTBOUND`
 
 Transakce tvoří historii účtu.
 
+#### Atributy
+- `tx_id`
+- `account_id`
+- `transfer_id`
+- `tx_type`
+- `amount`
+- `description`
+- `tx_date`
+
+#### Povolené typy
+- `DEPOSIT`
+- `WITHDRAWAL`
+- `INBOUND`
+- `OUTBOUND`
+
 ---
 
-# Entity: Transfer
-
-## Účel
+## Entity: Transfer
+### Účel
 Reprezentuje převod finančních prostředků mezi dvěma účty.
 
-## Business význam
+### Business význam
 Převod je samostatný business proces.
-Každý převod musí mít:
 
-* zdrojový účet (SOURCE)
-* cílový účet (TARGET)
-* částku (AMOUNT)
-* stav převodu (STATUS)
+Každý převod obsahuje:
+- zdrojový účet
+- cílový účet
+- částku
+- stav převodu
 
 Transfer může vytvářet související transakce na obou účtech.
 
----
+#### Atributy
+- `transfer_id`
+- `source_acc_id`
+- `target_acc_id`
+- `amount`
+- `transfer_status`
+- `created_at`
 
-# Relace (Relationships)
-
-## Client → Account
-Mohutnost (Cardinality):
-
-1 : N
-
-Význam:
-
-Jeden klient může vlastnit více účtů.
-Každý účet musí patřit právě jednomu klientovi.
-
----
-
-## Account → Card
-Mohutnost (Cardinality):
-
-1 : N
-
-Význam:
-
-Jeden účet může mít více karet.
-Každá karta musí být navázána na jeden účet.
+#### Povolené stavy
+- `PENDING`
+- `COMPLETED`
+- `FAILED`
 
 ---
 
-## Account → Transaction
-Mohutnost (Cardinality):
+## Relace
+### Client → Account
+**Mohutnost:** 1 : N
 
-1 : N
+**Význam:**
 
-Význam:
-
-Jeden účet může obsahovat mnoho transakcí.
-Každá transakce musí patřit jednomu účtu.
+Jeden klient může vlastnit více účtů. Každý účet musí patřit právě jednomu klientovi.
 
 ---
 
-## Account → Transfer (Source)
-Mohutnost (Cardinality):
+### Account → Card
+**Mohutnost:** 1 : N
 
-1 : N
+**Význam:**
 
-Význam:
+Jeden účet může mít více platebních karet. Každá karta musí být navázána na jeden účet.
+
+---
+
+### Account → Transaction
+**Mohutnost:** 1 : N
+
+**Význam:**
+
+Jeden účet může obsahovat mnoho transakcí. Každá transakce musí patřit jednomu účtu.
+
+---
+
+### Account → Transfer (Source)
+**Mohutnost:** 1 : N
+
+**Význam:**
 
 Účet může být zdrojovým účtem mnoha převodů.
 
 ---
 
-## Account → Transfer (Target)
-Mohutnost (Cardinality):
+### Account → Transfer (Target)
+**Mohutnost:** 1 : N
 
-1 : N
-
-Význam:
+**Význam:**
 
 Účet může být cílovým účtem mnoha převodů.
 
-## Transfer → Transaction
-Mohutnost (Cardinality):
+---
 
-1 : N
+### Transfer → Transaction
+**Mohutnost:** 1 : N
 
-Význam:
+**Význam:**
 
-Jeden převod může vytvářet více transakcí. Typicky:
-* OUTBOUND transakce
-* INBOUND transakce
+Jeden převod může vytvářet více souvisejících transakcí.
 
-Transakce nemusí být vždy součástí převodu.
+Typicky:
+- jednu `OUTBOUND` transakci
+- jednu `INBOUND` transakci
+
+Transakce nemusí být součástí převodu, například u vkladu nebo výběru.
 
 ---
 
-# Atributy jednotlivých entit
-
-## Client
-* Schválené atributy:
-    - client_id
-    - first_name
-    - last_name
-    - email
-    - phone_number
-    - created_at
-
-## Account
-* Schválené atributy:
-    - account_id
-    - client_id
-    - iban
-    - account_type
-    - balance
-    - currency
-    - created_at
-
-* Povolené typy účtu:
-    - CURRENT
-    - SAVINGS
-
-## Card
-* Schválené atributy:
-    - card_id
-    - account_id
-    - card_number
-    - card_status
-    - expiry_date
-    - created_at
-
-* Povolené stavy karty:
-    - ACTIVE
-    - BLOCKED
-    - EXPIRED
-
-## Transaction
-* Schválené atributy:
-    - tx_id
-    - account_id
-    - transfer_id
-    - tx_type
-    - amount
-    - description
-    - tx_date
-
-* Povolené typy transakcí:
-    - DEPOSIT
-    - WITHDRAWAL
-    - INBOUND
-    - OUTBOUND
-
-## Transfer
-* Schválené atributy:
-    - transfer_id
-    - source_acc_id
-    - target_acc_id
-    - amount
-    - transfer_status
-    - created_at
-
-* Povolené stavy převodu:
-    - PENDING
-    - COMPLETED
-    - FAILED
-
----
-
-# Logický Diagram
+## Logický diagram
+```text
 Client
 │
 └── Account
-│
-├── Card
-│
-├── Transaction
-│
-└── Transfer
-
-Transfer
-├── Source Account
-└── Target Account
+    │
+    ├── Card
+    │
+    ├── Transaction
+    │
+    └── Transfer
+        │
+        ├── Source Account
+        └── Target Account
+```
 
 ---
 
-# Business Pravidla
+## Databázová omezení
+Fyzické databázové schéma definuje zejména:
+- primární klíče (PK)
+- cizí klíče (FK)
+- UNIQUE omezení
+- CHECK omezení
+- NOT NULL omezení
+- výchozí hodnoty některých atributů
+
+Mezi důležitá omezení patří:
+- email klienta musí být unikátní
+- IBAN účtu musí být unikátní
+- číslo karty musí být unikátní
+- zůstatek účtu nesmí být záporný
+- částka převodu musí být větší než 0
+- zdrojový a cílový účet převodu nesmí být stejný
+- částka transakce musí být větší než 0
+- hodnoty stavů a typů jsou omezeny definovanými hodnotami
+
+---
+
+## Business pravidla
 Systém musí respektovat následující pravidla:
-
-* Účet musí patřit konkrétnímu klientovi.
-* Transakce musí být přiřazena ke konkrétnímu účtu.
-* Převod musí mít zdrojový a cílový účet.
-* Zablokovanou kartu nelze použít.
-* Zůstatek účtu nesmí být záporný, pokud není implementován kontokorent.
-
----
-
-# Mimo Rozsah (Verze 1)
-Následující oblasti nejsou součástí první verze databázového modelu:
-
-* úvěry
-* hypotéky
-* investiční produkty
-* pobočky
-* zaměstnanci banky
-* více měn na jednom účtu
-* auditní logy
-* dávkové zpracování
-* mainframe integrace
-
-Tyto oblasti mohou být přidány v budoucích verzích projektu.
+- Účet musí patřit konkrétnímu klientovi.
+- Transakce musí být přiřazena ke konkrétnímu účtu.
+- Převod musí mít zdrojový a cílový účet.
+- Zdrojový a cílový účet převodu nesmí být stejný.
+- Zůstatek účtu nesmí být záporný.
+- Zablokovanou kartu nelze použít.
+- Transakce související s převodem musí být navázány na konkrétní Transfer.
 
 ---
 
-# Poznámky
-* Atributy všech entit byly navrženy a schváleny.
-* Fyzické databázové schéma bylo implementováno v:
+## Mimo rozsah
+Databázový model v aktuálním rozsahu projektu neobsahuje:
+- úvěry
+- hypotéky
+- investiční produkty
+- pobočky
+- zaměstnance banky
+- auditní logy
+- dávkové zpracování
+- mainframe integraci
 
+Tyto oblasti mohou být řešeny v budoucích projektech nebo rozšířeních.
+
+---
+
+## Fyzická implementace
+Fyzické databázové schéma je uloženo v:
+```text
 database/schema.sql
+```
 
-* Byla vytvořena první verze testovacích dat.
-* Testovací data byla rozdělena na:
-    * klienty
-    * účty
-    * platební karty
-    * převody
-    * transakce
+Testovací data jsou uložena v:
+```text
+database/test_data.sql
+database/test_data_part2.sql
+```
 
-* Model byl úspěšně ověřen naplněním databáze testovacími daty.
-* Relace mezi entitami byly validovány pomocí SQL dotazů a cizích klíčů.
-* Byla doplněna vazba mezi entitami Transfer a Transaction prostřednictvím atributu transfer_id v tabulce Transaction.
-* Byly vytvořeny testovací úlohy a validační testy pro ověření správnosti dat a vazeb v databázi. Tyto jsou uloženy v:
+SQL cvičení jsou uložena v:
+```text
+database/SQL_EXERCISES.md
+```
 
-docs/SQL_EXERCISES.md
-docs/SQL_VALIDATION.md
+SQL validační testy jsou uloženy v:
+```text
+database/SQL_VALIDATION.md
+```

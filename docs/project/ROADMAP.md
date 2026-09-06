@@ -1,364 +1,131 @@
 # Roadmapa projektu
+## Projekt: Aegis Core Banking System
+Aegis je studijní a portfolio projekt zaměřený na simulaci práce junior manual QA v bankovním a enterprise prostředí. Roadmapa určuje plánovaný rozsah projektu a pořadí hlavních milníků.
 
-## Fáze 1 – Databáze
-* návrh logického databázového modelu ✅
-* vytvoření dokumentace:
-    - docs/DATABASE_MODEL.md ✅
-* návrh atributů entit ✅
-* vytvoření fyzického databázového schématu (schema.sql) ✅
-* vytvoření testovacích dat ✅
-* vytvoření SQL cvičení a dotazů ✅
-
-## Fáze 2 – Backend (Spring Boot)
-* vytvoření projektu ✅
-* konfigurace připojení k MySQL ✅
-* vytvoření entit ✅
-* vytvoření repository vrstev ✅
-
-## Fáze 3 – REST API
-
-### Studijní cíl Level 01 – Foundation
-
-Aegis má během této fáze prokázat porozumění:
-
-* Java
-* Spring Boot
-* Maven
-* REST API
-* HTTP
-* JSON
-* SQL
-* MySQL
-* DBeaver
-* Postman
-* Git/GitHub
-* Jira
-* requirements
-* Use Cases
-* základní software architecture
-* testing
-* documentation
-* SDLC
-
-Cílem není pouze implementovat jednotlivé endpointy, ale pochopit celý proces od business požadavku přes návrh a implementaci až po testování, review, dokumentaci a Git workflow.
-
-### Client API
-#### UC001 – Client Management
-* Create Client (POST /clients) ✅
-* Get All Clients (GET /clients) ✅
-* Get Client by ID (GET /clients/{id}) ✅
-* Update Client (PUT /clients/{id}) ✅
-* Delete Client (DELETE /clients/{id}) ✅
-
-#### PR-001 - Project Review po UC001
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Aktualizace Technical Backlog ✅
-
-#### High Priority (Technical Backlog)
-* TECH-001 – Globální zpracování výjimek ✅
-* TECH-002 – Validace vstupních dat ✅
-
-#### PR-002 - Project Review po TECH-001,002
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Aktualizace Technical Backlog ✅
-* High Priority položky ✅
-
-### Account API
-#### UC002 – Open Account
-* Create Account (POST /accounts) ✅
-* Validace existence klienta ✅
-* Validace typu účtu (CURRENT / SAVINGS) ✅
-* Validace měny (CZK / EUR / USD) ✅
-* Výchozí zůstatek účtu 0 ✅
-* Generování IBAN ✅
-* Ověření vytvoření účtu v databázi ✅
-
-#### PR-003 - Project Review po UC002
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Aktualizace Technical Backlog ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* Žádné
-
-#### UC003 - Deposit Money
-* POST /accounts/{id}/deposit ✅
-* Validace částky ✅
-* Navýšení balance účtu ✅
-* Vytvoření DEPOSIT transaction ✅
-* Ověření dat v databázi ✅
-* Automatizované controller testy ✅
-
-#### PR-004 - Project Review po UC003
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Aktualizace Technical Backlog ✅
-* Identifikace TECH-006 - Izolace testovací databáze ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* TECH-006 - Izolace testovací databáze ✅
-
-#### PR-005 - Project Review po TECH-006
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Aktualizace Technical Backlog ✅
-
-#### UC004 - Withdraw Money
-* POST /accounts/{id}/withdraw ✅
-* Validace částky ✅
-* Kontrola existence účtu ✅
-* Kontrola dostatečného balance ✅
-* Snížení balance účtu ✅
-* Vytvoření WITHDRAWAL transaction ✅
-* Ověření dat v databázi ✅
-* Automatizované controller testy ✅
-
-#### PR-006 - Project Review po UC004
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* Žádné
-
-#### UC005 - Transfer Money
-* POST /transfers ✅
-* Validace částky ✅
-* Kontrola existence zdrojového účtu ✅
-* Kontrola existence cílového účtu ✅
-* Kontrola, že zdrojový a cílový účet nejsou stejné ✅
-* Kontrola dostatečného balance zdrojového účtu ✅
-* Snížení balance zdrojového účtu ✅
-* Navýšení balance cílového účtu ✅
-* Vytvoření COMPLETED Transfer ✅
-* Vytvoření OUTBOUND transaction ✅
-* Vytvoření INBOUND transaction ✅
-* Ověření vazby Transaction → Transfer ✅
-* Ověření dat v databázi ✅
-* Automatizované controller testy ✅
-* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
-
-#### PR-007 - Project Review po UC005
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Aktualizace Technical Backlog ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* Žádné
-
-#### UC006 - Issue Card
-* POST /cards ✅
-* Validace existence účtu ✅
-* Validace accountId pomocí Bean Validation ✅
-* Generování unikátního 16místného čísla karty ✅
-* Nastavení card_status = ACTIVE při vydání ✅
-* Nastavení created_at pomocí @PrePersist ✅
-* Nastavení expiry_date na 10 let od data vydání ✅
-* Ověření vydání více karet ke stejnému účtu ✅
-* Ověření dat v databázi ✅
-* Automatizované controller testy ✅
-* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
-
-#### PR-008 - Project Review po UC006
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Aktualizace Technical Backlog ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* Žádné
-
-#### UC007 - Block Card
-* PATCH /cards/{cardId}/block ✅
-* Kontrola existence karty ✅
-* Kontrola, že karta není již BLOCKED ✅
-* Kontrola, že karta není EXPIRED ✅
-* Změna card_status z ACTIVE na BLOCKED ✅
-* Ověření, že ostatní atributy karty zůstávají nezměněny ✅
-* Ověření dat v databázi ✅
-* Automatizované controller testy ✅
-* Pozitivní a negativní scénáře ověřeny pomocí Postmanu ✅
-
-#### PR-009 - Project Review po UC007
-* Revize architektury projektu ✅
-* Kontrola dokumentace ✅
-* Kontrola technického dluhu ✅
-* Aktualizace Technical Backlog ✅
-* Rozhodnutí o High Priority položkách ✅
-
-#### High Priority (Technical Backlog)
-* Žádné
-
-#### Další business funkcionalita
-* 
-
-### Bankovní funkcionalita
-* API pro účty ⏳
-* API pro transakce ⏳
-* API pro platební karty ⏳
+Aktuální stav projektu je veden v `CURRENT_STATE.md`.
 
 ---
 
-## Level 01 – Aegis Exit Gate
+# 1. část – Minimum
+Povinný rozsah projektu zaměřený na vytvoření funkčního bankovního systému a základní praktické zkušenosti s testováním.
 
-Aegis / Level 01 je považován za dokončený, pokud projekt prokáže:
+## Fáze 1 – Databázový základ
+### Databázový model
+- Návrh logického databázového modelu – dokončeno
+- Fyzické databázové schéma – dokončeno
+- Testovací data – dokončeno
+- SQL cvičení – dokončeno
+- SQL validační testy – dokončeno
 
-* funkční základní bankovní aplikace,
-* funkční REST API,
-* základní business Use Cases,
-* databázovou vrstvu,
-* SQL znalosti a databázové ověřování,
-* pozitivní a negativní testování,
-* práci s Postmanem,
-* práci s Git/GitHub,
-* dokumentovaný vývojový workflow,
-* průběžně aktualizovanou projektovou dokumentaci,
-* evidenci technického dluhu,
-* Project Reviews,
-* schopnost vysvětlit použité technologie a návrhová rozhodnutí.
+## Fáze 2 – Backendový základ
+### Backend
+- Základní Spring Boot aplikace – dokončeno
+- JPA entity a relace – dokončeno
+- Repository vrstva – dokončeno
+- Základní REST API architektura – dokončeno
 
-### Portfolio rozsah
+## Fáze 3 – Základní bankovní funkcionalita
+### Client Management
+- UC001 – Client Management – dokončeno
+- PR-001 – Project Review po UC001 – dokončeno
+- TECH-001 – Globální zpracování výjimek – dokončeno
+- TECH-002 – Validace vstupních dat – dokončeno
+- PR-002 – Project Review po TECH-001 a TECH-002 – dokončeno
 
-Pro portfolio má projekt navíc prokazovat:
+### Account Management
+- UC002 – Open Account – dokončeno
+- PR-003 – Project Review po UC002 – dokončeno
 
-* realistické business požadavky,
-* Use Cases,
-* testovací scénáře,
-* bug reporting,
-* evidence testování,
-* konzistentní projektovou dokumentaci,
-* Git historii odpovídající vývoji projektu,
-* schopnost nového člověka pochopit projekt z dokumentace.
+### Account Transactions
+- UC003 – Deposit Money – dokončeno
+- PR-004 – Project Review po UC003 – dokončeno
+- TECH-006 – Izolace testovací databáze – dokončeno
+- PR-005 – Project Review po TECH-006 – dokončeno
+- UC004 – Withdraw Money – dokončeno
+- PR-006 – Project Review po UC004 – dokončeno
+- UC005 – Transfer Money – dokončeno
+- PR-007 – Project Review po UC005 – dokončeno
 
-### Bonus / Bridge
+### Card Management
+- UC006 – Issue Card – dokončeno
+- PR-008 – Project Review po UC006 – dokončeno
+- UC007 – Block Card – dokončeno
+- PR-009 – Project Review po UC007 – dokončeno
+- UC008 – Unblock Card – plánováno
 
-Volitelně může být provedena pouze malá příprava na následující projekt.
+### Account & Transaction Queries
+- UC009 – Zobrazení detailu účtu – plánováno
+- UC010 – Zobrazení účtů klienta – plánováno
+- UC011 – Zobrazení historie transakcí účtu – plánováno
+- UC012 – Zobrazení detailu převodu – plánováno
 
-Bonus nesmí změnit Aegis na nový integrační nebo automatizační projekt.
-
-Příklady:
-
-* návrh HTTP/API kontraktu,
-* jednoduchá test matrix,
-* návrh struktury dokumentace pro další projekt,
-* krátký zápis o převzetí projektu novým členem týmu.
-
-Bonus nesmí nahradit hlavní učivo následujícího projektu.
-
----
-
-## Fáze 4 – Testování API
-* vytvoření Postman kolekcí ⏳
-* pozitivní testy ⏳
-* negativní testy ⏳
-
-## Fáze 5 – Simulace práce testera
-* návrh testovacích scénářů (Test Cases) ⏳
-* tvorba bug reportů ⏳
-* provádění a evidence testů ⏳
-
-## Fáze 6 – Legacy/Mainframe prostředí
-* práce s flat files ⏳
-* dávkové zpracování (Batch Processing) ⏳
-* základní koncepty mainframe prostředí ⏳
-* základní koncepty COBOLu ⏳
-
-### Poznámka
-
-Fáze 4 a Fáze 5 nejsou pouze technické úkoly.
-
-Jejich cílem je vytvořit portfolio důkazů o schopnosti:
-
-* odvodit testy z business požadavků,
-* testovat API,
-* pracovat s pozitivními i negativními scénáři,
-* reprodukovat chybu,
-* vytvořit bug report,
-* provést regresní ověření,
-* zdokumentovat výsledek testování,
-* formulovat evidence-based závěr.
+### Account Lifecycle
+- UC013 – Uzavření účtu – plánováno
 
 ---
 
-## Aktuální stav
-* Fáze 1 – Databáze: dokončena.
-* Fáze 2 – Backend: dokončena základní JPA vrstva.
-* Fáze 3 – REST API: probíhá.
+# 2. část – Optimum / Portfolio
+Rozšíření projektu zaměřené na vytvoření realistického QA portfolia.
 
-## Poznámka
-Jednotlivé fáze na sebe navazují a neměly by být přeskakovány.
+## Fáze 4 – QA dokumentace
+- Test Strategy – plánováno
+- Test Plan – plánováno
+- Traceability Matrix – plánováno
+- Test Cases – plánováno
+- Test Data – plánováno
 
-Každá fáze by měla být dokončena a zdokumentována před zahájením následující fáze.
+## Fáze 5 – Testovací pokrytí
+- Happy-path scénáře – plánováno
+- Negativní scénáře – plánováno
+- Hraniční scénáře – plánováno
+- Regresní scénáře – plánováno
+- Minimálně dva evidované Test Runs – plánováno
 
-Od REST API bude každá větší funkcionalita implementována ve vlastní Git Feature Branch.
+## Fáze 6 – Bug Management
+- Bug Reports – plánováno
+- Reprodukce nalezených vad – plánováno
+- Severity a Priority – plánováno
+- Evidence opravy a retestu – plánováno
 
-Doporučený postup:
-1. vytvoření nové větve z main
-2. implementace funkcionality
-3. lokální testování
-4. commit
-5. merge do větve main
-6. Project Review
-7. aktualizace dokumentace
-8. implementace všech relevantních High Priority položek
-9. Project Review po Hight Priority položkách
-10. odstranění dokončené větve
-11. push na GitHub
-
-Každá Feature Branch by měla představovat jednu logicky uzavřenou funkcionalitu projektu.
-
-Po dokončení každého business Use Casu nebo významného technického milníku probíhá Project Review.
-
-Teprve po jeho dokončení a implementaci všech položek označených jako **High Priority** začíná implementace dalšího Use Casu.
-
-Podrobný postup vývoje je popsán v dokumentu:
-
-`DEVELOPMENT_WORKFLOW.md`
-
-Po dokončení významného milníku je nutné aktualizovat:
-* PROJECT_CONTEXT.md
-* PROJECT_VISION.md
-* BUSINESS_REQUIREMENTS.md
-* ROADMAP.md
-* (CHANGELOG.md)
+## Fáze 7 – Release-like assessment
+- Vyhodnocení výsledků testování – plánováno
+- Identifikace zbývajících rizik – plánováno
+- Release / No Release rozhodnutí – plánováno
+- QA-oriented README – plánováno
 
 ---
 
-## Aktuální milestone
+# 3. část – Bonus / Bridge (BB)
+Nepovinné rozšíření připravující přechod k projektu #2.
 
-**Dokončeno**
+## Fáze 8 – Handover a lokální zdroj pravdy
+- Ruční ověření převzetí projektu pouze z dokumentace a zdrojů – plánováno
+- Krátký technický zápis o převzetí projektu – plánováno
+- Inventura lokálních souborů a dokumentační struktury – volitelné
 
-✅ UC001 – Client Management
-✅ PR-001 – Project Review po UC001
-✅ TECH-001 – Globální zpracování výjimek
-✅ TECH-002 - Validace vstupních dat
-✅ PR-002 – Project Review po TECH-002
-✅ UC002 - Open Account
-✅ PR-003 - Project Review po UC002
-✅ UC003 - Deposit Money
-✅ PR-004 - Project Review po UC003
-✅ TECH-006 - Izolace testovací databáze
-✅ PR-005 - Project Review po TECH-006
-✅ UC004 - Withdraw Money
-✅ PR-006 - Project Review po UC004
-✅ UC005 - Transfer Money
-✅ PR-007 - Project Review po UC005
-✅ UC006 - Issue Card - implementováno a otestováno
-✅ PR-008 - Project Review po UC006
-✅ UC007 - Block Card - implementováno a otestováno
-✅ PR-009 - Project Review po UC007
+## Fáze 9 – Náhled na další projekt
+- Identifikace jedné hranice systému vhodné pro API kontrakt – plánováno
+- Návrh malé testovací matice pro API kontrakt – plánováno
 
-**Probíhá**
+Bonus nesmí rozšířit Aegis na samostatný projekt zaměřený na API automation nebo CI. Tyto oblasti patří do následujících projektů.
 
-**Následuje**
-⏳ Další Use Case dle ROADMAP.md a BUSINESS_REQUIREMENTS.md
+---
+
+# Aktuální milestone
+- ✅️ Dokončeno: UC001–UC007 a PR-001–PR-009
+- ⌛ Aktuálně: dokončená část základní bankovní funkcionality
+- ⏳ Následuje: UC008 – Unblock Card
+
+---
+
+# Pravidla roadmapy
+- Roadmapa určuje plánovaný rozsah a pořadí projektu.
+- Aktuální stav jednotlivých položek je současně udržován v `CURRENT_STATE.md`.
+- Detailní business požadavky jsou vedeny v `BUSINESS_REQUIREMENTS.md`.
+- Technický dluh je veden v `docs/technical/TECHNICAL_BACKLOG.md`.
+- Vývojový workflow je popsán v `docs/development/DEVELOPMENT_WORKFLOW.md`.
+- Historie skutečně provedených změn je vedena v `docs/CHANGELOG.md`.
+
+Každý Use Case prochází standardním vývojovým workflow a Project Review. 
+Nový Use Case nezačíná před dokončením předchozího Use Casu a všech relevantních High Priority položek.
+Roadmapa se aktualizuje pouze při změně plánovaného rozsahu, pořadí nebo stavu významného milníku.
