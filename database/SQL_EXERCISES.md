@@ -25,7 +25,7 @@ Vypiš pouze:
 * account_id
 * iban
 * balance
-* 
+
 z tabulky accounts.
 
 ---

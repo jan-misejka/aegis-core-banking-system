@@ -1,7 +1,5 @@
 # SQL Validation
-
 ## Validace Referenční Integrity
-
 ### VAL001
 Ověř, že každý účet patří existujícímu klientovi.
 
