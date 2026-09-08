@@ -257,5 +257,19 @@
 - Aktualizovány vazby mezi projektovou, business, technickou a QA dokumentací.
 
 ## 2026-09-08 - JM
-- Zahájení TECH-008: Refactoring transactions API.
-- 
+- Implementace TECH-008 - Refaktorizace endpointů Deposit/Withdraw:
+- Vytvořen společný endpoint POST /transactions pro vklad a výběr peněz.
+- Typ transakce je určen hodnotou DEPOSIT nebo WITHDRAWAL.
+- Vytvořen TransactionController pro zpracování transakcí.
+- Vytvořen CreateTransactionRequest pro vstupní data transakce.
+- Vytvořen TransactionResponse pro odpověď API.
+- Přesunuta odpovědnost pro Deposit/Withdraw z AccountController do TransactionController.
+- Přesunuta business logika Deposit/Withdraw do TransactionService.
+- Přidána validace typu transakce pomocí InvalidTransactionTypeException.
+- Zachována validace částky a kontrola dostatečného balance.
+- Zachováno vytvoření Transaction při úspěšném vkladu nebo výběru.
+- Přidáno automatické nastavení createdAt Transaction pomocí @PrePersist.
+- Přidány automatizované controller testy pro Deposit a Withdraw.
+- Ověřeny pozitivní a negativní scénáře pomocí Maven testů a Postmanu.
+- Aktualizována Postman collection pro nový endpoint POST /transactions.
+- TECH-008 dokončen a odstraněn z otevřeného Technical Backlogu.
