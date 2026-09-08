@@ -255,3 +255,7 @@
 - Přidána evidence Bug Reports do `jira/BUG_REPORTS.md`.
 - SQL výukové a validační artefakty sjednoceny v adresáři `database/`.
 - Aktualizovány vazby mezi projektovou, business, technickou a QA dokumentací.
+
+## 2026-09-08 - JM
+- Zahájení TECH-008: Refactoring transactions API.
+- 

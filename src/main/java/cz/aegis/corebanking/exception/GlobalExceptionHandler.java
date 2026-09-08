@@ -39,6 +39,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
+    @ExceptionHandler(InvalidTransactionTypeException.class)
+    public ResponseEntity<String> handleInvalidTransactionType(InvalidTransactionTypeException exception) {
+        return ResponseEntity.badRequest().body(exception.getMessage());
+    }
+
     @ExceptionHandler(CardNotFoundException.class)
     public ResponseEntity<Void> handleCardNotFound(CardNotFoundException exception) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

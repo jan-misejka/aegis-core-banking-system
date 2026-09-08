@@ -2,24 +2,16 @@ package cz.aegis.corebanking.service;
 
 import cz.aegis.corebanking.dto.AccountResponse;
 import cz.aegis.corebanking.dto.CreateAccountRequest;
-import cz.aegis.corebanking.dto.DepositMoneyRequest;
-import cz.aegis.corebanking.dto.WithdrawMoneyRequest;
 import cz.aegis.corebanking.entity.Account;
 import cz.aegis.corebanking.entity.Client;
-import cz.aegis.corebanking.entity.Transaction;
-import cz.aegis.corebanking.exception.AccountNotFoundException;
 import cz.aegis.corebanking.exception.ClientNotFoundException;
-import cz.aegis.corebanking.exception.InsufficientBalanceException;
 import cz.aegis.corebanking.exception.InvalidAccountDataException;
 import cz.aegis.corebanking.repository.AccountRepository;
 import cz.aegis.corebanking.repository.ClientRepository;
-import cz.aegis.corebanking.repository.TransactionRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.time.LocalDateTime;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -27,14 +19,11 @@ public class AccountService {
 
     private final ClientRepository clientRepository;
     private final AccountRepository accountRepository;
-    private final TransactionRepository transactionRepository;
 
     public AccountService(ClientRepository clientRepository,
-                          AccountRepository accountRepository,
-                          TransactionRepository transactionRepository) {
+                          AccountRepository accountRepository) {
         this.clientRepository = clientRepository;
         this.accountRepository = accountRepository;
-        this.transactionRepository = transactionRepository;
     }
 
     //Metoda pro vytvoření účtu
@@ -73,70 +62,6 @@ public class AccountService {
         response.setBalance(savedAccount.getBalance());
         response.setCurrency(savedAccount.getCurrency());
         response.setCreatedAt(savedAccount.getCreatedAt());
-
-        return response;
-    }
-
-    //Metoda pro deposit
-    @Transactional
-    public AccountResponse depositMoney(Long accountId, DepositMoneyRequest request) {
-        Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new AccountNotFoundException(accountId));
-
-        account.setBalance(account.getBalance().add(request.getAmount()));
-
-        Transaction transaction = new Transaction();
-        transaction.setAccount(account);
-        transaction.setTransactionType("DEPOSIT");
-        transaction.setAmount(request.getAmount());
-        transaction.setCreatedAt(LocalDateTime.now());
-
-        accountRepository.save(account);
-        transactionRepository.save(transaction);
-
-        AccountResponse response = new AccountResponse();
-
-        response.setAccountId(account.getAccountId());
-        response.setClientId(account.getClient().getClientId());
-        response.setIban(account.getIban());
-        response.setAccountType(account.getAccountType());
-        response.setBalance(account.getBalance());
-        response.setCurrency(account.getCurrency());
-        response.setCreatedAt(account.getCreatedAt());
-
-        return response;
-    }
-
-    //Metoda pro withdraw
-    @Transactional
-    public AccountResponse withdrawMoney(Long accountId, WithdrawMoneyRequest request) {
-        Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new AccountNotFoundException(accountId));
-
-        if (account.getBalance().compareTo(request.getAmount()) < 0) {
-            throw new InsufficientBalanceException(request.getAmount(), account.getBalance());
-        }
-
-        account.setBalance(account.getBalance().subtract(request.getAmount()));
-
-        Transaction transaction = new Transaction();
-        transaction.setAccount(account);
-        transaction.setTransactionType("WITHDRAWAL");
-        transaction.setAmount(request.getAmount());
-        transaction.setCreatedAt(LocalDateTime.now());
-
-        accountRepository.save(account);
-        transactionRepository.save(transaction);
-
-        AccountResponse response = new AccountResponse();
-
-        response.setAccountId(account.getAccountId());
-        response.setClientId(account.getClient().getClientId());
-        response.setIban(account.getIban());
-        response.setAccountType(account.getAccountType());
-        response.setBalance(account.getBalance());
-        response.setCurrency(account.getCurrency());
-        response.setCreatedAt(account.getCreatedAt());
 
         return response;
     }

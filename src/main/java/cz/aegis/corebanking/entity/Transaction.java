@@ -33,6 +33,11 @@ public class Transaction {
     @Column(name = "tx_date")
     private LocalDateTime createdAt;
 
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+
     public Transaction() {
     }
 

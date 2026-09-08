@@ -118,14 +118,16 @@ Doplnit automatizované testy pro funkcionalitu UC002 – Open Account.
 UC002 je v současnosti ověřen pomocí Maven/JUnit testů, Postmanu a DBeaveru. Automatizované testy zaměřené přímo na business scénáře UC002 zvýší regresní pokrytí při dalších změnách.
 
 ### TECH-008 – Refaktorizace endpointů Deposit/Withdraw
-**Stav:** Plánováno
+**Stav:** ✅ Dokončeno
 
 **Popis:**
-Refaktorovat endpointy pro vklad a výběr peněz z `/accounts/{id}/deposit` a `/accounts/{id}/withdraw` na transakčně orientované endpointy.
+Refaktorovat endpointy pro vklad a výběr peněz z `/accounts/{id}/deposit` a `/accounts/{id}/withdraw` na společný transakčně orientovaný endpoint `/transactions`.
 
 **Navrhovaný cílový design:**
-- POST /transactions/deposit
-- POST /transactions/withdraw
+- POST /transactions
+- typ transakce je určen hodnotou `type`:
+    - DEPOSIT
+    - WITHDRAWAL
 
 **Důvod:**
 Deposit a Withdraw vytvářejí finanční Transaction a z pohledu doménového návrhu je vhodnější, aby jejich API odpovědnost odpovídala transakční doméně.

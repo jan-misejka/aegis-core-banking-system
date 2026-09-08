@@ -2,9 +2,7 @@ package cz.aegis.corebanking.controller;
 
 import cz.aegis.corebanking.TestDatabaseReset;
 import cz.aegis.corebanking.entity.Account;
-import cz.aegis.corebanking.entity.Transaction;
 import cz.aegis.corebanking.repository.AccountRepository;
-import cz.aegis.corebanking.repository.TransactionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -32,172 +31,123 @@ public class AccountControllerTest extends TestDatabaseReset {
     @Autowired
     private AccountRepository accountRepository;
 
-    @Autowired
-    private TransactionRepository transactionRepository;
-
-    // Deposit tests
+    //Testy pro vytvoření účtu
     @Test
-    void shouldDepositMoneySuccessfully() throws Exception {
+    void shouldCreateAccountSuccessfully() throws Exception {
 
-        mockMvc.perform(post("/accounts/1/deposit")
-                .contentType(APPLICATION_JSON)
-                .content("""
-                        {
-                            "amount": 500.00
-                        }
-                        """))
-                .andExpect(status().isOk());
-    }
+        long initialAccountCount = accountRepository.count();
 
-    @Test
-    void shouldReturn400WhenDepositingZeroAmount() throws Exception {
-
-        mockMvc.perform(post("/accounts/1/deposit")
-                .contentType(APPLICATION_JSON)
-                .content("""
-                        {
-                            "amount": 0
-                        }
-                        """))
-                .andExpect(status().isBadRequest());
-    }
-
-    @Test
-    void shouldReturn400WhenDepositingNegativeAmount() throws Exception {
-
-        mockMvc.perform(post("/accounts/1/deposit")
+        mockMvc.perform(post("/accounts")
                         .contentType(APPLICATION_JSON)
                         .content("""
-                            {
-                                "amount": -100
-                            }
-                            """))
-                .andExpect(status().isBadRequest());
+                                {
+                                    "clientId": 1,
+                                    "accountType": "CURRENT",
+                                    "currency": "CZK"
+                                }
+                                """))
+                .andExpect(status().isCreated());
+
+        long finalAccountCount = accountRepository.count();
+
+        assertEquals(initialAccountCount + 1, finalAccountCount);
+
+        Account createdAccount = accountRepository.findAll()
+                .get(accountRepository.findAll().size() - 1);
+
+        assertEquals(1L, createdAccount.getClient().getClientId());
+        assertEquals("CURRENT", createdAccount.getAccountType());
+        assertEquals("CZK", createdAccount.getCurrency());
+        assertEquals(BigDecimal.ZERO, createdAccount.getBalance());
+        assertNotNull(createdAccount.getIban());
+        assertNotNull(createdAccount.getCreatedAt());
     }
 
     @Test
-    void shouldReturn404WhenDepositingToNonExistingAccount() throws Exception {
+    void shouldReturn404WhenCreatingAccountForNonExistingClient() throws Exception {
 
-        mockMvc.perform(post("/accounts/999999/deposit")
-                    .contentType(APPLICATION_JSON)
-                    .content("""
-                        {
-                            "amount": 500.00
-                        }
-                        """))
+        long initialAccountCount = accountRepository.count();
+
+        mockMvc.perform(post("/accounts")
+                        .contentType(APPLICATION_JSON)
+                        .content("""
+                                {
+                                    "clientId": 999999,
+                                    "accountType": "CURRENT",
+                                    "currency": "CZK"
+                                }
+                                """))
                 .andExpect(status().isNotFound());
-    }
 
-    // Withdraw tests
-    @Test
-    void shouldWithdrawMoneySuccessfully() throws Exception {
+        long finalAccountCount = accountRepository.count();
 
-        Account accountBefore = accountRepository.findById(1L).orElseThrow();
-        BigDecimal initialBalance = accountBefore.getBalance();
-        long initialTransactionCount = transactionRepository.count();
-
-        mockMvc.perform(post("/accounts/1/withdraw")
-                .contentType(APPLICATION_JSON)
-                .content("""
-                        {
-                            "amount": 500.00
-                        }
-                        """))
-                .andExpect(status().isOk());
-
-        Account accountAfter = accountRepository.findById(1L).orElseThrow();
-
-        assertEquals(
-                initialBalance.subtract(new BigDecimal("500.00")),
-                accountAfter.getBalance()
-        );
-
-        long finalTransactionCount = transactionRepository.count();
-
-        assertEquals(initialTransactionCount + 1, finalTransactionCount);
-
-        Transaction withdrawalTransaction = transactionRepository.findAll()
-                .get(transactionRepository.findAll().size() - 1);
-
-        assertEquals("WITHDRAWAL", withdrawalTransaction.getTransactionType());
-        assertEquals(new BigDecimal("500.00"), withdrawalTransaction.getAmount());
-        assertEquals(1L, withdrawalTransaction.getAccount().getAccountId());
+        assertEquals(initialAccountCount, finalAccountCount);
     }
 
     @Test
-    void shouldReturn400WhenWithdrawingZeroAmount() throws Exception {
+    void shouldReturn400WhenCreatingAccountWithInvalidAccountType() throws Exception {
 
-        mockMvc.perform(post("/accounts/1/withdraw")
-                .contentType(APPLICATION_JSON)
-                .content("""
-                        {
-                            "amount": 0
-                        }
-                        """))
-                .andExpect(status().isBadRequest());
-    }
+        long initialAccountCount = accountRepository.count();
 
-    @Test
-    void shouldReturn400WhenWithdrawingNegativeAmount() throws Exception {
-
-        mockMvc.perform(post("/accounts/1/withdraw")
+        mockMvc.perform(post("/accounts")
                         .contentType(APPLICATION_JSON)
                         .content("""
-                    {
-                        "amount": -100
-                    }
-                    """))
-                .andExpect(status().isBadRequest());
-    }
-
-    @Test
-    void shouldReturn404WhenWithdrawingFromNonExistingAccount() throws Exception {
-
-        mockMvc.perform(post("/accounts/999999/withdraw")
-                        .contentType(APPLICATION_JSON)
-                        .content("""
-                    {
-                        "amount": 500.00
-                    }
-                    """))
-                .andExpect(status().isNotFound());
-    }
-
-    @Test
-    void shouldReturn400WhenWithdrawingMoreThanBalance() throws Exception {
-
-        Account accountBefore = accountRepository.findById(1L).orElseThrow();
-        BigDecimal initialBalance = accountBefore.getBalance();
-        long initialTransactionCount = transactionRepository.count();
-
-        mockMvc.perform(post("/accounts/1/withdraw")
-                        .contentType(APPLICATION_JSON)
-                        .content("""
-                    {
-                        "amount": 25000.01
-                    }
-                    """))
+                                {
+                                    "clientId": 1,
+                                    "accountType": "INVALID",
+                                    "currency": "CZK"
+                                }
+                                """))
                 .andExpect(status().isBadRequest());
 
-        Account accountAfter = accountRepository.findById(1L).orElseThrow();
+        long finalAccountCount = accountRepository.count();
 
-        assertEquals(initialBalance, accountAfter.getBalance());
-
-        long finalTransactionCount = transactionRepository.count();
-
-        assertEquals(initialTransactionCount, finalTransactionCount);
+        assertEquals(initialAccountCount, finalAccountCount);
     }
 
     @Test
-    void shouldWithdrawEntireBalanceSuccessfully() throws Exception {
+    void shouldCreateAccountWithSupportedCurrency() throws Exception {
 
-        mockMvc.perform(post("/accounts/1/withdraw")
+        long initialAccountCount = accountRepository.count();
+
+        mockMvc.perform(post("/accounts")
                         .contentType(APPLICATION_JSON)
                         .content("""
-                    {
-                        "amount": 25000.00
-                    }
-                    """))
-                .andExpect(status().isOk());
+                                {
+                                    "clientId": 1,
+                                    "accountType": "CURRENT",
+                                    "currency": "EUR"
+                                }
+                                """))
+                .andExpect(status().isCreated());
+
+        long finalAccountCount = accountRepository.count();
+
+        assertEquals(initialAccountCount + 1, finalAccountCount);
+
+        Account createdAccount = accountRepository.findAll()
+                .get(accountRepository.findAll().size() - 1);
+
+        assertEquals("EUR", createdAccount.getCurrency());
+    }
+
+    @Test
+    void shouldCreateAccountWithInitialBalanceZero() throws Exception {
+
+        mockMvc.perform(post("/accounts")
+                        .contentType(APPLICATION_JSON)
+                        .content("""
+                                {
+                                    "clientId": 1,
+                                    "accountType": "SAVINGS",
+                                    "currency": "CZK"
+                                }
+                                """))
+                .andExpect(status().isCreated());
+
+        Account createdAccount = accountRepository.findAll()
+                .get(accountRepository.findAll().size() - 1);
+
+        assertEquals(BigDecimal.ZERO, createdAccount.getBalance());
     }
 }

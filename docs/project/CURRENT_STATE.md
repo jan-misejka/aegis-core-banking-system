@@ -20,6 +20,7 @@
 - TECH-001 – Globální zpracování výjimek
 - TECH-002 – Validace vstupních dat
 - TECH-006 – Izolace testovací databáze
+- TECH-008 – Refaktor Deposit/Withdraw endpointů
 
 ### Nejbližší krok
 - UC008 – Unblock Card
@@ -68,7 +69,6 @@
 - TECH-003 – DTO mapping
 - TECH-004 – Soft Delete
 - TECH-005 – Automatizované testy UC002
-- TECH-008 – Refaktor Deposit/Withdraw endpointů
 
 ### Low Priority
 - TECH-007 – Duplicitní testovací data
