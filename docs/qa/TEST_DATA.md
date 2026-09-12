@@ -270,9 +270,31 @@ Identifikátor slouží k propojení testovacích dat s konkrétními Test Cases
 
 ---
 
+## UC008 – Unblock Card
+### TD-008-01 – Zablokovaná karta
+- **Účel:** Testování úspěšného odblokování karty.
+- **Použití:** TC-008-01
+- **Stav:** Card status = BLOCKED.
+
+### TD-008-02 – Aktivní karta
+- **Účel:** Testování odmítnutí odblokování již aktivní karty.
+- **Použití:** TC-008-02
+- **Stav:** Card status = ACTIVE.
+
+### TD-008-03 – Expirovaná karta
+- **Účel:** Testování odmítnutí odblokování expirované karty.
+- **Použití:** TC-008-03
+- **Stav:** Card status = EXPIRED.
+
+### TD-008-04 – Neexistující karta
+- **Účel:** Testování práce s neexistující kartou.
+- **Použití:** TC-008-04
+- **Stav:** Použité ID karty neexistuje.
+
+---
+
 # 6. Plánovaná Test Data
 Testovací data pro následující Use Cases budou doplněna před zahájením jejich testování:
-- UC008 – Unblock Card
 - UC009 – Account Detail
 - UC010 – Client Accounts
 - UC011 – Transaction History

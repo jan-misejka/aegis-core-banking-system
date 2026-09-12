@@ -658,11 +658,76 @@ Jeden Test Case může podle potřeby pokrývat více charakteristik.
 
 ---
 
+## UC008 – Unblock Card
+### TC-008-01 – Odblokování zablokované karty
+- **Use Case:** UC008
+- **Typ:** Positive
+- **Priorita:** High
+- **Předpoklady:** Karta existuje a má stav BLOCKED.
+- **Testovací data:** Zablokovaná karta.
+- **Kroky:**
+  1. Ověřit výchozí stav karty.
+  2. Provést request pro odblokování karty.
+  3. Ověřit API response.
+  4. Ověřit stav karty v databázi.
+  5. Ověřit, že ostatní atributy karty zůstaly beze změny.
+- **Očekávaný výsledek:**
+  - operace je úspěšná
+  - stav karty se změní z BLOCKED na ACTIVE
+  - ostatní atributy karty zůstanou beze změny
+
+### TC-008-02 – Odblokování aktivní karty
+- **Use Case:** UC008
+- **Typ:** Negative
+- **Priorita:** High
+- **Předpoklady:** Karta existuje a má stav ACTIVE.
+- **Testovací data:** Aktivní karta.
+- **Kroky:**
+  1. Ověřit výchozí stav karty.
+  2. Pokusit se kartu odblokovat.
+  3. Ověřit response.
+  4. Ověřit stav karty v databázi.
+- **Očekávaný výsledek:**
+  - operace je odmítnuta
+  - API vrátí HTTP 400 Bad Request
+  - stav karty zůstane ACTIVE
+
+### TC-008-03 – Odblokování karty ve stavu EXPIRED
+- **Use Case:** UC008
+- **Typ:** Negative
+- **Priorita:** High
+- **Předpoklady:** Karta má stav EXPIRED.
+- **Testovací data:** Expirovaná karta.
+- **Kroky:**
+  1. Ověřit výchozí stav karty.
+  2. Pokusit se kartu odblokovat.
+  3. Ověřit response.
+  4. Ověřit stav karty v databázi.
+- **Očekávaný výsledek:**
+  - operace je odmítnuta
+  - API vrátí HTTP 400 Bad Request
+  - stav karty zůstane EXPIRED
+
+### TC-008-04 – Odblokování neexistující karty
+- **Use Case:** UC008
+- **Typ:** Negative
+- **Priorita:** High
+- **Předpoklady:** Karta s použitým ID neexistuje.
+- **Testovací data:** Neexistující ID karty.
+- **Kroky:**
+  1. Provést request pro odblokování karty.
+  2. Ověřit response.
+- **Očekávaný výsledek:**
+  - operace je odmítnuta
+  - API vrátí HTTP 404 Not Found
+  - nedojde ke změně databáze
+
+---
+
 # 4. Plánované Test Cases
 Pro dosud neimplementované Use Cases budou Test Cases doplněny před zahájením jejich testování.
 
 Plánované Use Cases:
-- UC008 – Unblock Card
 - UC009 – Account Detail
 - UC010 – Client Accounts
 - UC011 – Transaction History

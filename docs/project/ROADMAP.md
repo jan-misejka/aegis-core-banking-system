@@ -51,7 +51,8 @@ Povinný rozsah projektu zaměřený na vytvoření funkčního bankovního syst
 - PR-008 – Project Review po UC006 – dokončeno
 - UC007 – Block Card – dokončeno
 - PR-009 – Project Review po UC007 – dokončeno
-- UC008 – Unblock Card – plánováno
+- UC008 – Unblock Card – dokončeno
+- PR-010 - Project Review po UC008 - dokončeno
 
 ### Account & Transaction Queries
 - UC009 – Zobrazení detailu účtu – plánováno
@@ -112,9 +113,9 @@ Bonus nesmí rozšířit Aegis na samostatný projekt zaměřený na API automat
 ---
 
 # Aktuální milestone
-- ✅️ Dokončeno: UC001–UC007 a PR-001–PR-009
+- ✅️ Dokončeno: UC001–UC008 a PR-001–PR-010
 - ⌛ Aktuálně: dokončená část základní bankovní funkcionality
-- ⏳ Následuje: UC008 – Unblock Card
+- ⏳ Následuje: UC009 – Zobrazení detailu účtu
 
 ---
 

@@ -35,4 +35,13 @@ public class CardController {
 
         return ResponseEntity.ok(response);
     }
+
+    //endpoint PATCH - odblokování karty
+    @PatchMapping("/{cardId}/unblock")
+    public ResponseEntity<CardResponse> unblockCard(@PathVariable Long cardId) {
+
+        CardResponse response = cardService.unblockCard(cardId);
+
+        return ResponseEntity.ok(response);
+    }
 }

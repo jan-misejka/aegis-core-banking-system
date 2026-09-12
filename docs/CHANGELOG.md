@@ -273,3 +273,17 @@
 - Ověřeny pozitivní a negativní scénáře pomocí Maven testů a Postmanu.
 - Aktualizována Postman collection pro nový endpoint POST /transactions.
 - TECH-008 dokončen a odstraněn z otevřeného Technical Backlogu.
+
+## 2026-09-12 - JM
+- Implementace UC008 - Unblock Card:
+- Vytvořen endpoint PATCH /cards/{cardId}/unblock pro odblokování platební karty.
+- Přidána business logika pro změnu stavu BLOCKED → ACTIVE.
+- Přidána kontrola, že aktivní kartu nelze odblokovat.
+- Přidána kontrola, že expirovanou kartu nelze odblokovat.
+- Přidána CardNotBlockedException pro odmítnutí odblokování karty, která není ve stavu BLOCKED.
+- Zachováno zpracování neexistující karty pomocí CardNotFoundException.
+- Zachováno zachování ostatních atributů karty při odblokování.
+- Přidány automatizované controller testy pro UC008.
+- Ověřeny pozitivní, negativní a stavové scénáře pomocí Maven testů a Postmanu.
+- Ověřen výsledný stav karty v databázi pomocí SQL.
+- UC008 dokončen a uzavřen po Project Review PR-010.

@@ -21,10 +21,11 @@
 - TECH-002 – Validace vstupních dat
 - TECH-006 – Izolace testovací databáze
 - TECH-008 – Refaktor Deposit/Withdraw endpointů
-
-### Nejbližší krok
 - UC008 – Unblock Card
 
+
+### Nejbližší krok
+- UC009 - Zobrazení detailu účtu
 ---
 
 ## Technický stav
