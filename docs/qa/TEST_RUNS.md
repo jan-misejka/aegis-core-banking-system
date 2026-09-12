@@ -144,6 +144,26 @@ Aktuální testovací běhy budou doplňovány podle skutečně provedeného tes
 - **Notes:** TBD
 -->
 
+### TR-008 (po UC008)
+- **Datum:** 2026-09-12
+- **Scope:** UC008 – Unblock Card
+- **Test Cases:** TC-008-01, TC-008-02, TC-008-03, TC-008-04
+- **Test Environment:**
+    - Windows
+    - Spring Boot application
+    - MySQL test database
+    - Postman
+    - DBeaver
+    - Maven / JUnit
+- **Test Data:** TD-008-01, TD-008-02, TD-008-03, TD-008-04
+- **Result:** PASS
+- **Bugs:** None
+- **Evidence:**
+    - automatizované controller testy pro TC-008-01 až TC-008-04
+    - Postman ověření všech čtyř scénářů
+    - SQL ověření výsledného stavu karty po úspěšném odblokování
+- **Notes:** Všechny pozitivní, negativní a relevantní stavové scénáře UC008 byly úspěšně ověřeny. Při úspěšném odblokování byla ověřena změna BLOCKED → ACTIVE a zachování ostatních atributů karty.
+
 ---
 
 ## 6. Regression Testing

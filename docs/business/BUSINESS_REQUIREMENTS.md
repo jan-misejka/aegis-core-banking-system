@@ -171,9 +171,25 @@ Platební karta je zablokována.
 ---
 
 ### UC008 – Odblokování platební karty
-Bankovní pracovník obnoví použití dříve zablokované aktivní karty.
 
-**Stav:** ⏳ Plánováno
+Bankovní pracovník obnoví použití dříve zablokované karty.
+
+**Stav:** ✅ Dokončeno
+
+**Požadované chování:**
+
+- karta musí existovat
+- kartu ve stavu BLOCKED lze odblokovat
+- karta ve stavu BLOCKED je změněna do stavu ACTIVE
+- kartu ve stavu ACTIVE nelze odblokovat
+- kartu ve stavu EXPIRED nelze odblokovat
+- při odblokování se mění pouze stav karty
+
+**HTTP chování:**
+
+- 200 OK – karta byla úspěšně odblokována
+- 400 Bad Request – karta je již aktivní nebo je expirovaná
+- 404 Not Found – karta neexistuje
 
 ---
 

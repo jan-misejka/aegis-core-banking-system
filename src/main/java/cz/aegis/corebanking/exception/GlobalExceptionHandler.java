@@ -54,6 +54,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
+    @ExceptionHandler(CardNotBlockedException.class)
+    public ResponseEntity<Void> handleCardNotBlocked(CardNotBlockedException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
     @ExceptionHandler(ExpiredCardException.class)
     public ResponseEntity<Void> handleExpiredCard(ExpiredCardException exception) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
