@@ -196,7 +196,21 @@ Bankovní pracovník obnoví použití dříve zablokované karty.
 ### UC009 – Zobrazení detailu účtu
 Bankovní pracovník zobrazí účet včetně vlastníka, měny, IBANu a aktuálního zůstatku.
 
-**Stav:** ⏳ Plánováno
+**Stav:** ✅ Dokončeno
+
+**Požadované chování:**
+- existující účet lze vyhledat podle ID
+- response obsahuje ID účtu
+- response obsahuje ID vlastníka účtu
+- response obsahuje IBAN
+- response obsahuje typ účtu
+- response obsahuje aktuální zůstatek
+- response obsahuje měnu
+- response obsahuje datum vytvoření
+
+**HTTP chování:**
+- 200 OK – účet byl úspěšně nalezen
+- 404 Not Found – účet neexistuje
 
 ---
 

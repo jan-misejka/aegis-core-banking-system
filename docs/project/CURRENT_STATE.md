@@ -22,10 +22,11 @@
 - TECH-006 – Izolace testovací databáze
 - TECH-008 – Refaktor Deposit/Withdraw endpointů
 - UC008 – Unblock Card
-
+- UC009 - Zobrazení detailu účtu
 
 ### Nejbližší krok
-- UC009 - Zobrazení detailu účtu
+- UC010 – Zobrazení účtů klienta
+
 ---
 
 ## Technický stav

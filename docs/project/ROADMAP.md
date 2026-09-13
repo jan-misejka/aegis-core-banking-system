@@ -55,7 +55,7 @@ Povinný rozsah projektu zaměřený na vytvoření funkčního bankovního syst
 - PR-010 - Project Review po UC008 - dokončeno
 
 ### Account & Transaction Queries
-- UC009 – Zobrazení detailu účtu – plánováno
+- UC009 – Zobrazení detailu účtu – dokončeno
 - UC010 – Zobrazení účtů klienta – plánováno
 - UC011 – Zobrazení historie transakcí účtu – plánováno
 - UC012 – Zobrazení detailu převodu – plánováno
@@ -113,9 +113,9 @@ Bonus nesmí rozšířit Aegis na samostatný projekt zaměřený na API automat
 ---
 
 # Aktuální milestone
-- ✅️ Dokončeno: UC001–UC008 a PR-001–PR-010
+- ✅️ Dokončeno: UC001–UC009 a PR-001–PR-011
 - ⌛ Aktuálně: dokončená část základní bankovní funkcionality
-- ⏳ Následuje: UC009 – Zobrazení detailu účtu
+- ⏳ Následuje: UC010 – Zobrazení účtů klienta
 
 ---
 

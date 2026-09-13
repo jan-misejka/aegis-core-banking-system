@@ -16,7 +16,9 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -149,5 +151,52 @@ public class AccountControllerTest extends TestDatabaseReset {
                 .get(accountRepository.findAll().size() - 1);
 
         assertEquals(BigDecimal.ZERO, createdAccount.getBalance());
+    }
+
+    //TC-009-01: Úspěšně zobrazení detailu účtu
+    @Test
+    void shouldReturnAccountSuccessfully() throws Exception {
+        mockMvc.perform(get("/accounts/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.accountId").value(1))
+                .andExpect(jsonPath("$.clientId").value(1))
+                .andExpect(jsonPath("$.iban").exists())
+                .andExpect(jsonPath("$.accountType").value("CURRENT"))
+                .andExpect(jsonPath("$.balance").value(25000))
+                .andExpect(jsonPath("$.currency").value("CZK"))
+                .andExpect(jsonPath("$.createdAt").exists());
+    }
+
+    //TC-009-02: Neexistující účet při zobrazení detailu účtu
+    @Test
+    void shouldReturnA404WHenAccountDoesNotExist() throws Exception {
+        mockMvc.perform(get("/accounts/999999")).andExpect(status().isNotFound());
+    }
+
+    // TC-009-03 – Zobrazení účtu s nulovým zůstatkem
+    @Test
+    void shouldReturnAccountWithZeroBalance() throws Exception {
+        mockMvc.perform(get("/accounts/7"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.balance").value(0));
+    }
+
+    // TC-009-04 – GET detailu účtu nemění stav databáze
+    @Test
+    void shouldNotModifyAccountWhenGettingAccount() throws Exception {
+        Account accountBefore = accountRepository.findById(1L).orElseThrow();
+
+        mockMvc.perform(get("/accounts/1"))
+                .andExpect(status().isOk());
+
+        Account accountAfter = accountRepository.findById(1L).orElseThrow();
+
+        assertEquals(accountBefore.getAccountId(), accountAfter.getAccountId());
+        assertEquals(accountBefore.getClient().getClientId(), accountAfter.getClient().getClientId());
+        assertEquals(accountBefore.getIban(), accountAfter.getIban());
+        assertEquals(accountBefore.getAccountType(), accountAfter.getAccountType());
+        assertEquals(accountBefore.getBalance(), accountAfter.getBalance());
+        assertEquals(accountBefore.getCurrency(), accountAfter.getCurrency());
+        assertEquals(accountBefore.getCreatedAt(), accountAfter.getCreatedAt());
     }
 }

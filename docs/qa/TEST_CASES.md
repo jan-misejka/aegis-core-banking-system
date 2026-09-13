@@ -724,11 +724,68 @@ Jeden Test Case může podle potřeby pokrývat více charakteristik.
 
 ---
 
+## UC009 – Account Detail
+### TC-009-01 – Zobrazení detailu existujícího účtu
+- **Use Case:** UC009
+- **Typ:** Positive
+- **Priorita:** High
+- **Předpoklady:** Existuje účet s ID 1.
+- **Testovací data:** Účet ID 1.
+- **Kroky:**
+  1. Odeslat `GET /accounts/1`.
+  2. Ověřit HTTP response.
+  3. Ověřit obsah response.
+- **Očekávaný výsledek:**
+  - API vrátí HTTP 200 OK.
+  - Response obsahuje ID účtu, ID klienta, IBAN, typ účtu, balance, měnu a datum vytvoření.
+  - Hodnoty odpovídají databázi.
+
+### TC-009-02 – Zobrazení detailu neexistujícího účtu
+- **Use Case:** UC009
+- **Typ:** Negative
+- **Priorita:** High
+- **Předpoklady:** Účet s použitým ID neexistuje.
+- **Testovací data:** Neexistující ID účtu `999999`.
+- **Kroky:**
+  1. Odeslat `GET /accounts/999999`.
+  2. Ověřit HTTP response.
+- **Očekávaný výsledek:**
+  - API vrátí HTTP 404 Not Found.
+  - Nedojde ke změně databáze.
+
+### TC-009-03 – Zobrazení účtu s nulovým zůstatkem
+- **Use Case:** UC009
+- **Typ:** Boundary
+- **Priorita:** Medium
+- **Předpoklady:** Existuje účet s balance `0`.
+- **Testovací data:** Účet ID 1 s nulovým zůstatkem.
+- **Kroky:**
+  1. Odeslat `GET /accounts/1`.
+  2. Ověřit hodnotu balance v response.
+- **Očekávaný výsledek:**
+  - API vrátí HTTP 200 OK.
+  - Balance je `0`.
+
+### TC-009-04 – Ověření, že GET nemění stav účtu
+- **Use Case:** UC009
+- **Typ:** Regression
+- **Priorita:** Medium
+- **Předpoklady:** Existuje účet s ID 1.
+- **Testovací data:** Účet ID 1.
+- **Kroky:**
+  1. Ověřit stav účtu před requestem.
+  2. Odeslat `GET /accounts/1`.
+  3. Ověřit stav účtu po requestu.
+- **Očekávaný výsledek:**
+  - API vrátí HTTP 200 OK.
+  - Data účtu zůstanou beze změny.
+
+---
+
 # 4. Plánované Test Cases
 Pro dosud neimplementované Use Cases budou Test Cases doplněny před zahájením jejich testování.
 
 Plánované Use Cases:
-- UC009 – Account Detail
 - UC010 – Client Accounts
 - UC011 – Transaction History
 - UC012 – Transfer Detail

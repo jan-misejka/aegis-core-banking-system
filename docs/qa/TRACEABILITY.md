@@ -58,7 +58,7 @@ Bug Reports jsou vedeny v:
 | UC006 – Issue Card          | TC-006-01 – TC-006-05 | TD-006-01 – TD-006-04 | TBD       | TBD  |
 | UC007 – Block Card          | TC-007-01 – TC-007-04 | TD-007-01 – TD-007-04 | TBD       | TBD  |
 | UC008 – Unblock Card        | TC-008-01 – TC-008-04 | TD-008-01 – TD-008-04 | TR-008    | None |
-| UC009 – Account Detail      | Planned               | Planned               | TBD       | TBD  |
+| UC009 – Account Detail      | TC-009-01 – TC-009-04 | TD-009-01 – TD-009-03 | TR-009    | None |
 | UC010 – Client Accounts     | Planned               | Planned               | TBD       | TBD  |
 | UC011 – Transaction History | Planned               | Planned               | TBD       | TBD  |
 | UC012 – Transfer Detail     | Planned               | Planned               | TBD       | TBD  |

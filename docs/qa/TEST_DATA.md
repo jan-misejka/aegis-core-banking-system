@@ -293,9 +293,21 @@ Identifikátor slouží k propojení testovacích dat s konkrétními Test Cases
 
 ---
 
+## UC009 – Account Detail
+### TD-009-01 – Existující účet
+- **Účel:** Ověření úspěšného zobrazení detailu existujícího účtu.
+- **Použití:** TC-009-01, TC-009-03, TC-009-04
+- **Stav:** Účet ID 1 existuje a je dostupný pro čtení.
+
+### TD-009-02 – Neexistující účet
+- **Účel:** Ověření zpracování požadavku na neexistující účet.
+- **Použití:** TC-009-02
+- **Stav:** Použité ID účtu `999999` neexistuje.
+
+---
+
 # 6. Plánovaná Test Data
 Testovací data pro následující Use Cases budou doplněna před zahájením jejich testování:
-- UC009 – Account Detail
 - UC010 – Client Accounts
 - UC011 – Transaction History
 - UC012 – Transfer Detail

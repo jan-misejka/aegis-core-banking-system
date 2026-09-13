@@ -166,6 +166,30 @@ Aktuální testovací běhy budou doplňovány podle skutečně provedeného tes
 
 ---
 
+### TR-009 (po UC009)
+- **Datum:** 2026-09-13
+- **Scope:** UC009 – Account Detail
+- **Test Cases:** TC-009-01, TC-009-02, TC-009-03, TC-009-04
+- **Test Environment:**
+  - Windows
+  - Spring Boot application
+  - MySQL test database
+  - Postman
+  - DBeaver
+  - Maven / JUnit
+- **Test Data:** TD-009-01, TD-009-02
+- **Result:** PASS
+- **Bugs:** None
+- **Evidence:**
+  - automatizované controller testy pro TC-009-01 až TC-009-04
+  - Postman ověření pozitivního a negativního scénáře
+  - SQL ověření dat účtu v databázi
+  - ověření, že GET operace nezměnila stav účtu
+  - opakovaná reprodukce pozitivního a negativního scénáře
+- **Notes:** Všechny scénáře UC009 byly úspěšně ověřeny. Ověřeno zobrazení detailu existujícího účtu, zpracování neexistujícího účtu, nulový zůstatek a zachování stavu databáze při GET operaci.
+
+---
+
 ## 6. Regression Testing
 Test Runs mohou být použity jako podklad pro regresní testování.
 

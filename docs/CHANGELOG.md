@@ -287,3 +287,16 @@
 - Ověřeny pozitivní, negativní a stavové scénáře pomocí Maven testů a Postmanu.
 - Ověřen výsledný stav karty v databázi pomocí SQL.
 - UC008 dokončen a uzavřen po Project Review PR-010.
+
+## 2026-09-13 - JM
+- Implementace UC009 – Account Detail.
+- Přidán endpoint GET /accounts/{accountId} pro zobrazení detailu účtu.
+- Response využívá existující AccountResponse DTO.
+- Přidána kontrola neexistujícího účtu pomocí AccountNotFoundException.
+- Přidány automatizované controller testy pro UC009.
+- Ověřeny pozitivní, negativní a boundary scénáře.
+- Ověřeno, že GET operace nemění stav databáze.
+- Provedeno manuální API ověření pomocí Postmanu.
+- Provedeno databázové ověření pomocí DBeaveru.
+- Proveden TR-009 – Test Run po UC009.
+- UC009 prošel Review bez identifikace nové technické položky.

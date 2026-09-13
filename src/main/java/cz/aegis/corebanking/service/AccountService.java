@@ -4,6 +4,7 @@ import cz.aegis.corebanking.dto.AccountResponse;
 import cz.aegis.corebanking.dto.CreateAccountRequest;
 import cz.aegis.corebanking.entity.Account;
 import cz.aegis.corebanking.entity.Client;
+import cz.aegis.corebanking.exception.AccountNotFoundException;
 import cz.aegis.corebanking.exception.ClientNotFoundException;
 import cz.aegis.corebanking.exception.InvalidAccountDataException;
 import cz.aegis.corebanking.repository.AccountRepository;
@@ -20,8 +21,7 @@ public class AccountService {
     private final ClientRepository clientRepository;
     private final AccountRepository accountRepository;
 
-    public AccountService(ClientRepository clientRepository,
-                          AccountRepository accountRepository) {
+    public AccountService(ClientRepository clientRepository, AccountRepository accountRepository) {
         this.clientRepository = clientRepository;
         this.accountRepository = accountRepository;
     }
@@ -62,6 +62,23 @@ public class AccountService {
         response.setBalance(savedAccount.getBalance());
         response.setCurrency(savedAccount.getCurrency());
         response.setCreatedAt(savedAccount.getCreatedAt());
+
+        return response;
+    }
+
+    //Metoda pro získání detailu účtu
+    public AccountResponse getAccount(Long accountId) {
+        Account account = accountRepository.findById(accountId).orElseThrow(() -> new AccountNotFoundException(accountId));
+
+        AccountResponse response = new AccountResponse();
+
+        response.setAccountId(account.getAccountId());
+        response.setClientId(account.getClient().getClientId());
+        response.setIban(account.getIban());
+        response.setAccountType(account.getAccountType());
+        response.setBalance(account.getBalance());
+        response.setCurrency(account.getCurrency());
+        response.setCreatedAt(account.getCreatedAt());
 
         return response;
     }
