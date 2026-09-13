@@ -8,6 +8,8 @@
 - UC005 – Transfer Money
 - UC006 – Issue Card
 - UC007 – Block Card
+- UC008 – Unblock Card
+- UC009 - Zobrazení detailu účtu
 - PR-001
 - PR-002
 - PR-003
@@ -17,12 +19,12 @@
 - PR-007
 - PR-008
 - PR-009
+- PR-010
+- PR-011
 - TECH-001 – Globální zpracování výjimek
 - TECH-002 – Validace vstupních dat
 - TECH-006 – Izolace testovací databáze
 - TECH-008 – Refaktor Deposit/Withdraw endpointů
-- UC008 – Unblock Card
-- UC009 - Zobrazení detailu účtu
 
 ### Nejbližší krok
 - UC010 – Zobrazení účtů klienta
